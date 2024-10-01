@@ -13,7 +13,7 @@ def getPlot(soup):
     plotHeader = soup.find(id="Plot").parent
     sibling = plotHeader.find_next_sibling()
     while sibling.name == "p":
-        plot += str(sibling).strip()
+        plot += str(sibling.text.strip())
         sibling = sibling.find_next_sibling()
 
     return plot
