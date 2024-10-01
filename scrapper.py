@@ -24,16 +24,19 @@ def getPlot(soup):
     plot = ""
     plotHeader = soup.find(id="Plot").parent
     sibling = plotHeader.find_next_sibling()
-    while sibling.name == "p":
-        plot += str(sibling.text.strip())
+    while sibling.name != "h2":
+        if(sibling.name == "p"):
+            plot += sibling.text.strip()
+        phrases = sibling.find_all("p")
+        for p in phrases:
+            plot += str(p.text.strip())
         sibling = sibling.find_next_sibling()
     return plot
 
 def get_plot_from_episode(episode):
     html = fetchText(api_url+episode)
     soup = BeautifulSoup(fetchText(api_url+episode),"html.parser")
-    
+
     return getPlot(soup)
 
-print(get_plot_from_episode("EP001"))
-print(get_list_episodes(episodes_url))
+print(get_plot_from_episode("EP041"))
