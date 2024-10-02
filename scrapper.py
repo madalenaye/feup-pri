@@ -4,6 +4,8 @@ import json
 
 api_url= 'https://bulbapedia.bulbagarden.net/w/api.php?action=parse&format=json&page='
 
+# Gets the list of episodes from the API as ep codes (ex:EP001)
+# Arg url: string url
 def get_list_episodes(url):
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     with urllib.request.urlopen(req) as url:
@@ -11,14 +13,16 @@ def get_list_episodes(url):
         soup = BeautifulSoup(html, 'html.parser')
         fetch = soup.find_all('tr',style="text-align:center; background:#FFFFFF")
         return [i.contents[1].text.strip() for i in fetch]
-
-
-
+    
+# Gets html from the json provided by the url
+# Arg url: string url
 def fetchText(url):
     req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
     with urllib.request.urlopen(req) as url:
         return json.load(url)["parse"]["text"]["*"]
 
+# Gets the plot from the html
+# Arg soup: BeautifulSoup object
 def getPlot(soup):
     plot = ""
     plotHeader = soup.find(id="Plot").parent
@@ -31,13 +35,16 @@ def getPlot(soup):
             plot += str(p.text.strip())
         sibling = sibling.find_next_sibling()
     return plot
-
+# Gets the plot from the episode code
+# Arg episode: string code of the episode
 def get_plot_from_episode(episode):
     html = fetchText(api_url+episode)
     soup = BeautifulSoup(fetchText(api_url+episode),"html.parser")
 
     return getPlot(soup)
 
+# Gets the table content from the episode page
+# Arg soup: BeautifulSoup object
 def get_table(soup):
     table = {}
     tableHeader = soup.find("table", class_="roundy", style="float:right; display: table !important; background: #FFAAAA; width: 25%; margin-left: 5px; margin-bottom: 5px")
