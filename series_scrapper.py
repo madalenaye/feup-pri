@@ -5,6 +5,8 @@ from utils import fetchText, api_url
 
 # Gets the list of episodes from the API as ep codes (ex:EP001)
 # Arg url: string url
+# Arg page: string page name
+# Return: list of episode codes
 def get_list_episodes(api_url,page):
     html= fetchText(api_url+page)
     soup = BeautifulSoup(html, 'html.parser')
@@ -13,6 +15,7 @@ def get_list_episodes(api_url,page):
     
 # Gets the plot from the html
 # Arg soup: BeautifulSoup object
+# Return: string plot
 def getPlot(soup):
     plot = ""
     plotHeader = soup.find(id="Plot").parent
@@ -25,8 +28,10 @@ def getPlot(soup):
             plot += str(p.text.strip())
         sibling = sibling.find_next_sibling()
     return plot
+
 # Gets the plot from the episode code
 # Arg episode: string code of the episode
+# Return: string plot
 def get_plot_from_episode(api_url,episode):
     html = fetchText(api_url+episode)
     soup = BeautifulSoup(fetchText(api_url+episode),"html.parser")
@@ -35,6 +40,7 @@ def get_plot_from_episode(api_url,episode):
 
 # Gets the table content from the episode page
 # Arg soup: BeautifulSoup object
+# Return: dict table of the episode info
 def get_table(soup):
     table = {}
     tableHeader = soup.find("table", class_="roundy", style="float:right; display: table !important; background: #FFAAAA; width: 25%; margin-left: 5px; margin-bottom: 5px")
@@ -63,6 +69,7 @@ def get_table(soup):
 # Gets the dict of characters and pokemons from the episode
 # Arg api_url: string url
 # Arg episode: string code of the episode
+# Return: dict characters and pokemons
 def get_characters(api_url,episode):
     characters={}
     html = fetchText(api_url+episode)
