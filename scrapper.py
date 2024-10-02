@@ -37,7 +37,7 @@ def getPlot(soup):
     return plot
 # Gets the plot from the episode code
 # Arg episode: string code of the episode
-def get_plot_from_episode(episode):
+def get_plot_from_episode(api_url,episode):
     html = fetchText(api_url+episode)
     soup = BeautifulSoup(fetchText(api_url+episode),"html.parser")
 
@@ -70,14 +70,30 @@ def get_table(soup):
     ### I dont consider adicional credits, we need another approach otherwise
     return table          
             
+def get_characters(api_url,episode):
+    characters={}
+    html = fetchText(api_url+episode)
+    soup = BeautifulSoup(html,"html.parser")
+    characters_section = soup.find(id="Characters")
+
+    humans = characters_section.find_next("h3")
+    list_of_humans = humans.find_next("ul")
+    humans_list = list_of_humans.find_all("li")
+    characters["Humans"]= [i.text.strip() for i in humans_list]
+
+    pokemons = humans.find_next("h3")
+    list_of_pokemons = pokemons.find_next("ul")
+    pokemons_list = list_of_pokemons.find_all("li")
+    characters["Pokemons"]= [i.text.strip() for i in pokemons_list]
         
+    return characters
 i=0
-#for episode in get_list_episodes(api_url+'List_of_animated_series_episodes'):
- #   if i==28:
-  #      break
-  #  print(get_plot_from_episode(episode))
-  #  print("-----------------------------")
-   # i-=1
+'''for episode in get_list_episodes(api_url+'List_of_animated_series_episodes'):
+    if i==28:
+        break
+    print(get_plot_from_episode(episode))
+    print("-----------------------------")
+    i-=1
 for episode in get_list_episodes(api_url+'List_of_animated_series_episodes'):
     if i<=30:
         print(get_table(BeautifulSoup(fetchText(api_url+episode),"html.parser")))
@@ -85,3 +101,5 @@ for episode in get_list_episodes(api_url+'List_of_animated_series_episodes'):
     else:
         break;
     i+=1
+'''
+print(get_characters(api_url,'EP002'))
