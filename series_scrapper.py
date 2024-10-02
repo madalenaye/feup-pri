@@ -5,13 +5,11 @@ from utils import fetchText, api_url
 
 # Gets the list of episodes from the API as ep codes (ex:EP001)
 # Arg url: string url
-def get_list_episodes(url):
-    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
-    with urllib.request.urlopen(req) as url:
-        html = json.load(url)["parse"]["text"]["*"]
-        soup = BeautifulSoup(html, 'html.parser')
-        fetch = soup.find_all('tr',style="text-align:center; background:#FFFFFF")
-        return [i.contents[1].text.strip() for i in fetch]
+def get_list_episodes(api_url,page):
+    html= fetchText(api_url+page)
+    soup = BeautifulSoup(html, 'html.parser')
+    fetch = soup.find_all('tr',style="text-align:center; background:#FFFFFF")
+    return [i.contents[1].text.strip() for i in fetch]
     
 # Gets the plot from the html
 # Arg soup: BeautifulSoup object
@@ -97,4 +95,5 @@ for episode in get_list_episodes(api_url+'List_of_animated_series_episodes'):
         break;
     i+=1
 '''
-print(get_characters(api_url,'EP002'))
+#print(get_characters(api_url,'EP002'))
+#print(get_list_episodes(api_url,'List_of_animated_series_episodes'))
