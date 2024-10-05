@@ -94,13 +94,19 @@ i=0
     print(get_plot_from_episode(episode))
     print("-----------------------------")
     i-=1
-for episode in get_list_episodes(api_url+'List_of_animated_series_episodes'):
-    if i<=30:
-        print(get_table(BeautifulSoup(fetchText(api_url+episode),"html.parser")))
-        print("-----------------------------")
-    else:
-        break;
-    i+=1
 '''
+for episode in get_list_episodes(api_url,'List_of_animated_series_episodes'):
+    try:
+        if i<=40:
+            print(get_table(BeautifulSoup(fetchText(api_url+episode),"html.parser")))
+            print("-----------------------------")
+        else:
+            break;
+        i+=1
+    except:
+        print("Error in episode: "+episode)
+        continue
+
+#print(get_table(BeautifulSoup(fetchText(api_url+'EP042'),"html.parser")))
 #print(get_characters(api_url,'EP002'))
 #print(get_list_episodes(api_url,'List_of_animated_series_episodes'))
