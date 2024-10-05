@@ -21,6 +21,7 @@ with open("documents/episodes.json","w") as json_file:
             except Exception as error:
                 print("Error in episode: "+episode)
                 print(error)
+                print("-------")
                 continue
         else:
             break
@@ -32,7 +33,6 @@ with open("documents/characters.json","w") as json_file:
     i = 0;
     for character,character_code,first_appearance,role in get_list_characters(api_url,"List_of_animated_series_characters#Original_series"):
         print(character,character_code,first_appearance,role)
-        print("-------")
         if i<31:
             try:
                 character_info = get_character_table_info(api_url,character_code)
@@ -46,6 +46,7 @@ with open("documents/characters.json","w") as json_file:
                 print("Error in character: "+character)
                 print(error)
                 print("-------")
+                i+=1
                 continue
         else:
             break;

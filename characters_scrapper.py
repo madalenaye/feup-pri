@@ -43,8 +43,7 @@ def get_character_character(api_url,name):
                 text += sibling.text.strip() 
             sibling = sibling.find_next_sibling()
     else:
-        print("Character section not found for given character: "+name)
-        text = ""
+        raise Exception("Character section not found for given character: "+name)
     return text
 
 def get_character_history(api_url,name):
@@ -58,6 +57,10 @@ def get_character_history(api_url,name):
             if(sibling.name == "p"):
                 text += sibling.text.strip() 
             sibling = sibling.find_next_sibling()
+    
+    else:
+        raise Exception("History section not found for given character: "+name)
+    
     return text
 # Gets the table info from the html for a character
 # Arg api_url: string url
@@ -67,23 +70,24 @@ def get_character_table_info(api_url,name):
     html = fetchText(api_url+name)
     soup = BeautifulSoup(html,"html.parser")
     character_table_section = soup.find("big")
-    character_table = character_table_section.find_parent("table")
-    if character_table:
-        rows = character_table.find_all("tr")
-        name = rows[0].find("big").text.strip()
-        table["Name"]=name
-        japanese_name = rows[0].find("span")
-        if japanese_name:
-            table["Japanese Name"]=japanese_name.text.strip() + " " +"("+japanese_name.find_next_sibling("i").text.strip()+")"
-        for row in rows[1:]:
-            key = row.find("th")
-            value = row.find("td")
-            if(key and value):
-                table[key.text.strip()] = value.text.strip()
+    if character_table_section:
+        character_table = character_table_section.find_parent("table")
+        if character_table:
+            rows = character_table.find_all("tr")
+            name = rows[0].find("big")
+            table["Name"]=name.text.strip()
+            japanese_name_translation = name.find_next("i")
+            japanese_name = japanese_name_translation.find_previous_sibling()
+
+            if japanese_name:
+                table["Japanese Name"]=japanese_name.text.strip() + " " +"("+japanese_name_translation.text.strip()+")"
+            for row in rows[1:]:
+                key = row.find("th")
+                value = row.find("td")
+                if(key and value):
+                    table[key.text.strip()] = value.text.strip()
+        else:
+            raise Exception("Table not found for given character: "+name)
     else:
-        print("Table not found for given character: "+name)
-        character_table = {}
-
+        raise Exception("Table section not found for given character: "+name)
     return table
-
-
