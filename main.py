@@ -1,0 +1,54 @@
+from characters_scrapper import *
+from series_scrapper import * 
+from utils import *
+import pandas as pd 
+import json
+
+# Writes to a document unprocessed data
+'''
+i=0
+with open("documents/episodes.json","w") as json_file:
+    final_document={}
+    for episode in get_list_episodes(api_url,'List_of_animated_series_episodes'):
+        print(episode)
+        if i<31:
+            try:
+                episode_info = get_table(BeautifulSoup(fetchText(api_url+episode),"html.parser"))
+                episode_info["Characters"] = get_characters(api_url,episode)
+                episode_info["Plot"] = get_plot_from_episode(api_url,episode)
+
+                final_document[episode]=episode_info
+            except Exception as error:
+                print("Error in episode: "+episode)
+                print(error)
+                continue
+        else:
+            break
+        i+=1
+    json.dump(final_document,json_file)'''
+
+with open("documents/characters.json","w") as json_file:
+    final_document={}
+    i = 0;
+    for character,character_code,first_appearance,role in get_list_characters(api_url,"List_of_animated_series_characters#Original_series"):
+        print(character,character_code,first_appearance,role)
+        print("-------")
+        if i<31:
+            try:
+                character_info = get_character_table_info(api_url,character_code)
+                character_info["Character Code"] = character_code
+                character_info["Role"] = role
+                character_info["First Appearance"]=first_appearance
+                character_info["Character"]=get_character_character(api_url,character_code)
+                character_info["History"]=get_character_history(api_url,character_code)
+                final_document[character]=character_info
+            except Exception as error:
+                print("Error in character: "+character)
+                print(error)
+                print("-------")
+                continue
+        else:
+            break;
+        i+=1
+        
+    json.dump(final_document,json_file)

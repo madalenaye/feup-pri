@@ -86,8 +86,4 @@ def get_character_table_info(api_url,name):
 
     return table
 
-        
-    
-print(get_character_history(api_url,"Misty_(anime)"))
-#print(get_list_characters(api_url,"List_of_animated_series_characters#Original_series"))
-#print(get_character_table_info(api_url,"Ash_Ketchum"))
+
