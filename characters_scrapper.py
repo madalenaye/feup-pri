@@ -91,3 +91,5 @@ def get_character_table_info(api_url,name):
     else:
         raise Exception("Table section not found for given character: "+name)
     return table
+
+
