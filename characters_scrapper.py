@@ -36,7 +36,6 @@ def get_character_character(api_url,name):
     html = fetchText(api_url+name)
     soup = BeautifulSoup(html,"html.parser")
     character_section = soup.find(id="Character")
-
     if character_section:
         sibling=character_section.find_next("p")
         while sibling.name != "h3":
@@ -48,6 +47,21 @@ def get_character_character(api_url,name):
         text = ""
     return text
 
+def get_character_history(api_url,name):
+    text=""
+    html = fetchText(api_url+name)
+    soup = BeautifulSoup(html,"html.parser")
+    history_section = soup.find(id="History")
+    if history_section:
+        sibling=history_section.find_next("p")
+        while sibling.name != "h3":
+            if(sibling.name == "p"):
+                text += sibling.text.strip() 
+            sibling = sibling.find_next_sibling()
+    return text
+# Gets the table info from the html for a character
+# Arg api_url: string url
+# Arg name: string name of the character
 def get_character_table_info(api_url,name):
     table = {}
     html = fetchText(api_url+name)
@@ -71,9 +85,9 @@ def get_character_table_info(api_url,name):
         character_table = {}
 
     return table
-    
+
         
     
-#print(get_character_character(api_url,"Ash_Ketchum"))
+print(get_character_history(api_url,"Misty_(anime)"))
 #print(get_list_characters(api_url,"List_of_animated_series_characters#Original_series"))
-print(get_character_table_info(api_url,"Ash_Ketchum"))
+#print(get_character_table_info(api_url,"Ash_Ketchum"))
