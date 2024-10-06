@@ -21,7 +21,6 @@ def get_list_characters(api_url,page):
         for row in rows[1:]:
             cells = row.find_all_next("td")
             character = cells[0].find("a").text.strip()
-            print(character)
             character_page = cells[0].find("a").get("href").split("/")[-1]
             ep = cells[1].find("a").get("href").split("/")[-1]
             role = cells[2].text.strip()
@@ -32,9 +31,8 @@ def get_list_characters(api_url,page):
 # Arg api_url: string url
 # Arg name: string name of the character
 # Return: string text of the character
-def get_character_character(api_url,name):
+def get_character_character(html,name):
     text=""
-    html = fetchText(api_url+name)
     soup = BeautifulSoup(html,"html.parser")
     character_section = soup.find(id="Character")
     if character_section:
@@ -47,9 +45,8 @@ def get_character_character(api_url,name):
         raise Exception("Character section not found for given character: "+name)
     return text
 
-def get_character_history(api_url,name):
+def get_character_history(html,name):
     text=""
-    html = fetchText(api_url+name)
     soup = BeautifulSoup(html,"html.parser")
     history_section = soup.find(id="History")
     if history_section:
@@ -66,9 +63,8 @@ def get_character_history(api_url,name):
 # Gets the table info from the html for a character
 # Arg api_url: string url
 # Arg name: string name of the character
-def get_character_table_info(api_url,name):
+def get_character_table_info(html,name):
     table = {}
-    html = fetchText(api_url+name)
     soup = BeautifulSoup(html,"html.parser")
     character_table_section = soup.find("big")
     if character_table_section:

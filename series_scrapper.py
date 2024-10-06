@@ -8,8 +8,7 @@ from utils import fetchText, api_url
 # Arg page: string page name
 # Return: list of episode codes
 def get_list_episodes(api_url,page):
-    html= fetchText(api_url+page)
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(fetchText(api_url+page), 'html.parser')
     fetch = soup.find_all('tr',style="text-align:center; background:#FFFFFF")
     return [i.contents[1].text.strip() for i in fetch]
     
@@ -32,9 +31,8 @@ def getPlot(soup):
 # Gets the plot from the episode code
 # Arg episode: string code of the episode
 # Return: string plot
-def get_plot_from_episode(api_url,episode):
-    html = fetchText(api_url+episode)
-    soup = BeautifulSoup(fetchText(api_url+episode),"html.parser")
+def get_plot_from_episode(html,episode):
+    soup = BeautifulSoup(html,"html.parser")
 
     return getPlot(soup)
 
@@ -70,9 +68,8 @@ def get_table(soup):
 # Arg api_url: string url
 # Arg episode: string code of the episode
 # Return: dict characters and pokemons
-def get_characters(api_url,episode):
+def get_characters(html,episode):
     characters={}
-    html = fetchText(api_url+episode)
     soup = BeautifulSoup(html,"html.parser")
     characters_section = soup.find(id="Characters")
 
@@ -88,9 +85,8 @@ def get_characters(api_url,episode):
         
     return characters
 
-def get_major_events(api_url, episode):
+def get_major_events(html, episode):
     major_events = []
-    html = fetchText(api_url+episode)
     soup = BeautifulSoup(html, "html.parser")
     major_events = soup.find(id="Major_events")
 
