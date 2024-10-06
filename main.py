@@ -57,4 +57,4 @@ def scrape_characters(num):
                     break
         json.dump(final_document,json_file)
 
-scrape_characters(9)
+scrape_characters(2)

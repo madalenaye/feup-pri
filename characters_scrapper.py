@@ -86,13 +86,26 @@ def get_character_table_info(html,name):
                     if (len(br) > 0):
                         values = []
                         curr = ""
+                        open_parentheses = 0
+                        closed_parentheses = 0
                         for child in value.children:
-                            if (child.name == "br"):
-                                values.append(curr)
+                            if child.name == "br" and closed_parentheses == open_parentheses:
+                                if curr[0] == '(':
+                                    values[-1] += ' ' + curr
+                                else:
+                                    values.append(curr)
                                 curr = ""
+                                open_parentheses = 0
+                                closed_parentheses = 0
                             else:
+                                closed_parentheses += child.text.count(')')
+                                open_parentheses += child.text.count('(')
+                                print(child.text, closed_parentheses, open_parentheses)
                                 curr += child.text
-                        values.append(curr)
+                        if curr[0] == '(':
+                            values[-1] += ' ' + curr
+                        else:
+                            values.append(curr)
                         table[key.text.strip()] = values
                     else:
                         table[key.text.strip()] = value.text
