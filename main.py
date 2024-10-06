@@ -30,6 +30,23 @@ def scrape_episodes(num):
                     break
         json.dump(final_document,json_file)
 
+def extract_age(string):
+    if isinstance(string, list):
+        text = ""
+        for s in string:
+            text += s
+        age = re.search(r'\d+',text).group()
+        if age:
+            return int(age)
+        else:
+            return pd.NA
+    else:
+        age = re.search(r'\d+',string).group()
+        if age:
+            return int(age)
+        else:
+            return pd.NA
+
 # Writes to a document unprocessed data of characters
 def scrape_characters(num):
     with open("documents/characters.json","w") as json_file:
@@ -60,9 +77,13 @@ def scrape_characters(num):
 def dataset_processing_characters(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
-    # Extract 'First Appearance' from the nested dictionaries
-    df["Age"]= df["Age"].apply((lambda string : re.search(r'\d+',string).group() if re.search(r'\d+', string) else pd.NA))
-    print(df)
+    # Extract 'Age' from the string or list of strings
+    df["Age"]= df["Age"].apply(extract_age)
+    # Merge 'Animated debut' and 'Debut' columns since they mean the same thing
+    df["Debut"] = df["Animated debut"].fillna(df["Debut"])
+    df.drop(columns=["Animated debut"],inplace=True)
+    # Drop unnecessary columns
+    df.drop(columns=["Game counterpart","Manga counterpart(s)","Manga series","Games","Generation","Counterpart(s)"],inplace=True)
     return df
 # Processes the dataset obtained from the series json file
 # Arg path_to_file: string path to the json file
@@ -93,7 +114,10 @@ def dataset_processing_series(path_to_file):
         df[key] = df["Credits"].apply(lambda x: x.get(key) if isinstance(x, dict) else None)
     return df
 
+ # Set display options to show all columns and rows
+pd.set_option('display.max_columns', None)
+pd.set_option('display.max_rows', None)
     
 #dataset_processing_series("documents/episodes.json")
-dataset_processing_characters("documents/characters.json")
+print(dataset_processing_characters("documents/characters.json"))
 #scrape_characters(5)
