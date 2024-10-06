@@ -18,9 +18,10 @@ def get_list_characters(api_url,page):
             break
         
         rows = table.find_all("tr")
-        for row in rows:
+        for row in rows[1:]:
             cells = row.find_all_next("td")
             character = cells[0].find("a").text.strip()
+            print(character)
             character_page = cells[0].find("a").get("href").split("/")[-1]
             ep = cells[1].find("a").get("href").split("/")[-1]
             role = cells[2].text.strip()
