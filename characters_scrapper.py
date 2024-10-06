@@ -82,7 +82,33 @@ def get_character_table_info(html,name):
                 key = row.find("th")
                 value = row.find("td")
                 if(key and value):
-                    table[key.text.strip()] = value.text.strip()
+                    br = value.find_all("br")
+                    if (len(br) > 0):
+                        values = []
+                        curr = ""
+                        open_parentheses = 0
+                        closed_parentheses = 0
+                        for child in value.children:
+                            if child.name == "br" and closed_parentheses == open_parentheses:
+                                if curr[0] == '(':
+                                    values[-1] += ' ' + curr
+                                else:
+                                    values.append(curr)
+                                curr = ""
+                                open_parentheses = 0
+                                closed_parentheses = 0
+                            else:
+                                closed_parentheses += child.text.count(')')
+                                open_parentheses += child.text.count('(')
+                                print(child.text, closed_parentheses, open_parentheses)
+                                curr += child.text
+                        if curr[0] == '(':
+                            values[-1] += ' ' + curr
+                        else:
+                            values.append(curr)
+                        table[key.text.strip()] = values
+                    else:
+                        table[key.text.strip()] = value.text
         else:
             raise Exception("Table not found for given character: "+name)
     else:
