@@ -1,5 +1,5 @@
 from bs4 import BeautifulSoup
-from utils import fetchText, api_url
+from utils import fetchText, api_url, remove_references
 
 
 def get_list_pokemon(api_url, page):
@@ -21,23 +21,42 @@ def get_pokemon_blurb(html, name):
     soup = BeautifulSoup(html, "html.parser")
     beforeBlurb = soup.select('div.mw-parser-output > table')[1]
     sibling = beforeBlurb.find_next_sibling()
-    while sibling.name != "div":
-        if sibling.name == "p":
-            text += sibling.text.strip() + " "
-        phrases = sibling.find_all("p")
-        for p in phrases:
-            plot += str(p.text.strip())
-        sibling = sibling.find_next_sibling()
+    if sibling.name == "p":
+        while sibling.name != "div":
+            if sibling.name == "p":
+                text += remove_references(sibling.text.strip()) + " "
+            phrases = sibling.find_all("p")
+            for p in phrases:
+                plot += remove_references(str(p.text.strip()))
+            sibling = sibling.find_next_sibling()
+    else:
+        raise Exception("Blurb section not found for given pokemon: " + name)
     return text
 
-#print(get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number'))
+def get_pokemon_biology(html, name):
+    text = ""
+    soup = BeautifulSoup(html, "html.parser")
+    beforeBiology = soup.find("div", class_='thumb tleft')
+    biology = beforeBiology.find_next_sibling()
+    if biology.name == "p":
+        while biology.name != "h3":
+            if biology.name == "p":
+                text += remove_references(biology.text.strip()) + " "
+                phrases = biology.find_all("p")
+                for p in phrases:
+                    text += remove_references(str(p.text.strip()))
+            biology = biology.find_next_sibling()
+    else:
+        raise Exception("Biology section not found for given pokemon: " + name)
+    return text
+    
 
 def main():
     #print(get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number'))
     all = get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number')
-    test = all[43][2]
+    test = all[1022][2]
     url = fetchText(api_url+test)
-    test1 = get_pokemon_blurb(url, 'a')
+    test1 = get_pokemon_biology(url, 'Bulbasaur')
     print(test1)
 
 main()
