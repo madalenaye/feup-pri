@@ -95,6 +95,6 @@ def get_major_events(api_url, episode):
     major_events = soup.find(id="Major_events")
 
     list_of_events = major_events.find_next("ul")
-    major_events = [i.text.strip() for i in list_of_events]
+    major_events = [i.text.strip() for i in list_of_events if i.text.strip() != ""]
 
     return major_events

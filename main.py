@@ -15,6 +15,7 @@ def scrape_episodes(num):
                 episode_info = get_table(BeautifulSoup(fetchText(api_url+episode),"html.parser"))
                 episode_info["Characters"] = get_characters(api_url,episode)
                 episode_info["Plot"] = get_plot_from_episode(api_url,episode)
+                episode_info["Major events"] = get_major_events(api_url, episode)
 
                 final_document[episode]=episode_info
             except Exception as error:
@@ -52,4 +53,4 @@ def scrape_characters(num):
                     break
         json.dump(final_document,json_file)
 
-scrape_characters(5)
+scrape_episodes(5)
