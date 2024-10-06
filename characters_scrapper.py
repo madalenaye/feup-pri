@@ -82,7 +82,20 @@ def get_character_table_info(html,name):
                 key = row.find("th")
                 value = row.find("td")
                 if(key and value):
-                    table[key.text.strip()] = value.text.strip()
+                    br = value.find_all("br")
+                    if (len(br) > 0):
+                        values = []
+                        curr = ""
+                        for child in value.children:
+                            if (child.name == "br"):
+                                values.append(curr)
+                                curr = ""
+                            else:
+                                curr += child.text
+                        values.append(curr)
+                        table[key.text.strip()] = values
+                    else:
+                        table[key.text.strip()] = value.text
         else:
             raise Exception("Table not found for given character: "+name)
     else:
