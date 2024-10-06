@@ -49,9 +49,13 @@ def get_pokemon_biology(html, name):
     else:
         raise Exception("Biology section not found for given pokemon: " + name)
     return text
-    
 
-def main():
+#def get_pokemon_stats(html, name):
+    
+#def get_pokemon_evolution(html, name):
+
+
+'''def main():
     #print(get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number'))
     all = get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number')
     test = all[1022][2]
@@ -60,3 +64,4 @@ def main():
     print(test1)
 
 main()
+''' 
