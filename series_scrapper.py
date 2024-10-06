@@ -87,3 +87,14 @@ def get_characters(api_url,episode):
     characters["Pokemons"]= [i.text.strip() for i in pokemons_list]
         
     return characters
+
+def get_major_events(api_url, episode):
+    major_events = []
+    html = fetchText(api_url+episode)
+    soup = BeautifulSoup(html, "html.parser")
+    major_events = soup.find(id="Major_events")
+
+    list_of_events = major_events.find_next("ul")
+    major_events = [i.text.strip() for i in list_of_events]
+
+    return major_events

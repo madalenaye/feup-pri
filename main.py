@@ -5,13 +5,12 @@ import pandas as pd
 import json
 
 # Writes to a document unprocessed data
-'''
-i=0
-with open("documents/episodes.json","w") as json_file:
-    final_document={}
-    for episode in get_list_episodes(api_url,'List_of_animated_series_episodes'):
-        print(episode)
-        if i<31:
+
+def scrape_episodes(num):
+    with open("documents/episodes.json","w") as json_file:
+        final_document={}
+        for episode in get_list_episodes(api_url,'List_of_animated_series_episodes'):
+            print(episode)
             try:
                 episode_info = get_table(BeautifulSoup(fetchText(api_url+episode),"html.parser"))
                 episode_info["Characters"] = get_characters(api_url,episode)
@@ -23,17 +22,17 @@ with open("documents/episodes.json","w") as json_file:
                 print(error)
                 print("-------")
                 continue
-        else:
-            break
-        i+=1
-    json.dump(final_document,json_file)'''
+            finally:
+                num -= 1
+                if num <= 0:
+                    break
+        json.dump(final_document,json_file)
 
-with open("documents/characters.json","w") as json_file:
-    final_document={}
-    i = 0;
-    for character,character_code,first_appearance,role in get_list_characters(api_url,"List_of_animated_series_characters#Original_series"):
-        print(character,character_code,first_appearance,role)
-        if i<31:
+def scrape_characters(num):
+    with open("documents/characters.json","w") as json_file:
+        final_document={}
+        for character,character_code,first_appearance,role in get_list_characters(api_url,"List_of_animated_series_characters#Original_series"):
+            print(character,character_code,first_appearance,role)
             try:
                 character_info = get_character_table_info(api_url,character_code)
                 character_info["Character Code"] = character_code
@@ -46,10 +45,11 @@ with open("documents/characters.json","w") as json_file:
                 print("Error in character: "+character)
                 print(error)
                 print("-------")
-                i+=1
                 continue
-        else:
-            break;
-        i+=1
-        
-    json.dump(final_document,json_file)
+            finally:
+                num -= 1
+                if num <= 0:
+                    break
+        json.dump(final_document,json_file)
+
+scrape_characters(5)
