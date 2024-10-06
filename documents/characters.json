@@ -20,7 +20,10 @@
             "Newcomer Trainer, Dawn (Pocket Monsters Diamond & Pearl)",
             "Legend? Check! Friends? Check! (Pok\u00e9mon Journeys: The Series)\n"
         ],
-        "Counterpart(s)": "Ash Ketchum (EToP), Ash Ketchum (Pok\u00e9mon Newspaper Strip)\n",
+        "Counterpart(s)": [
+            "Ash Ketchum (EToP)",
+            "Ash Ketchum (Pok\u00e9mon Newspaper Strip)\n"
+        ],
         "English voice actor": [
             "Veronica Taylor (Puzzle League)",
             "Sarah Natochenny (Masters EX)\n"
@@ -32,8 +35,30 @@
             "Pok\u00e9mon Trainer, Baron, Champion, Monarch",
             "Pallet Town's (Ga-Ol\u00e9)\n"
         ],
-        "Generation": "I, II, III, VI, VII, VIII, IX\n",
-        "Games": "Puzzle League, Catch the Numbers!, Advanced Generation: I've Begun Hiragana and Katakana!, Advanced Generation: Pico for Everyone Pok\u00e9mon Loud Battle!, Team Turbo, Team Rocket Blast Off, Pok\u00e9 Ball Launcher, Seek & Find, Tretta, Ga-Ol\u00e9, GO, Mezastar,  Masters EX\n",
+        "Generation": [
+            "I",
+            "II",
+            "III",
+            "VI",
+            "VII",
+            "VIII",
+            "IX\n"
+        ],
+        "Games": [
+            "Puzzle League",
+            "Catch the Numbers!",
+            "Advanced Generation: I've Begun Hiragana and Katakana!",
+            "Advanced Generation: Pico for Everyone Pok\u00e9mon Loud Battle!",
+            "Team Turbo",
+            "Team Rocket Blast Off",
+            "Pok\u00e9 Ball Launcher",
+            "Seek & Find",
+            "Tretta",
+            "Ga-Ol\u00e9",
+            "GO",
+            "Mezastar",
+            "Masters EX\n"
+        ],
         "Manga series": [
             "The Electric Tale of Pikachu",
             "Ash & Pikachu",
@@ -65,7 +90,12 @@
         ],
         "Hometown": "Pallet Town\n",
         "Region": "Kanto\n",
-        "Relatives": "Ash (son), Ash (son, M20), Unnamed husband (EP002, M20, M23, JNS05), Unnamed father-in-law (EP002)\n",
+        "Relatives": [
+            "Ash (son)",
+            "Ash (son, M20)",
+            "Unnamed husband (EP002, M20, M23, JNS05)",
+            "Unnamed father-in-law (EP002)\n"
+        ],
         "Animated debut": "Pok\u00e9mon - I Choose You!\n",
         "English voice actor": [
             "Veronica Taylor (EP001-AG133)",

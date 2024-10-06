@@ -1,3 +1,4 @@
+import re
 from bs4 import BeautifulSoup
 import urllib.request
 import json 
@@ -100,7 +101,6 @@ def get_character_table_info(html,name):
                             else:
                                 closed_parentheses += child.text.count(')')
                                 open_parentheses += child.text.count('(')
-                                print(child.text, closed_parentheses, open_parentheses)
                                 curr += child.text
                         if curr[0] == '(':
                             values[-1] += ' ' + curr
@@ -108,7 +108,8 @@ def get_character_table_info(html,name):
                             values.append(curr)
                         table[key.text.strip()] = values
                     else:
-                        table[key.text.strip()] = value.text
+                        split = re.split(r',\s*(?![^()]*\))', value.text)
+                        table[key.text.strip()] = split if len(split) > 1 else value.text
         else:
             raise Exception("Table not found for given character: "+name)
     else:
