@@ -82,7 +82,7 @@ def get_character_table_info(html,name):
             for row in rows[1:]:
                 key = row.find("th")
                 value = row.find("td")
-                if(key and value):
+                if(key and value) and key.text.strip() not in table:
                     br = value.find_all("br")
                     if (len(br) > 0):
                         values = []
