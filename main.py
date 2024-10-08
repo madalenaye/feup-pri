@@ -1,14 +1,17 @@
-from characters_scrapper import *
-from series_scrapper import * 
+from characters_scraper import *
+from series_scraper import * 
 from utils import *
 import pandas as pd 
 import json
 import re
+import matplotlib.pyplot as plt 
+from wordcloud import WordCloud
+import traceback
 # Writes to a document unprocessed data of episodes
 def scrape_episodes(num):
     with open("documents/episodes.json","w") as json_file:
         final_document={}
-        for episode in get_list_episodes(api_url,'List_of_animated_series_episodes'):
+        for episode in get_list_episodes(api_url,"List_of_animated_series_episodes"):
             print(episode)
             try:
                 html = fetchText(api_url+episode)
@@ -23,6 +26,7 @@ def scrape_episodes(num):
                 print("Error in episode: "+episode)
                 print(error)
                 print("-------")
+                traceback.print_exc()
                 continue
             finally:
                 num -= 1
@@ -74,6 +78,8 @@ def scrape_characters(num):
                     break
         json.dump(final_document,json_file)
 
+
+
 def dataset_processing_characters(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
@@ -84,6 +90,8 @@ def dataset_processing_characters(path_to_file):
     df.drop(columns=["Animated debut"],inplace=True)
     # Drop unnecessary columns
     df.drop(columns=["Game counterpart","Manga counterpart(s)","Manga series","Games","Generation","Counterpart(s)"],inplace=True)
+    # Fill NaN values with 'Unknown
+    df.fillna(value="Unknown",inplace=True) 
     return df
 # Processes the dataset obtained from the series json file
 # Arg path_to_file: string path to the json file
@@ -101,7 +109,7 @@ def dataset_processing_series(path_to_file):
     df["Human Characters"] = df["Characters"].apply(lambda x: x.get("Humans") if isinstance(x, dict) else None)
     df["Pokemon Characters"] = df["Characters"].apply(lambda x: x.get("Pokemons") if isinstance(x, dict) else None)
 
-    # Extract the 'English Themes' column and split it into 'English Themed Opening' and 'English Themed Ending'
+    # Extract the 'English Themes' column and split it into 'English Theme Opening' and 'English Theme Ending'
     df["English Theme Opening"] = df["English themes"].apply(lambda x: x.get("Opening") if isinstance(x, dict) else None)
     df["English Theme Ending"] = df["English themes"].apply(lambda x: x.get("Ending") if isinstance(x, dict) else None)
 
@@ -112,12 +120,29 @@ def dataset_processing_series(path_to_file):
     # Extract the 'Credits' column and split it into many different columns with the respective credits
     for key in df["Credits"][0].keys():
         df[key] = df["Credits"].apply(lambda x: x.get(key) if isinstance(x, dict) else None)
+    # Fill NaN values with 'Unknown'
+    df.fillna(value="Unknown",inplace=True)
     return df
 
  # Set display options to show all columns and rows
 pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
+
+#Plot word cloud:
+#arg df: dataframe
+def plot_word_cloud(df,column):
+    all_plot = ' '.join(df[column].astype(str))  
     
-#dataset_processing_series("documents/episodes.json")
+    # Create a word cloud
+    wordcloud = WordCloud(width = 800, height = 800, 
+                    background_color ='white', 
+                    ).generate(all_plot)
+    plt.figure(figsize = (10, 10), facecolor = None)
+    plt.imshow(wordcloud,interpolation="bilinear")
+    plt.axis("off")
+    plt.show()
+
+#print(dataset_processing_series("documents/episodes.json"))
 #print(dataset_processing_characters("documents/characters.json"))
-scrape_characters(5)
+scrape_episodes(274)
+#plot_word_cloud(dataset_processing_series("documents/episodes.json"),"Plot")
