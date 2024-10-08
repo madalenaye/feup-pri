@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
-import urllib.request
-import json 
-from utils import fetchText, api_url
+
+from utils import fetchText
 
 # Gets the list of episodes from the API as ep codes (ex:EP001)
 # Arg url: string url

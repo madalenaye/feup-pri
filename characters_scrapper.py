@@ -1,8 +1,6 @@
 import re
 from bs4 import BeautifulSoup
-import urllib.request
-import json 
-from utils import fetchText, api_url
+from utils import fetchText
 
 # Gets the list of characters from the list page
 # Arg api_url: string url
