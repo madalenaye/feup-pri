@@ -14,23 +14,20 @@
             "Unnamed grandfather (EP002,Japanese version only)\n"
         ],
         "Animated series": "Pok\u00e9mon the Series\n",
-        "Debut": [
-            "Pikachu, I See You! (The Electric Tale of Pikachu)",
-            "Hoppip, The Wind Calls! (Ash & Pikachu)",
-            "Newcomer Trainer, Dawn (Pocket Monsters Diamond & Pearl)",
-            "Legend? Check! Friends? Check! (Pok\u00e9mon Journeys: The Series)\n"
-        ],
-        "Counterpart(s)": [
-            "Ash Ketchum (EToP)",
-            "Ash Ketchum (Pok\u00e9mon Newspaper Strip)\n"
-        ],
+        "Debut": "Pok\u00e9mon - I Choose You!\n",
+        "Counterpart(s)": "Ash Ketchum (M20)\n",
         "English voice actor": [
-            "Veronica Taylor (Puzzle League)",
-            "Sarah Natochenny (Masters EX)\n"
+            "Veronica Taylor (EP001-AG145)",
+            "Sarah Natochenny (AG146-JN147, MoMP re-dub)",
+            "Jamie Peacock (MoMP original dub)\n"
         ],
-        "Japanese voice actor": "Rica Matsumoto\n",
-        "Member of": "Aether Foundation (Sun & Moon)\n",
-        "Rank": "Ultra Guardian\n",
+        "Japanese voice actor": [
+            "Rica Matsumoto",
+            "Hana Takeda(JN001; age 6)",
+            "\n"
+        ],
+        "Member of": "Alola League\n",
+        "Rank": "Champion\n",
         "Trainer class": [
             "Pok\u00e9mon Trainer, Baron, Champion, Monarch",
             "Pallet Town's (Ga-Ol\u00e9)\n"
@@ -113,8 +110,14 @@
         "Japanese Name": "\u30aa\u30fc\u30ad\u30c9\u30fb\u30b7\u30b2\u30eb (Shigeru Okido)",
         "Age": "10 (as of debut)\n",
         "Gender": "Male\n",
-        "Eye color": "Black*, Dark Viridian*\n",
-        "Hair color": "Auburn*, Mahogany*\n",
+        "Eye color": [
+            "Black*",
+            "Dark Viridian*\n"
+        ],
+        "Hair color": [
+            "Auburn*",
+            "Mahogany*\n"
+        ],
         "Hometown": "Pallet Town\n",
         "Region": "Kanto\n",
         "Relatives": [
@@ -132,7 +135,10 @@
         "Animated debut": "Pok\u00e9mon - I Choose You!\n",
         "English voice actor": "Carter Cathcart\n",
         "Japanese voice actor": "Y\u016bko Kobayashi\n",
-        "Manga counterpart(s)": "Blue, Green\n",
+        "Manga counterpart(s)": [
+            "Blue",
+            "Green\n"
+        ],
         "Character Code": "Gary_Oak",
         "Role": "Rival, Project Mew, recurring character",
         "First Appearance": "EP001",

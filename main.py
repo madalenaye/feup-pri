@@ -119,5 +119,5 @@ pd.set_option('display.max_columns', None)
 pd.set_option('display.max_rows', None)
     
 #dataset_processing_series("documents/episodes.json")
-print(dataset_processing_characters("documents/characters.json"))
-#scrape_characters(5)
+#print(dataset_processing_characters("documents/characters.json"))
+scrape_characters(5)
