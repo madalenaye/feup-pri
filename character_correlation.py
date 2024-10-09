@@ -5,7 +5,6 @@ from utils import set_default
 def build_reverse_index(obj):
     for episode, episode_data in episodes.items():
         for human in episode_data["Characters"]["Humans"]:
-            print(human)
             if (not human["code"]) or human["code"].replace("'", "%27") not in obj:
                 continue
             character = obj[human["code"].replace("'", "%27")]
@@ -22,7 +21,20 @@ def get_correlations():
             filtered_characters[character] = character_data
 
     build_reverse_index(filtered_characters)
-    print(json.dumps(filtered_characters, indent=2, default=set_default))
+
+    char_list = list(filtered_characters.items())
+    char_len = len(char_list)
+    pairs = []
+    for i in range(char_len-1):
+        for j in range(i, char_len):
+            if "Appearances" not in char_list[i][1] or "Appearances" not in char_list[j][1]:
+                continue
+
+            union = len(char_list[i][1]["Appearances"] | char_list[j][1]["Appearances"])
+            intersection = len(char_list[i][1]["Appearances"] & char_list[j][1]["Appearances"])
+            pairs.append((char_list[i][0], char_list[j][0], intersection/union))
+
+    print(pairs)
 
 with open('documents/episodes.json', 'r') as file:
     episodes = json.load(file)
