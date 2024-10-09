@@ -62,20 +62,23 @@ def scrape_characters(num):
 
                 character_info = get_character_table_info(html,character_code)
                 character_info["Character Code"] = character_code
+                character_info["Name"] = character
                 character_info["Role"] = role
                 character_info["First Appearance"]=first_appearance
                 character_info["Character"]=get_character_character(html,character_code)
                 character_info["History"]=get_character_history(html,character_code)
-                final_document[character]=character_info
+                final_document[character_code]=character_info
+                if character_code == "Captain_(EP274)":
+                    break
             except Exception as error:
                 print("Error in character: "+character)
                 print(error)
                 print("-------")
                 continue
-            finally:
-                num -= 1
-                if num <= 0:
-                    break
+            #finally:
+            #    num -= 1
+            #    if num <= 0:
+            #        break
         json.dump(final_document,json_file)
 
 
@@ -142,7 +145,7 @@ def plot_word_cloud(df,column):
     plt.axis("off")
     plt.show()
 
+scrape_characters(274)
 #print(dataset_processing_series("documents/episodes.json"))
 #print(dataset_processing_characters("documents/characters.json"))
-scrape_episodes(274)
 #plot_word_cloud(dataset_processing_series("documents/episodes.json"),"Plot")
