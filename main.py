@@ -108,6 +108,8 @@ def dataset_processing_series(path_to_file):
     df['First broadcast Japan'] = pd.to_datetime(df['First broadcast Japan'])
     df['First broadcast United States'] = pd.to_datetime(df['First broadcast United States'].apply(lambda x: x[:x.find('*')] if x.find('*') != -1 else x), errors="coerce")
 
+    df['Broadcast Delay'] = (df['First broadcast United States'] - df['First broadcast Japan']).dt.days
+
     # Extract the 'Characters' column and split it into 'Human Characters' and 'Pokemon Characters'
     df["Human Characters"] = df["Characters"].apply(lambda x: x.get("Humans") if isinstance(x, dict) else None)
     df["Pokemon Characters"] = df["Characters"].apply(lambda x: x.get("Pokemons") if isinstance(x, dict) else None)
@@ -127,7 +129,7 @@ def dataset_processing_series(path_to_file):
     df["Plot Word Count"] = df["Plot"].apply(lambda x: len(x.split(" ")))
 
     # Fill NaN values with 'Unknown'
-    df.fillna(value="Unknown",inplace=True)
+    #df.fillna(value="Unknown",inplace=True)
     return df
 
  # Set display options to show all columns and rows
@@ -152,6 +154,14 @@ def plot_word_count(df):
     hist = df.hist(column="Plot Word Count")
     hist[0][0].get_figure().savefig("fig.png")
 
-plot_word_count(dataset_processing_series("documents/episodes.json"))
+def plot_broadcast_delay(df):
+    print(df["Broadcast Delay"])
+    df = df.sort_values('First broadcast Japan', ascending=True)
+    #plt.plot(df['First broadcast Japan'], df['Broadcast Delay'])
+    #plt.xticks(rotation='vertical')
+    plot = df.plot(x="First broadcast Japan", y="Broadcast Delay")
+    plot.get_figure().savefig("timefig.png")
+
+plot_broadcast_delay(dataset_processing_series("documents/episodes.json"))
 #print(dataset_processing_characters("documents/characters.json"))
 #plot_word_cloud(dataset_processing_series("documents/episodes.json"),"Plot")
