@@ -155,7 +155,6 @@ def plot_word_count(df):
     hist[0][0].get_figure().savefig("fig.png")
 
 def plot_broadcast_delay(df):
-    print(df["Broadcast Delay"])
     df = df.sort_values('First broadcast Japan', ascending=True)
     #plt.plot(df['First broadcast Japan'], df['Broadcast Delay'])
     #plt.xticks(rotation='vertical')
