@@ -106,7 +106,7 @@ def dataset_processing_series(path_to_file):
     df['First broadcast United States'] = df['First broadcast'].apply(lambda x: x.get('United States') if isinstance(x, dict) else None)
     # Convert the extracted dates to datetime format
     df['First broadcast Japan'] = pd.to_datetime(df['First broadcast Japan'])
-    df['First broadcast United States'] = pd.to_datetime(df['First broadcast United States'])
+    df['First broadcast United States'] = pd.to_datetime(df['First broadcast United States'].apply(lambda x: x[:x.find('*')] if x.find('*') != -1 else x), errors="coerce")
 
     # Extract the 'Characters' column and split it into 'Human Characters' and 'Pokemon Characters'
     df["Human Characters"] = df["Characters"].apply(lambda x: x.get("Humans") if isinstance(x, dict) else None)
@@ -123,6 +123,9 @@ def dataset_processing_series(path_to_file):
     # Extract the 'Credits' column and split it into many different columns with the respective credits
     for key in df["Credits"][0].keys():
         df[key] = df["Credits"].apply(lambda x: x.get(key) if isinstance(x, dict) else None)
+
+    df["Plot Word Count"] = df["Plot"].apply(lambda x: len(x.split(" ")))
+
     # Fill NaN values with 'Unknown'
     df.fillna(value="Unknown",inplace=True)
     return df
@@ -145,7 +148,10 @@ def plot_word_cloud(df,column):
     plt.axis("off")
     plt.show()
 
-scrape_characters(274)
-#print(dataset_processing_series("documents/episodes.json"))
+def plot_word_count(df):
+    hist = df.hist(column="Plot Word Count")
+    hist[0][0].get_figure().savefig("fig.png")
+
+plot_word_count(dataset_processing_series("documents/episodes.json"))
 #print(dataset_processing_characters("documents/characters.json"))
 #plot_word_cloud(dataset_processing_series("documents/episodes.json"),"Plot")
