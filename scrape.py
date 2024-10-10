@@ -7,8 +7,9 @@ from series_scraper import get_characters, get_list_episodes, get_major_events, 
 from utils import api_url, fetchText
 
 
-def scrape_episodes(num):
-    with open("documents/episodes.json","w") as json_file:
+def scrape_episodes(file):
+    num = 274
+    with open(file,"w") as json_file:
         final_document={}
         for episode in get_list_episodes(api_url,"List_of_animated_series_episodes"):
             print(episode)
@@ -32,10 +33,11 @@ def scrape_episodes(num):
                 if num <= 0:
                     break
         json.dump(final_document,json_file)
+        return final_document
 
 # Writes to a document unprocessed data of characters
-def scrape_characters(num):
-    with open("documents/characters.json","w") as json_file:
+def scrape_characters(file):
+    with open(file,"w") as json_file:
         final_document={}
         for character,character_code,first_appearance,role in get_list_characters(api_url,"List_of_animated_series_characters#Original_series"):
             print(character,character_code,first_appearance,role)
@@ -62,3 +64,4 @@ def scrape_characters(num):
             #    if num <= 0:
             #        break
         json.dump(final_document,json_file)
+        return final_document

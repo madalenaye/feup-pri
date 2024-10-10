@@ -3,6 +3,7 @@ import pandas as pd
 
 
 def extract_age(string):
+    print(type(string))
     if isinstance(string, list):
         text = ""
         for s in string:
@@ -12,18 +13,20 @@ def extract_age(string):
             return int(age)
         else:
             return pd.NA
-    else:
+    elif isinstance(string, str):
+        print(string)
         age = re.search(r'\d+',string).group()
         if age:
             return int(age)
         else:
             return pd.NA
+    return pd.NA
         
 def dataset_processing_characters(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
     # Extract 'Age' from the string or list of strings
-    df["Age"]= df["Age"].apply(extract_age)
+    #df["Age"]= df["Age"].apply(extract_age)
     # Merge 'Animated debut' and 'Debut' columns since they mean the same thing
     df["Debut"] = df["Animated debut"].fillna(df["Debut"])
     df.drop(columns=["Animated debut"],inplace=True)

@@ -14,13 +14,13 @@ def plot_word_cloud(df,column):
     plt.axis("off")
     plt.show()
 
-def plot_word_count(df):
+def plot_word_count(df, file):
     hist = df.hist(column="Plot Word Count")
-    hist[0][0].get_figure().savefig("fig.png")
+    hist[0][0].get_figure().savefig(file)
 
-def plot_broadcast_delay(df):
+def plot_broadcast_delay(df, file):
     df = df.sort_values('First broadcast Japan', ascending=True)
     #plt.plot(df['First broadcast Japan'], df['Broadcast Delay'])
     #plt.xticks(rotation='vertical')
     plot = df.plot(x="First broadcast Japan", y="Broadcast Delay")
-    plot.get_figure().savefig("timefig.png")
+    plot.get_figure().savefig(file)
