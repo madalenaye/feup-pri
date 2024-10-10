@@ -1,5 +1,6 @@
 from matplotlib import pyplot as plt
 from wordcloud import WordCloud
+import re
 
 
 def plot_word_cloud(df,column):
@@ -29,3 +30,28 @@ def plot_major_events(df, file):
     print(df["Major events"].apply(lambda x: len(x)))
     hist = df["Major events"].apply(lambda x: len(x)).hist()
     hist.get_figure().savefig(file)
+
+def get_name_re(name):
+    words = name.split(' ')
+    if len(words) == 1:
+        return name
+    elif name.find("'") != -1:
+        return None
+    else:
+        return f"({name}|{words[0]})"
+
+def add_occurences(row, ep):
+    #print(row['re'])
+    #print(re.findall(re.compile(row['re']), "Ash found Jessie amazing"))
+    row['occ'] += len(re.findall(re.compile(row['re']), ep['Plot']))
+    return row
+
+def plot_major_characters(episodes, characters, file):
+    main_chars = characters[characters["Role"].apply(lambda x: re.search("main", x, re.IGNORECASE) is not None)][["Name"]]
+    main_chars['re'] = main_chars['Name'].apply(lambda x: get_name_re(x))
+    main_chars = main_chars.dropna()
+    main_chars['occ'] = 0
+    for index, episode in episodes.iterrows():
+        main_chars = main_chars.apply(lambda x: add_occurences(x, episode), axis=1)
+    plot = main_chars.plot.bar(x="Name", y="occ", rot=0)
+    plot.get_figure().savefig(file)

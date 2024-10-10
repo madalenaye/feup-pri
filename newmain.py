@@ -11,6 +11,7 @@ parser.add_argument("-s", "--skip-scraping", action="store_true")
 parser.add_argument("-b", "--broadcast-delay", nargs='?', const="broadcastfig.png")
 parser.add_argument("-w", "--word-count", nargs='?', const="wordcountfig.png")
 parser.add_argument("-m", "--major-events", nargs='?', const="eventsfig.png")
+parser.add_argument('-o', "--character-occurences", nargs='?', const="characterfig.png")
 
 args = parser.parse_args()
 print(args)
@@ -29,3 +30,6 @@ if args.word_count:
 
 if args.major_events:
     plots.plot_major_events(episode_df, args.major_events)
+
+if args.character_occurences:
+    plots.plot_major_characters(episode_df, character_df, args.character_occurences)
