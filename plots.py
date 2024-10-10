@@ -24,3 +24,8 @@ def plot_broadcast_delay(df, file):
     #plt.xticks(rotation='vertical')
     plot = df.plot(x="First broadcast Japan", y="Broadcast Delay")
     plot.get_figure().savefig(file)
+
+def plot_major_events(df, file):
+    print(df["Major events"].apply(lambda x: len(x)))
+    hist = df["Major events"].apply(lambda x: len(x)).hist()
+    hist.get_figure().savefig(file)

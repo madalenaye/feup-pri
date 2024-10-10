@@ -10,6 +10,7 @@ parser.add_argument("-e", "--episode-file", default="documents/episodes.json")
 parser.add_argument("-s", "--skip-scraping", action="store_true")
 parser.add_argument("-b", "--broadcast-delay", nargs='?', const="broadcastfig.png")
 parser.add_argument("-w", "--word-count", nargs='?', const="wordcountfig.png")
+parser.add_argument("-m", "--major-events", nargs='?', const="eventsfig.png")
 
 args = parser.parse_args()
 print(args)
@@ -25,3 +26,6 @@ if args.broadcast_delay:
 
 if args.word_count:
     plots.plot_word_count(episode_df, args.word_count)
+
+if args.major_events:
+    plots.plot_major_events(episode_df, args.major_events)
