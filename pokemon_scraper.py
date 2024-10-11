@@ -42,7 +42,7 @@ def get_pokemon_biology(html, name):
     biology_header = soup.find("span", id="Biology")
     before_biology = biology_header.find_parent()
     biology = before_biology.find_next_sibling()
-    if biology.name != "p":
+    while (biology.name != "p"):
         biology = biology.find_next_sibling()
         
     if biology.name == "p":
@@ -76,3 +76,4 @@ def get_pokemon_stats(html, name):
             break
     pokemon_stats.append(pokemon_abilities)
     return pokemon_stats
+
