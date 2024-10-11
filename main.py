@@ -15,12 +15,11 @@ def scrape_episodes(num):
             print(episode)
             try:
                 html = fetchText(api_url+episode)
-
                 episode_info = get_table(BeautifulSoup(html,"html.parser"))
-                episode_info["Characters"] = get_characters(html,episode)
-                episode_info["Plot"] = get_plot_from_episode(html,episode)
-                episode_info["Major events"] = get_major_events(html, episode)
-
+                episode_info["Characters"] = get_characters(html)
+                episode_info["Plot"] = getPlot(BeautifulSoup(html,"html.parser"))
+                episode_info["Major events"] = get_major_events(html)
+                episode_info["Blurb"] = get_blurb(html)
                 final_document[episode]=episode_info
             except Exception as error:
                 print("Error in episode: "+episode)
@@ -144,5 +143,6 @@ def plot_word_cloud(df,column):
 
 #print(dataset_processing_series("documents/episodes.json"))
 #print(dataset_processing_characters("documents/characters.json"))
-scrape_episodes(274)
+scrape_episodes(6)
+#print(get_blurb(fetchText(api_url+"EP001")))
 #plot_word_cloud(dataset_processing_series("documents/episodes.json"),"Plot")
