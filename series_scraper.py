@@ -1,7 +1,6 @@
 from bs4 import BeautifulSoup
-import urllib.request
-import json 
-from utils import fetchText, api_url
+
+from utils import fetchText
 
 # Gets the list of episodes from the API as ep codes (ex:EP001)
 # Arg url: string url
@@ -41,18 +40,16 @@ def get_plot_from_episode(html,episode):
 # Return: dict table of the episode info
 def get_table(soup):
     table = {}
-    tableHeader = soup.find("table", class_="roundy", style="float:right; display: table !important; background: #FFAAAA; width: 25%; margin-left: 5px; margin-bottom: 5px")
-    
-    ep_code = tableHeader.find("td", class_="roundy", width="25%",style="background: #AAFFAA;")
+    tableHeader = soup.find("big").parent.parent.parent.parent.parent
+    ep_code = tableHeader.find("td", class_="roundy", width="25%")
     table["Episode Code"]=ep_code.text.strip()
-
     title = tableHeader.find("big")
     table["Name"]=title.text.strip()
 
     subtitle = tableHeader.find("small")
     table["Subtitle"]=subtitle.text.strip()
 
-    subtables = tableHeader.find_all("td", class_="roundy" ,style="background:#AAFFAA")
+    subtables = tableHeader.find_all("td", class_="roundy")
     for subtable in subtables:
         sub_header = subtable.find("b")
         if sub_header:

@@ -1,7 +1,6 @@
+import re
 from bs4 import BeautifulSoup
-import urllib.request
-import json 
-from utils import fetchText, api_url
+from utils import fetchText
 
 # Gets the list of characters from the list page
 # Arg api_url: string url
@@ -81,8 +80,34 @@ def get_character_table_info(html,name):
             for row in rows[1:]:
                 key = row.find("th")
                 value = row.find("td")
-                if(key and value):
-                    table[key.text.strip()] = value.text.strip()
+                if(key and value) and key.text.strip() not in table:
+                    br = value.find_all("br")
+                    if (len(br) > 0):
+                        values = []
+                        curr = ""
+                        open_parentheses = 0
+                        closed_parentheses = 0
+                        for child in value.children:
+                            if child.name == "br" and closed_parentheses == open_parentheses:
+                                if curr[0] == '(':
+                                    values[-1] += ' ' + curr
+                                else:
+                                    values.append(curr)
+                                curr = ""
+                                open_parentheses = 0
+                                closed_parentheses = 0
+                            else:
+                                closed_parentheses += child.text.count(')')
+                                open_parentheses += child.text.count('(')
+                                curr += child.text
+                        if curr[0] == '(':
+                            values[-1] += ' ' + curr
+                        else:
+                            values.append(curr)
+                        table[key.text.strip()] = values
+                    else:
+                        split = re.split(r',\s*(?![^()]*\))', value.text)
+                        table[key.text.strip()] = split if len(split) > 1 else value.text
         else:
             raise Exception("Table not found for given character: "+name)
     else:
