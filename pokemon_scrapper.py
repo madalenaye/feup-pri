@@ -71,22 +71,3 @@ def get_pokemon_stats(html, name):
     pokemon_stats.append(pokemon_abilities)
     return pokemon_stats
 
-
-
-      
-def get_pokemon_evolution(html, name):
-    
-    return
-
-
-def main():
-    #print(get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number'))
-    all = get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number')
-    test = all[11][2]
-    url = fetchText(api_url+test)
-    test1 = get_pokemon_stats(url, 'Bulbasaur')
-    print(test1)
-
-main()
-
-#print(get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number'))
