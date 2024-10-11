@@ -2,6 +2,7 @@ import argparse
 import scrape
 import process
 import plots
+import json
 
 parser = argparse.ArgumentParser(prog="PRI - Milestone 1 Pipeline")
 
@@ -13,6 +14,7 @@ parser.add_argument("-b", "--broadcast-delay", nargs='?', const="broadcastfig.pn
 parser.add_argument("-w", "--word-count", nargs='?', const="wordcountfig.png")
 parser.add_argument("-m", "--major-events", nargs='?', const="eventsfig.png")
 parser.add_argument('-o', "--character-occurences", nargs='?', const="characterfig.png")
+parser.add_argument("-t", "--pokemon-types", nargs='?', const="typefig.png")
 
 args = parser.parse_args()
 print(args)
@@ -23,6 +25,8 @@ if args.skip_scraping == False:
 
 character_df = process.dataset_processing_characters(args.character_file)
 episode_df = process.dataset_processing_series(args.episode_file)
+with open(args.pokemon_file, "r") as file:
+    pokemon_json = json.load(file)
 
 if args.broadcast_delay:
     plots.plot_broadcast_delay(episode_df, args.broadcast_delay)
@@ -35,3 +39,6 @@ if args.major_events:
 
 if args.character_occurences:
     plots.plot_major_characters(episode_df, character_df, args.character_occurences)
+
+if args.pokemon_types:
+    plots.plot_type_representation(episode_df, pokemon_json, args.pokemon_types)

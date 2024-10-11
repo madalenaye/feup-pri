@@ -55,3 +55,24 @@ def plot_major_characters(episodes, characters, file):
         main_chars = main_chars.apply(lambda x: add_occurences(x, episode), axis=1)
     plot = main_chars.plot.bar(x="Name", y="occ", rot=0)
     plot.get_figure().savefig(file)
+
+def get_pokemon_name(name):
+    idx = name.find('(')
+    if idx == -1:
+        return name
+    else:
+        return name[:idx-1]
+
+def plot_type_representation(episodes, pokemon_json, file):
+    types = {}
+    for index, episode in episodes.iterrows():
+        pokemons = list(map(lambda x: get_pokemon_name(x), episode["Characters"]["Pokemons"]))
+        for pokemon in pokemons:
+            if pokemon not in pokemon_json:
+                print(pokemon)
+                continue
+            pokemon_obj = pokemon_json[pokemon]
+            for type in pokemon_obj["Types"]:
+                if type is not None:
+                    types[type] = types.get(type, 0) + 1
+    print(types)
