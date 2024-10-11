@@ -1,5 +1,6 @@
 from characters_scraper import *
 from series_scraper import * 
+from pokemon_scraper import *
 from utils import *
 import pandas as pd 
 import json
@@ -77,6 +78,33 @@ def scrape_characters(num):
                     break
         json.dump(final_document,json_file)
 
+#scrape_characters(5)
+
+def scrape_pokemon(num):
+    with open("documents/pokemons.json","w") as json_file:
+        final_document={}
+        for pokedex_entry, pokemon, pokemon_page, pokemon_types in get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number'):
+            try:
+                html = fetchText(api_url+pokemon_page)
+                pokemon_info = {}
+                pokemon_info["Pokedex Entry"] = pokedex_entry
+                pokemon_info["Pokemon Page"] = pokemon_page
+                pokemon_info["Types"] = pokemon_types
+                pokemon_info["Blurb"] = get_pokemon_blurb(html,pokemon)
+                pokemon_info["Biology"] = get_pokemon_biology(html,pokemon)
+                pokemon_info["Stats"] = get_pokemon_stats(html,pokemon)
+                final_document[pokemon]=pokemon_info
+            except Exception as error:
+                print("Error in pokemon: "+pokemon)
+                print(error)
+                print("-------")
+                continue
+            finally:
+                num -= 1
+                if num <= 0:
+                    break
+        json.dump(final_document,json_file)
+scrape_pokemon(5)
 
 
 def dataset_processing_characters(path_to_file):
