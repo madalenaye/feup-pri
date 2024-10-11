@@ -1,4 +1,5 @@
 from matplotlib import pyplot as plt
+import numpy as np
 from wordcloud import WordCloud
 import re
 import matplotlib.pyplot as plt
@@ -66,6 +67,10 @@ def get_pokemon_name(name):
 
 def plot_type_representation(episodes, pokemon_json, file):
     types = {}
+    single_types = {}
+    types_max = None
+    single_types_max = None
+    
     for index, episode in episodes.iterrows():
         pokemons = list(map(lambda x: get_pokemon_name(x), episode["Characters"]["Pokemons"]))
         for pokemon in pokemons:
@@ -75,6 +80,36 @@ def plot_type_representation(episodes, pokemon_json, file):
             pokemon_obj = pokemon_json[pokemon]
             for type in pokemon_obj["Types"]:
                 if type is not None:
-                    types[type] = types.get(type, 0) + 1
-    plt.bar(*zip(*types.items()))
+                    val = types.get(type, 0) + 1
+                    types[type] = val
+                    if types_max is None or val > types_max:
+                        types_max = val
+
+    for pokemon in pokemon_json:
+        pokemon_obj = pokemon_json[pokemon]
+        for type in pokemon_obj["Types"]:
+            if type is not None:
+                val = single_types.get(type, 0) + 1
+                single_types[type] = val
+                if single_types_max is None or val > single_types_max:
+                    single_types_max = val
+    
+    for key, val in types.items():
+        types[key] = val/types_max
+    for key, val in single_types.items():
+        single_types[key] = val/single_types_max
+
+    types = dict(sorted(types.items()))
+    single_types = dict(sorted(single_types.items()))
+
+    n = len(types)
+    x = np.arange(n)
+    width = 0.35
+
+    plt.bar(x, types.values(), width=width, label='Types in episodes')
+    plt.bar(x + width, single_types.values(), width=width, label='Types of individual Pokémon')
+
+    plt.xticks(x + width / 2, types.keys(), rotation=45)  
+    plt.legend()
+
     plt.savefig(file)
