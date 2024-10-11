@@ -82,6 +82,7 @@ def scrape_pokemon(file):
                 pokemon_info["Biology"] = get_pokemon_biology(html,pokemon)
                 pokemon_info["Stats"] = get_pokemon_stats(html,pokemon)
                 final_document[pokemon]=pokemon_info
+                print(pokemon)
             except Exception as error:
                 print("Error in pokemon: "+pokemon)
                 print(error)

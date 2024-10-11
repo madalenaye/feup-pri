@@ -1,6 +1,7 @@
 from matplotlib import pyplot as plt
 from wordcloud import WordCloud
 import re
+import matplotlib.pyplot as plt
 
 
 def plot_word_cloud(df,column):
@@ -75,4 +76,5 @@ def plot_type_representation(episodes, pokemon_json, file):
             for type in pokemon_obj["Types"]:
                 if type is not None:
                     types[type] = types.get(type, 0) + 1
-    print(types)
+    plt.bar(*zip(*types.items()))
+    plt.savefig(file)
