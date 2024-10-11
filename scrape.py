@@ -3,6 +3,7 @@ import json
 import traceback
 from bs4 import BeautifulSoup
 from characters_scraper import get_character_character, get_character_history, get_character_table_info, get_list_characters
+from pokemon_scraper import get_list_pokemon, get_pokemon_biology, get_pokemon_blurb, get_pokemon_stats
 from series_scraper import get_characters, get_list_episodes, get_major_events, get_plot_from_episode, get_table
 from utils import api_url, fetchText
 
@@ -63,5 +64,32 @@ def scrape_characters(file):
             #    num -= 1
             #    if num <= 0:
             #        break
+        json.dump(final_document,json_file)
+        return final_document
+    
+def scrape_pokemon(file):
+    num = 151
+    with open(file,"w") as json_file:
+        final_document={}
+        for pokedex_entry, pokemon, pokemon_page, pokemon_types in get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number'):
+            try:
+                html = fetchText(api_url+pokemon_page)
+                pokemon_info = {}
+                pokemon_info["Pokedex Entry"] = pokedex_entry
+                pokemon_info["Pokemon Page"] = pokemon_page
+                pokemon_info["Types"] = pokemon_types
+                pokemon_info["Blurb"] = get_pokemon_blurb(html,pokemon)
+                pokemon_info["Biology"] = get_pokemon_biology(html,pokemon)
+                pokemon_info["Stats"] = get_pokemon_stats(html,pokemon)
+                final_document[pokemon]=pokemon_info
+            except Exception as error:
+                print("Error in pokemon: "+pokemon)
+                print(error)
+                print("-------")
+                continue
+            finally:
+                num -= 1
+                if num <= 0:
+                    break
         json.dump(final_document,json_file)
         return final_document
