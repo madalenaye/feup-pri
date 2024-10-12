@@ -37,8 +37,6 @@ def get_pokemon_blurb(html, name):
 def get_pokemon_biology(html, name):
     text = ""
     soup = BeautifulSoup(html, "html.parser")
-    #before_biology = soup.find("div", class_='thumb tleft')
-    #biology = before_biology.find_next_sibling()
     biology_header = soup.find("span", id="Biology")
     before_biology = biology_header.find_parent()
     biology = before_biology.find_next_sibling()
@@ -63,9 +61,11 @@ def get_pokemon_stats(html, name):
     pokemon_abilities = []
     table = soup.select('div.mw-parser-output > table')[1]
     table_body = table.find('tbody')
-    ability_row = table_body.contents[4].find_all('td')
+    ability_header = table_body.find('a', title="Ability")
+    ability_div = ability_header.find_parent()
+    ability_row = ability_div.find_next_sibling().find_all('td')
     for i in ability_row:
-        if i.find('a') is not None and "style" not in i.attrs:
+        if (i.find('a') is not None and "style" not in i.attrs) or (i.find('a') is not None and i["style"] != "display: none"):
             pokemon_abilities.append(i.find('a').text.strip())
     image_row = table_body.contents[0].find_all('td')
     for i in image_row:
@@ -76,4 +76,3 @@ def get_pokemon_stats(html, name):
             break
     pokemon_stats.append(pokemon_abilities)
     return pokemon_stats
-
