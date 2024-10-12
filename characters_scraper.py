@@ -41,7 +41,8 @@ def get_character_character(html,name):
                 text += sibling.text.strip() 
             sibling = sibling.find_next_sibling()
     else:
-        raise Exception("Character section not found for given character: "+name)
+        #raise Exception("Character section not found for given character: "+name)
+        return None
     return text
 
 def get_character_history(html,name):
@@ -56,7 +57,8 @@ def get_character_history(html,name):
             sibling = sibling.find_next_sibling()
     
     else:
-        raise Exception("History section not found for given character: "+name)
+        #raise Exception("History section not found for given character: "+name)
+        return None
     
     return text
 # Gets the table info from the html for a character
@@ -109,9 +111,11 @@ def get_character_table_info(html,name):
                         split = re.split(r',\s*(?![^()]*\))', value.text)
                         table[key.text.strip()] = split if len(split) > 1 else value.text
         else:
-            raise Exception("Table not found for given character: "+name)
+            #raise Exception("Table not found for given character: "+name)
+            return {}
     else:
-        raise Exception("Table section not found for given character: "+name)
+        #raise Exception("Table section not found for given character: "+name)~
+        return {}
     return table
 
 

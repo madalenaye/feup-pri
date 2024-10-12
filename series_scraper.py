@@ -82,7 +82,7 @@ def get_characters(html):
     humans = characters_section.find_next("h3")
     list_of_humans = humans.find_next("ul")
     humans_list = list_of_humans.find_all("li")
-    characters["Humans"]= [i.text.strip() for i in humans_list]
+    characters["Humans"] = [{"name": i.text.strip(), "code": "_".join(i.a["title"].split()) if i.a else None} for i in humans_list]
 
     pokemons = humans.find_next("h3")
     list_of_pokemons = pokemons.find_next("ul")

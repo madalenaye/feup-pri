@@ -62,20 +62,23 @@ def scrape_characters(num):
 
                 character_info = get_character_table_info(html,character_code)
                 character_info["Character Code"] = character_code
+                character_info["Name"] = character
                 character_info["Role"] = role
                 character_info["First Appearance"]=first_appearance
                 character_info["Character"]=get_character_character(html,character_code)
                 character_info["History"]=get_character_history(html,character_code)
-                final_document[character]=character_info
+                final_document[character_code]=character_info
+                if character_code == "Captain_(EP274)":
+                    break
             except Exception as error:
                 print("Error in character: "+character)
                 print(error)
                 print("-------")
                 continue
-            finally:
-                num -= 1
-                if num <= 0:
-                    break
+            #finally:
+            #    num -= 1
+            #    if num <= 0:
+            #        break
         json.dump(final_document,json_file)
 
 #scrape_characters(5)
@@ -130,7 +133,9 @@ def dataset_processing_series(path_to_file):
     df['First broadcast United States'] = df['First broadcast'].apply(lambda x: x.get('United States') if isinstance(x, dict) else None)
     # Convert the extracted dates to datetime format
     df['First broadcast Japan'] = pd.to_datetime(df['First broadcast Japan'])
-    df['First broadcast United States'] = pd.to_datetime(df['First broadcast United States'])
+    df['First broadcast United States'] = pd.to_datetime(df['First broadcast United States'].apply(lambda x: x[:x.find('*')] if x.find('*') != -1 else x), errors="coerce")
+
+    df['Broadcast Delay'] = (df['First broadcast United States'] - df['First broadcast Japan']).dt.days
 
     # Extract the 'Characters' column and split it into 'Human Characters' and 'Pokemon Characters'
     df["Human Characters"] = df["Characters"].apply(lambda x: x.get("Humans") if isinstance(x, dict) else None)
@@ -147,8 +152,11 @@ def dataset_processing_series(path_to_file):
     # Extract the 'Credits' column and split it into many different columns with the respective credits
     for key in df["Credits"][0].keys():
         df[key] = df["Credits"].apply(lambda x: x.get(key) if isinstance(x, dict) else None)
+
+    df["Plot Word Count"] = df["Plot"].apply(lambda x: len(x.split(" ")))
+
     # Fill NaN values with 'Unknown'
-    df.fillna(value="Unknown",inplace=True)
+    #df.fillna(value="Unknown",inplace=True)
     return df
 
  # Set display options to show all columns and rows
@@ -169,8 +177,17 @@ def plot_word_cloud(df,column):
     plt.axis("off")
     plt.show()
 
-#print(dataset_processing_series("documents/episodes.json"))
+def plot_word_count(df):
+    hist = df.hist(column="Plot Word Count")
+    hist[0][0].get_figure().savefig("fig.png")
+
+def plot_broadcast_delay(df):
+    df = df.sort_values('First broadcast Japan', ascending=True)
+    #plt.plot(df['First broadcast Japan'], df['Broadcast Delay'])
+    #plt.xticks(rotation='vertical')
+    plot = df.plot(x="First broadcast Japan", y="Broadcast Delay")
+    plot.get_figure().savefig("timefig.png")
+
+plot_broadcast_delay(dataset_processing_series("documents/episodes.json"))
 #print(dataset_processing_characters("documents/characters.json"))
-scrape_episodes(6)
-#print(get_blurb(fetchText(api_url+"EP001")))
 #plot_word_cloud(dataset_processing_series("documents/episodes.json"),"Plot")

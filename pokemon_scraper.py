@@ -42,7 +42,7 @@ def get_pokemon_biology(html, name):
     biology_header = soup.find("span", id="Biology")
     before_biology = biology_header.find_parent()
     biology = before_biology.find_next_sibling()
-    if biology.name != "p":
+    while (biology.name != "p"):
         biology = biology.find_next_sibling()
         
     if biology.name == "p":
@@ -77,12 +77,3 @@ def get_pokemon_stats(html, name):
     pokemon_stats.append(pokemon_abilities)
     return pokemon_stats
 
-def main():
-    #print(get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number'))
-    all = get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number')
-    test = all[0][2]
-    url = fetchText(api_url+test)
-    test1 = get_pokemon_biology(url, 'Bulbasaur')
-    print(test1)
-
-main()
