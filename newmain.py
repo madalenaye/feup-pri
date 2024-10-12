@@ -6,22 +6,28 @@ import json
 
 parser = argparse.ArgumentParser(prog="PRI - Milestone 1 Pipeline")
 
-parser.add_argument("-c", "--character-file", default="documents/characters.json")
-parser.add_argument("-e", "--episode-file", default="documents/episodes.json")
-parser.add_argument("-p", "--pokemon-file", default="documents/pokemons.json")
-parser.add_argument("-s", "--skip-scraping", action="store_true")
+parser.add_argument("--character-file", default="documents/characters.json")
+parser.add_argument("--episode-file", default="documents/episodes.json")
+parser.add_argument("--pokemon-file", default="documents/pokemons.json")
+parser.add_argument("--scrape-caracters", action="store_true")
+parser.add_argument("--scrape-pokemon", action="store_true")
+parser.add_argument("--scrape-episodes", action="store_true")
 parser.add_argument("-b", "--broadcast-delay", nargs='?', const="broadcastfig.png")
 parser.add_argument("-w", "--word-count", nargs='?', const="wordcountfig.png")
 parser.add_argument("-m", "--major-events", nargs='?', const="eventsfig.png")
 parser.add_argument('-o', "--character-occurences", nargs='?', const="characterfig.png")
-parser.add_argument("-t", "--pokemon-types", nargs='?', const="typefig.png")
+parser.add_argument("-p", "--pokemon-types", nargs='?', const="typefig.png")
+parser.add_argument("-c", "--word-cloud", nargs='?', const="wordcloud.png")
 
 args = parser.parse_args()
 print(args)
-if args.skip_scraping == False:
-    #scrape.scrape_characters(args.character_file)
-    #scrape.scrape_episodes(args.episode_file)
-    scrape.scrape_pokemon(args.pokemon_file)
+
+if args.scrape_characters:
+    scrape.scrape_characters(args.character_file)
+if args.scrape_pokemon:
+    scrape.scrape_characters(args.pokemon_file)
+if args.scrape_episodes:
+    scrape.scrape_episodes(args.episode_file)
 
 character_df = process.dataset_processing_characters(args.character_file)
 episode_df = process.dataset_processing_series(args.episode_file)
@@ -42,3 +48,6 @@ if args.character_occurences:
 
 if args.pokemon_types:
     plots.plot_type_representation(episode_df, pokemon_json, args.pokemon_types)
+
+if args.word_cloud:
+    plots.plot_word_cloud(episode_df, "Plot", args.word_cloud)

@@ -5,7 +5,7 @@ import re
 import matplotlib.pyplot as plt
 
 
-def plot_word_cloud(df,column):
+def plot_word_cloud(df, column, file):
     all_plot = ' '.join(df[column].astype(str))  
     
     # Create a word cloud
@@ -15,7 +15,7 @@ def plot_word_cloud(df,column):
     plt.figure(figsize = (10, 10), facecolor = None)
     plt.imshow(wordcloud,interpolation="bilinear")
     plt.axis("off")
-    plt.show()
+    plt.savefig(file)
 
 def plot_word_count(df, file):
     hist = df.hist(column="Plot Word Count")
