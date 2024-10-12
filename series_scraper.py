@@ -30,11 +30,20 @@ def getPlot(soup):
 # Gets the plot from the episode code
 # Arg episode: string code of the episode
 # Return: string plot
-def get_plot_from_episode(html,episode):
+def get_plot_from_episode(html):
     soup = BeautifulSoup(html,"html.parser")
-
     return getPlot(soup)
 
+def get_blurb(html):
+    soup = BeautifulSoup(html, "html.parser")
+    blurb = ""
+    burbHeader = soup.find(id="Blurb").parent
+    sibling = burbHeader.find_next_sibling()
+    while sibling.name != "h2":
+        if(sibling.name == "p"):
+            blurb += sibling.text.strip()
+        sibling = sibling.find_next_sibling()
+    return blurb
 # Gets the table content from the episode page
 # Arg soup: BeautifulSoup object
 # Return: dict table of the episode info
@@ -65,7 +74,7 @@ def get_table(soup):
 # Arg api_url: string url
 # Arg episode: string code of the episode
 # Return: dict characters and pokemons
-def get_characters(html,episode):
+def get_characters(html):
     characters={}
     soup = BeautifulSoup(html,"html.parser")
     characters_section = soup.find(id="Characters")
@@ -82,7 +91,7 @@ def get_characters(html,episode):
         
     return characters
 
-def get_major_events(html, episode):
+def get_major_events(html):
     major_events = []
     soup = BeautifulSoup(html, "html.parser")
     major_events = soup.find(id="Major_events")
