@@ -3,13 +3,14 @@ import scrape
 import process
 import plots
 import json
+import utils
 
 parser = argparse.ArgumentParser(prog="PRI - Milestone 1 Pipeline")
 
 parser.add_argument("--character-file", default="documents/characters.json")
 parser.add_argument("--episode-file", default="documents/episodes.json")
 parser.add_argument("--pokemon-file", default="documents/pokemons.json")
-parser.add_argument("--scrape-caracters", action="store_true")
+parser.add_argument("--scrape-characters", action="store_true")
 parser.add_argument("--scrape-pokemon", action="store_true")
 parser.add_argument("--scrape-episodes", action="store_true")
 parser.add_argument("-b", "--broadcast-delay", nargs='?', const="broadcastfig.png")
@@ -30,7 +31,11 @@ if args.scrape_episodes:
     scrape.scrape_episodes(args.episode_file)
 
 character_df = process.dataset_processing_characters(args.character_file)
+utils.save_df_as_json(character_df, utils.make_final_name(args.character_file))
+
 episode_df = process.dataset_processing_series(args.episode_file)
+utils.save_df_as_json(episode_df, utils.make_final_name(args.episode_file))
+
 with open(args.pokemon_file, "r") as file:
     pokemon_json = json.load(file)
 

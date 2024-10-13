@@ -1,6 +1,8 @@
 import urllib.request
 import json 
 import re
+import os
+import pandas as pd
 
 api_url= 'https://bulbapedia.bulbagarden.net/w/api.php?action=parse&format=json&page='
 
@@ -22,3 +24,14 @@ def set_default(obj):
     if isinstance(obj, set):
         return list(obj)
     raise TypeError
+
+def make_final_name(docfile):
+    path, filename = os.path.split(docfile)
+    filename, ext = os.path.splitext(filename)
+    newfilename = f"{filename}_final{ext}"
+    return os.path.join(path, newfilename)
+
+def save_df_as_json(df, file):
+    with open(file, "w", encoding="utf-8") as final_file:
+        #json.dump(df.to_json(orient="index", force_ascii=False).encode("utf-8"), final_file)
+        df.to_json(path_or_buf=final_file, orient="index", force_ascii=False)
