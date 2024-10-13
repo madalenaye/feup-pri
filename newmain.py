@@ -36,8 +36,10 @@ utils.save_df_as_json(character_df, utils.make_final_name(args.character_file))
 episode_df = process.dataset_processing_series(args.episode_file)
 utils.save_df_as_json(episode_df, utils.make_final_name(args.episode_file))
 
-with open(args.pokemon_file, "r") as file:
-    pokemon_json = json.load(file)
+pokemon_df = process.dataset_processing_pokemon(args.pokemon_file)
+
+#with open(args.pokemon_file, "r") as file:
+#    pokemon_json = json.load(file)
 
 if args.broadcast_delay:
     plots.plot_broadcast_delay(episode_df, args.broadcast_delay)
