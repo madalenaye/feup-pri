@@ -70,3 +70,18 @@ def dataset_processing_series(path_to_file):
     # Fill NaN values with 'Unknown'
     #df.fillna(value="Unknown",inplace=True)
     return df
+
+def pokemon_processing(path_to_file):
+    df = pd.read_json(path_to_file)
+    df = df.transpose()
+    df = df.reset_index()
+    split = pd.DataFrame(df['Stats'].to_list(), columns = ['Image', 'Abilities'])
+    df = pd.concat([df, split], axis=1)
+    df = df.set_index('index')
+    df = df.rename_axis(None)
+    print(df.head())
+
+def main():
+    pokemon_processing("documents/pokemons.json")
+
+main()
