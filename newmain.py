@@ -39,6 +39,7 @@ episode_df = process.dataset_processing_series(args.episode_file)
 utils.save_df_as_json(episode_df, utils.make_final_name(args.episode_file))
 
 pokemon_df = process.dataset_processing_pokemon(args.pokemon_file)
+utils.save_df_as_json(pokemon_df, utils.make_final_name(args.pokemon_file))
 
 #with open(args.pokemon_file, "r") as file:
 #    pokemon_json = json.load(file)
@@ -56,7 +57,7 @@ if args.character_occurences:
     plots.plot_major_characters(episode_df, character_df, args.character_occurences)
 
 if args.pokemon_types:
-    plots.plot_type_representation(episode_df, pokemon_df, args.pokemon_types)
+    plots.plot_type_representation(episode_df, json.loads(pokemon_df.to_json(orient="index")), args.pokemon_types)
 
 if args.word_cloud:
     plots.plot_word_cloud(episode_df, "Plot", args.word_cloud)

@@ -74,11 +74,12 @@ def dataset_processing_series(path_to_file):
 def dataset_processing_pokemon(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
-    df = df.reset_index(names="Name")
+    #df = df.set_index("Name")
     split = pd.DataFrame(df['Stats'].to_list(), columns = ['Image', 'Abilities'])
-    df = pd.concat([df, split], axis=1)
-    df = df.rename_axis(None)
-    print(df.head())
+    df["Image"] = df["Stats"].apply(lambda x: x[0])
+    df["Abilities"] = df["Stats"].apply(lambda x: x[1])
+    #df = pd.concat([df, split], axis=1)
+    return df
 
 #def main():
 #    pokemon_processing("documents/pokemons.json")

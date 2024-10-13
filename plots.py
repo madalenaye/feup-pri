@@ -29,7 +29,6 @@ def plot_broadcast_delay(df, file):
     plot.get_figure().savefig(file)
 
 def plot_major_events(df, file):
-    print(df["Major events"].apply(lambda x: len(x)))
     hist = df["Major events"].apply(lambda x: len(x)).hist()
     hist.get_figure().savefig(file)
 
@@ -75,7 +74,6 @@ def plot_type_representation(episodes, pokemon_json, file):
         pokemons = list(map(lambda x: get_pokemon_name(x), episode["Characters"]["Pokemons"]))
         for pokemon in pokemons:
             if pokemon not in pokemon_json:
-                print(pokemon)
                 continue
             pokemon_obj = pokemon_json[pokemon]
             for type in pokemon_obj["Types"]:

@@ -4,7 +4,7 @@ from utils import set_default
 import pandas as pd
 
 def build_reverse_index(episodes, obj):
-    for episode, episode_data in episodes.items():
+    for episode, episode_data in episodes.iterrows():
         for human in episode_data["Characters"]["Humans"]:
             if (not human["code"]) or human["code"].replace("'", "%27") not in obj:
                 continue
@@ -17,7 +17,7 @@ def build_reverse_index(episodes, obj):
 def get_correlations(characters, episodes, file):
     pattern = re.compile("(main|Main|recurring|Recurring)")
     filtered_characters = {}
-    for character, character_data in characters.items():
+    for character, character_data in characters.iterrows():
         if pattern.search(character_data["Role"]):
             filtered_characters[character] = character_data
 
