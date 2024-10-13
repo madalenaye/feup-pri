@@ -54,7 +54,7 @@ if args.character_occurences:
     plots.plot_major_characters(episode_df, character_df, args.character_occurences)
 
 if args.pokemon_types:
-    plots.plot_type_representation(episode_df, pokemon_json, args.pokemon_types)
+    plots.plot_type_representation(episode_df, pokemon_df, args.pokemon_types)
 
 if args.word_cloud:
     plots.plot_word_cloud(episode_df, "Plot", args.word_cloud)
