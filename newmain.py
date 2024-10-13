@@ -61,5 +61,5 @@ if args.pokemon_types:
 if args.word_cloud:
     plots.plot_word_cloud(episode_df, "Plot", args.word_cloud)
 
-if args.character_correlation:
-    character_correlation.get_correlations(args.character_correlation)
+if args.correlation:
+    character_correlation.get_correlations(args.correlation)
