@@ -3,7 +3,7 @@ import re
 from utils import set_default
 import pandas as pd
 
-def build_reverse_index(obj):
+def build_reverse_index(episodes, obj):
     for episode, episode_data in episodes.items():
         for human in episode_data["Characters"]["Humans"]:
             if (not human["code"]) or human["code"].replace("'", "%27") not in obj:
@@ -14,14 +14,14 @@ def build_reverse_index(obj):
             else:
                 character["Appearances"] = set([episode])
 
-def get_correlations(file):
+def get_correlations(characters, episodes, file):
     pattern = re.compile("(main|Main|recurring|Recurring)")
     filtered_characters = {}
     for character, character_data in characters.items():
         if pattern.search(character_data["Role"]):
             filtered_characters[character] = character_data
 
-    build_reverse_index(filtered_characters)
+    build_reverse_index(episodes, filtered_characters)
 
     char_list = list(filtered_characters.items())
     char_len = len(char_list)
@@ -38,9 +38,3 @@ def get_correlations(file):
     df = pd.DataFrame(pairs, columns = ["Character 1", "Character 2", "Correlation"])
     df = df.sort_values(by="Correlation", ascending=False).reset_index()
     df.to_json(file, orient="index")
-
-with open('documents/episodes.json', 'r') as file:
-    episodes = json.load(file)
-
-with open('documents/characters.json', 'r') as file:
-    characters = json.load(file)

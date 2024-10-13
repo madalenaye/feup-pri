@@ -62,4 +62,4 @@ if args.word_cloud:
     plots.plot_word_cloud(episode_df, "Plot", args.word_cloud)
 
 if args.correlation:
-    character_correlation.get_correlations(args.correlation)
+    character_correlation.get_correlations(character_df, episode_df, args.correlation)

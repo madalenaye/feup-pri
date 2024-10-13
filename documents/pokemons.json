@@ -185,7 +185,7 @@
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/d/da/0011Metapod.png/250px-0011Metapod.png",
             [
-                "50% male, 50% female"
+                "Shed Skin"
             ]
         ]
     },
@@ -235,7 +235,7 @@
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/f/f3/0014Kakuna.png/250px-0014Kakuna.png",
             [
-                "50% male, 50% female"
+                "Shed Skin"
             ]
         ]
     },
@@ -1392,7 +1392,8 @@
             [
                 "Oblivious",
                 "Quick Draw",
-                "Regenerator"
+                "Regenerator",
+                "Shell Armor"
             ]
         ]
     },
@@ -1601,7 +1602,7 @@
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/c/c2/0092Gastly.png/250px-0092Gastly.png",
             [
-                "50% male, 50% female"
+                "Levitate"
             ]
         ]
     },
@@ -1617,7 +1618,7 @@
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/d/d1/0093Haunter.png/250px-0093Haunter.png",
             [
-                "50% male, 50% female"
+                "Levitate"
             ]
         ]
     },
@@ -1634,7 +1635,8 @@
             "https://archives.bulbagarden.net/media/upload/thumb/4/47/0094Gengar.png/250px-0094Gengar.png",
             [
                 "Cursed Body",
-                "Shadow Tag"
+                "Shadow Tag",
+                "Levitate"
             ]
         ]
     },
@@ -2008,7 +2010,7 @@
             null
         ],
         "Blurb": "Horsea (Japanese: \u30bf\u30c3\u30c4\u30fc Tattu) is a Water-type Pok\u00e9mon introduced in Generation I. It evolves into Seadra starting at level 32, which evolves into Kingdra when traded while holding a Dragon Scale. (Specifics may differ in past games. Refer to Game data\u2192Evolution data for these details.) ",
-        "Biology": "Horsea is a light blue, piscine Pok\u00e9mon that is similar to a seahorse. It has red eyes, a long, tubular mouth, and three spike-like fins on either side of its head. Its ridged belly and single dorsal fin are cream-colored. Highly adept in the water, it uses its dorsal fin to swim in any direction while facing forward. It has a tightly curled tail that it can use as both a balance and an anchor when caught in a strong current. In safer environments, it uses its tail to play with other members of its species. Horsea feeds on insects and moss gathered from rocks. If Horsea senses danger, it sprays water or dense black ink from its mouth at its attacker. It can shoot more precisely at insects flying above the surface of the water. Horsea nests in coral reefs and islands throughout oceans with gentle currents. Many Eggs are laid every year, and the young are raised by the male Horsea rather than the female. Horsea swims with dance-like motions, creating whirlpools in the process. It tends to compete with each other to see who can create the biggest whirlpool. ",
+        "Biology": "Horsea is a light blue, piscine Pok\u00e9mon that is similar to a seahorse. It has red eyes, a long, tubular mouth, and three spike-like fins on either side of its head. Its ridged belly and single dorsal fin are cream-colored. Highly adept in the water, it uses its dorsal fin to swim in any direction while facing forward. It has a tightly curled tail that it can use as both a balance and an anchor when caught in a strong current. In safer environments, it uses its tail to play with other members of its species. Horsea feeds on insects and moss gathered from rocks. If Horsea senses danger, it sprays water or dense black ink from its mouth at its attacker. It can shoot more precisely at insects flying above the surface of the water. Horsea nests in coral reefs and islands throughout oceans with gentle currents. Many Eggs are laid every year, and the young are raised by the male Horsea rather than the female. Horsea swims with dance-like motions, creating whirlpools in the process. Horsea tend to compete with each other to see who can create the biggest whirlpool. ",
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/1/14/0116Horsea.png/250px-0116Horsea.png",
             [
@@ -2514,7 +2516,8 @@
             [
                 "Pressure",
                 "Defiant",
-                "Static"
+                "Static",
+                "Lightning Rod"
             ]
         ]
     },
@@ -2617,7 +2620,9 @@
         "Biology": "Mew is a pink, bipedal Pok\u00e9mon with mammalian features. It has a rounded, wide snout; triangular ears; and large, blue eyes. It has short arms with three-fingered paws and large hind paws with oval markings on the soles. Its tail is long and thin with an ovoid tip. Its fur is so fine and thin, it can only be seen under a microscope. Mew has shown a playful, childish personality, showing signs of high intelligence, curiosity, shyness, playfulness, and even selflessness. It is said to have the DNA of every single Pok\u00e9mon contained within its body. This causes many scientists to theorize that Mew is the ancestor of all Pok\u00e9mon. It is an incredibly adaptable species, capable of levitation and teleportation. It can use almost all known moves, regardless of their types. It has also shown the rare power to transform into all known Pok\u00e9mon. It is capable of making itself invisible at will, so it entirely avoids notice even if it approaches people. As seen on several occasions, it has the ability to create an orb of energy around itself for protection, which can come in many colors, such as green, yellow, and pink. According to journals found in Kanto's Pok\u00e9mon Mansion, Mr. Fuji is the one who discovered Mew deep in the jungle and coined its name. With other scientists, he managed to gather some of Mew's DNA and used it in his mansion to create a modified clone of it, aiming it to be the most powerful Pok\u00e9mon of all, which resulted in the birth of the Legendary Pok\u00e9mon Mewtwo. Since Mew can make itself invisible, very few people have seen it, leading some scientists to declare it extinct and most to assume it to be nothing, but a mirage. However, sightings of it are still being reported to this day, confirming its existence. Even though it's rarely seen, it will willingly show itself to a person who is pure of heart and has a strong desire to see it. According to the Pok\u00e9mon the Series-related radio drama, The Birth of Mewtwo, Mew was discovered by Jessie's mother, Miyamoto, who registered its cry in a forest 20 years before the events of the series. It was worshiped for its protection by ancient people who created a song in its honor and believed it appeared once a year with the rising sun. It wasn't rediscovered until 18 years after Miyamoto met Mew by sunrise on the peak of a high mountain. As depicted in the episode In the Palms of our Hands! it is capable of splitting itself up and transforming into more than one Pok\u00e9mon at the same time. It was also shown to possess a strong rivalry with its clone, Mewtwo in Mewtwo Strikes Back. Mew is the only known Pok\u00e9mon capable of using the Z-Move Genesis Supernova. ",
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/9/9a/0151Mew.png/250px-0151Mew.png",
-            []
+            [
+                "Synchronize"
+            ]
         ]
     },
     "Chikorita": {
@@ -3452,7 +3457,7 @@
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/1/1f/0200Misdreavus.png/250px-0200Misdreavus.png",
             [
-                "50% male, 50% female"
+                "Levitate"
             ]
         ]
     },
@@ -3467,7 +3472,9 @@
         "Biology": "Unown is a flat, thin Pok\u00e9mon shaped like an eye with appendages that make it resemble a letter or a punctuation mark. It is entirely black, except for its white sclerae. All 26 alphabetic forms of Unown have fully open eyes, while the two punctuation forms have half-closed eyes. Though each of its forms has a counterpart in the Latin alphabet, Unown is said to resemble ancient writing and hieroglyphs called Unown symbols. It is a mystery whether Unown predates or postdates written language, and therefore which one is based on the other. Unown can move its appendages independently like tentacles or fingers. In the Japanese version of Pok\u00e9mon Crystal, a researcher implies that the Unown began appearing at the Ruins of Alph after the Pok\u00e9mon Communication Center was built in Goldenrod City, implying the Unown have some connection to radio waves or telecommunications. This text was translated and left unused in the English release. The Pok\u00e9dex and Professor Oak's research disagree on whether Unown communicates using electromagnetic waves or telepathy. Either way, it can be detected by the Pok\u00e9gear radio, which interprets it as the melody of the Azure Flute. Unown has an unknown connection to Arceus. It is said that an \"odd power\" emerges when more than one Unown come together. Certain Unown loose in the Hisui region were capable of repelling Pok\u00e9 Balls that contained Pok\u00e9mon, preventing them from being battled. Professor Laventon's research observed that Unown resemble human writing from other lands, though no one took him seriously. In the Pok\u00e9mon movie Spell of the Unown: Entei, Unown is shown to be capable of reading the thoughts of other life forms. Great numbers of Unown are capable of distorting reality to suit the dreams and wishes of whoever is in control of the Unown. However, they can only do this when more Unown are present, so it could be a shared effort rather than an ability unique to each Unown. Unown is an extremely rare Pok\u00e9mon that lives in its own dimension and rarely ventures outside. When it moves to the Pok\u00e9mon world, Unown tends to stick to walls like engravings of ancient texts, or orbit other Unown, usually in ruins. In Pok\u00e9mon Crystal, the Unown are said to share a cooperative bond with Suicune. In Generation VIII, Unown is the only known Pok\u00e9mon capable of learning the move Hidden Power. ",
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/b/b4/0201Unown.png/250px-0201Unown.png",
-            []
+            [
+                "Levitate"
+            ]
         ]
     },
     "Wobbuffet": {
@@ -3638,6 +3645,24 @@
             [
                 "Poison Point",
                 "Intimidate"
+            ]
+        ]
+    },
+    "Scizor": {
+        "Pokedex Entry": "#0212",
+        "Pokemon Page": "Scizor_(Pok%C3%A9mon)",
+        "Types": [
+            "Bug",
+            "Steel"
+        ],
+        "Blurb": "Scizor (Japanese: \u30cf\u30c3\u30b5\u30e0 Hassam) is a dual-type Bug/Steel Pok\u00e9mon introduced in Generation II. It evolves from Scyther when traded while holding a Metal Coat. It is one of Scyther's final forms, the other being Kleavor. (Specifics may differ in past games. Refer to Game data\u2192Evolution data for more details.) Scizor can Mega Evolve into Mega Scizor using the Scizorite. ",
+        "Biology": "Scizor is a bipedal, insectoid Pok\u00e9mon with a red, metallic exoskeleton. It has gray, retractable forewings and hind wings with simple, curved venation. Its rounded head has three blunt horns extending above its forehead and eyes with dark yellow irises. Scizor's thin, black neck connects to a black, teardrop-shaped patch on its thorax. Scizor has broad shoulders and thin, segmented arms ending in large, round pincers, which comprise a third of Scizor's body weight. Scizor has a large, rounded abdomen with three black, chevron-shaped stripes extending from its waist down its front; female Scizor has larger abdomens than male Scizor. Scizor's legs are defined by large hip joints, thin thighs, and wide calves, and its feet end in a clawed toe on each side. Its arms appear similar to pincers of animals from crustecean group like crabs and the presence of markings resembling eyes gives the illusion of additional heads. Scizor's body and muscles are made of metal that is as hard as steel, with pincers strong enough to crush any hard object. They can be opened and closed like jaws and are patterned with black eyespots with yellow \"pupils\". It will raise its pincers and wave them around to scare off predators or foes, giving it the appearance of having three heads. When it identifies an enemy, Scizor will use its pincers to beat up the opponent to the point there is nothing but scrap left afterwards. Scizor is normally incapable of flight, instead it quickly flaps its wings to regulate its body temperature to prevent itself from becoming too hot and melting, although it still can hover and glide for short distances, as shown in the games and animated series. It has tremendous power despite its slim body. Scizor is rarely found in the wild, though it can be found in grasslands. ",
+        "Stats": [
+            "https://archives.bulbagarden.net/media/upload/thumb/3/39/0212Scizor.png/250px-0212Scizor.png",
+            [
+                "Swarm",
+                "Light Metal",
+                "Technician"
             ]
         ]
     },
@@ -4019,6 +4044,23 @@
             ]
         ]
     },
+    "Smeargle": {
+        "Pokedex Entry": "#0235",
+        "Pokemon Page": "Smeargle_(Pok%C3%A9mon)",
+        "Types": [
+            "Normal",
+            null
+        ],
+        "Blurb": "Smeargle (Japanese: \u30c9\u30fc\u30d6\u30eb Doble) is a Normal-type Pok\u00e9mon introduced in Generation II. It is not known to evolve into or from any other Pok\u00e9mon. Smeargle is best known for its ability to use the move Sketch, which permanently copies the last move used by the opponent. Due to this, it can legitimately have any move in the Pok\u00e9mon games except for Chatter, Struggle, Tera Starstorm, Revival Blessing, the Starmobiles' signature moves, and Shadow moves \u2014 though it could learn Dark Void and Hyperspace Fury prior to Generation IX, it cannot use those moves as they can only be used by Darkrai and Hoopa, respectively. Consequently, it can pass on any Egg Move to Pok\u00e9mon in the Field Egg Group. ",
+        "Biology": "Smeargle is a bipedal, beagle-like Pok\u00e9mon with white and brown fur. It has a long tail with an end resembling a paintbrush. This paintbrush oozes with paint, and the color of the paint may vary for each Smeargle, as well as change in hue corresponding to its emotions. Smeargle has a footprint on its back that is typically the same color as the paint on the tip of its tail, though Smeargle can have separate back and tail colors in Pok\u00e9mon Stadium 2. The mark is placed on Smeargle's back as a sign of adulthood. Smeargle also has a round structure on its head with a point that resembles a beret. It has floppy, brown ears and a brown collar on its neck. The rings encircling Smeargle's eyes are also brown, as are Smeargle's eyelids. Its arms have two brown bands, and its legs have only one. Each of its limbs has three digits. Smeargle's in-game appearances in Pok\u00e9mon Gold, Silver, and Crystal as well as Pok\u00e9mon Colosseum and Pok\u00e9mon XD: Gale of Darkness all depict it with red paint on its back and tail while its Shiny coloration is depicted with green; the inverse is true in the Generation III core series games and in every game from Generation IV onwards. Pok\u00e9mon Stadium 2 and the Pok\u00e9mon the Series episode The Art of Pok\u00e9mon both depict Smeargle that have blue back and tail colors, with the animated series episode also depicting Smeargle that have yellow back and tail colors. Its Shiny coloration in Stadium 2 can also be seen with teal, orange, or indigo paint on its back and tail. Smeargle uses its paint to mark its territory. There are over 5,000 known different marks that Smeargle uses. Each Smeargle's tail is predetermined by the mysterious fluid secreted at the tip of the tail. There are Smeargle fanatics who will pay big money to own one. It can also use its signature move, Sketch, to copy moves from other Pok\u00e9mon. Smeargle is the only known Pok\u00e9mon capable of learning the move Sketch. Smeargle is often found in urban areas filled with graffiti. ",
+        "Stats": [
+            "https://archives.bulbagarden.net/media/upload/thumb/7/72/0235Smeargle.png/250px-0235Smeargle.png",
+            [
+                "Own Tempo",
+                "Moody"
+            ]
+        ]
+    },
     "Tyrogue": {
         "Pokedex Entry": "#0236",
         "Pokemon Page": "Tyrogue_(Pok%C3%A9mon)",
@@ -4151,7 +4193,8 @@
             "https://archives.bulbagarden.net/media/upload/thumb/4/48/0243Raikou.png/250px-0243Raikou.png",
             [
                 "Pressure",
-                "Inner Focus"
+                "Inner Focus",
+                "Volt Absorb"
             ]
         ]
     },
@@ -4168,7 +4211,8 @@
             "https://archives.bulbagarden.net/media/upload/thumb/2/2b/0244Entei.png/250px-0244Entei.png",
             [
                 "Pressure",
-                "Inner Focus"
+                "Inner Focus",
+                "Flash Fire"
             ]
         ]
     },
@@ -4185,7 +4229,8 @@
             "https://archives.bulbagarden.net/media/upload/thumb/d/dc/0245Suicune.png/250px-0245Suicune.png",
             [
                 "Pressure",
-                "Inner Focus"
+                "Inner Focus",
+                "Water Absorb"
             ]
         ]
     },
@@ -4218,7 +4263,7 @@
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/8/88/0247Pupitar.png/250px-0247Pupitar.png",
             [
-                "50% male, 50% female"
+                "Shed Skin"
             ]
         ]
     },
@@ -4285,7 +4330,9 @@
         "Biology": "Celebi is a green, fairy-like Pok\u00e9mon. It has round toeless feet, three-fingered hands, and clear wings on its back. It has a round head that comes to a curved point. It has large baby-blue eyes with thick black rings around them, and a pair of green antennae with blue tips. Often found in forests, Celebi is a Mythical Pok\u00e9mon, known in legend as the \"Voice of the Forest.\" It is able to travel through time and exist simultaneously throughout time, and plant life flourishes wherever it has been. As seen in Celebi: The Voice of the Forest, it is able to heal Celebi when it is dying and restore plants to perfect health. Celebi also has the ability to heal wounds, and can release a telekinetic energy wave to defend itself. It was shown in Pok\u00e9mon Colosseum that Celebi has the power to instantly cause the Purification of any Shadow Pok\u00e9mon and can be summoned at Relic Forest with the melody of a Time Flute. Despite living in forests as its guardian, Celebi only shows itself in areas and times of peace. It has been regarded that as long as Celebi are seen throughout the world, a prosperous and bright future is still in store for the Pok\u00e9mon world. As depicted in A Timeless Encounter!, Celebi can sense if something is a temporal anomaly in the current timeline and will bring them back to their original timeline. Celebi has been referred to as a forest deity. ",
         "Stats": [
             "https://archives.bulbagarden.net/media/upload/thumb/3/3f/0251Celebi.png/250px-0251Celebi.png",
-            []
+            [
+                "Natural Cure"
+            ]
         ]
     }
 }
