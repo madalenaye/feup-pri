@@ -4,6 +4,7 @@ import process
 import plots
 import json
 import utils
+import character_correlation
 
 parser = argparse.ArgumentParser(prog="PRI - Milestone 1 Pipeline")
 
@@ -19,6 +20,7 @@ parser.add_argument("-m", "--major-events", nargs='?', const="eventsfig.png")
 parser.add_argument('-o', "--character-occurences", nargs='?', const="characterfig.png")
 parser.add_argument("-p", "--pokemon-types", nargs='?', const="typefig.png")
 parser.add_argument("-c", "--word-cloud", nargs='?', const="wordcloud.png")
+parser.add_argument("--correlation", nargs='?', const="correlation.json")
 
 args = parser.parse_args()
 print(args)
@@ -58,3 +60,6 @@ if args.pokemon_types:
 
 if args.word_cloud:
     plots.plot_word_cloud(episode_df, "Plot", args.word_cloud)
+
+if args.character_correlation:
+    character_correlation.get_correlations(args.character_correlation)

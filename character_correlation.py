@@ -1,6 +1,7 @@
 import json
 import re
 from utils import set_default
+import pandas as pd
 
 def build_reverse_index(obj):
     for episode, episode_data in episodes.items():
@@ -13,7 +14,7 @@ def build_reverse_index(obj):
             else:
                 character["Appearances"] = set([episode])
 
-def get_correlations():
+def get_correlations(file):
     pattern = re.compile("(main|Main|recurring|Recurring)")
     filtered_characters = {}
     for character, character_data in characters.items():
@@ -26,7 +27,7 @@ def get_correlations():
     char_len = len(char_list)
     pairs = []
     for i in range(char_len-1):
-        for j in range(i, char_len):
+        for j in range(i+1, char_len):
             if "Appearances" not in char_list[i][1] or "Appearances" not in char_list[j][1]:
                 continue
 
@@ -34,12 +35,12 @@ def get_correlations():
             intersection = len(char_list[i][1]["Appearances"] & char_list[j][1]["Appearances"])
             pairs.append((char_list[i][0], char_list[j][0], intersection/union))
 
-    print(pairs)
+    df = pd.DataFrame(pairs, columns = ["Character 1", "Character 2", "Correlation"])
+    df = df.sort_values(by="Correlation", ascending=False).reset_index()
+    df.to_json(file, orient="index")
 
 with open('documents/episodes.json', 'r') as file:
     episodes = json.load(file)
 
 with open('documents/characters.json', 'r') as file:
     characters = json.load(file)
-
-get_correlations()
