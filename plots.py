@@ -16,6 +16,7 @@ def plot_word_cloud(df, column, file):
     plt.imshow(wordcloud,interpolation="bilinear")
     plt.axis("off")
     plt.savefig(file)
+    plt.clf()
 
 def plot_word_count(df, file):
     hist = df.hist(column="Plot Word Count")
@@ -27,10 +28,12 @@ def plot_broadcast_delay(df, file):
     #plt.xticks(rotation='vertical')
     plot = df.plot(x="First broadcast Japan", y="Broadcast Delay")
     plot.get_figure().savefig(file)
+    plt.clf()
 
 def plot_major_events(df, file):
     hist = df["Major events"].apply(lambda x: len(x)).hist()
     hist.get_figure().savefig(file)
+    plt.clf()
 
 def get_name_re(name):
     words = name.split(' ')
@@ -56,6 +59,7 @@ def plot_major_characters(episodes, characters, file):
         main_chars = main_chars.apply(lambda x: add_occurences(x, episode), axis=1)
     plot = main_chars.plot.bar(x="Name", y="occ", rot=0)
     plot.get_figure().savefig(file)
+    plt.clf()
 
 def get_pokemon_name(name):
     idx = name.find('(')
@@ -111,3 +115,4 @@ def plot_type_representation(episodes, pokemon_json, file):
     plt.legend()
 
     plt.savefig(file)
+    plt.clf()
