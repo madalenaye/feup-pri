@@ -20,7 +20,7 @@ parser.add_argument("-m", "--major-events", nargs='?', const="eventsfig.png")
 parser.add_argument('-o', "--character-occurences", nargs='?', const="characterfig.png")
 parser.add_argument("-p", "--pokemon-types", nargs='?', const="typefig.png")
 parser.add_argument("-c", "--word-cloud", nargs='?', const="wordcloud.png")
-parser.add_argument("--correlation", nargs='?', const="correlation.json")
+parser.add_argument("--correlation", nargs='?', const="jaccard_indexes.json")
 
 args = parser.parse_args()
 print(args)
