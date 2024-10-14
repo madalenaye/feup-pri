@@ -20,6 +20,7 @@ parser.add_argument("-m", "--major-events", nargs='?', const="eventsfig.png")
 parser.add_argument('-o', "--character-occurences", nargs='?', const="characterfig.png")
 parser.add_argument("-p", "--pokemon-types", nargs='?', const="typefig.png")
 parser.add_argument("-c", "--word-cloud", nargs='?', const="wordcloud.png")
+parser.add_argument("--scatter-episode-plot", nargs='?', const="scatterfig.png")
 parser.add_argument("--correlation", nargs='?', const="jaccard_indexes.json")
 
 args = parser.parse_args()
@@ -61,6 +62,9 @@ if args.pokemon_types:
 
 if args.word_cloud:
     plots.plot_word_cloud(episode_df, "Plot", args.word_cloud)
+
+if args.scatter_episode_plot:
+    plots.plot_scatter_events(episode_df, args.scatter_episode_plot)
 
 if args.correlation:
     character_correlation.get_correlations(character_df, episode_df, args.correlation)

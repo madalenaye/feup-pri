@@ -116,3 +116,10 @@ def plot_type_representation(episodes, pokemon_json, file):
 
     plt.savefig(file)
     plt.clf()
+
+def plot_scatter_events(episodes, file):
+    episodes_new = episodes.copy(deep=True)
+    episodes_new["Major Event Amount"] = episodes_new["Major events"].apply(lambda x: len(x))
+    plot = episodes_new.plot.scatter("Plot Word Count", "Major Event Amount")
+    plot.get_figure().savefig(file)
+    plt.clf()
