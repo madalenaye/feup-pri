@@ -46,7 +46,7 @@ def scrape_characters(file):
                 html = fetchText(api_url+character_code)
 
                 character_info = get_character_table_info(html,character_code)
-                character_info["Character Code"] = character_code
+                #character_info["Character Code"] = character_code
                 character_info["Name"] = character
                 character_info["Role"] = role
                 character_info["First Appearance"]=first_appearance

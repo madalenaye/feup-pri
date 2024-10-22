@@ -51,7 +51,7 @@ def get_table(soup):
     table = {}
     tableHeader = soup.find("big").parent.parent.parent.parent.parent
     ep_code = tableHeader.find("td", class_="roundy", width="25%")
-    table["Episode Code"]=ep_code.text.strip()
+    #table["Episode Code"]=ep_code.text.strip()
     title = tableHeader.find("big")
     table["Name"]=title.text.strip()
 

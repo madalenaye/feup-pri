@@ -1,5 +1,6 @@
-{
-    "Bulbasaur": {
+[
+    {
+        "Name": "Bulbasaur",
         "Pokedex Entry": "#0001",
         "Pokemon Page": "Bulbasaur_(Pok%C3%A9mon)",
         "Types": [
@@ -21,7 +22,8 @@
             "Chlorophyll"
         ]
     },
-    "Ivysaur": {
+    {
+        "Name": "Ivysaur",
         "Pokedex Entry": "#0002",
         "Pokemon Page": "Ivysaur_(Pok%C3%A9mon)",
         "Types": [
@@ -43,7 +45,8 @@
             "Chlorophyll"
         ]
     },
-    "Venusaur": {
+    {
+        "Name": "Venusaur",
         "Pokedex Entry": "#0003",
         "Pokemon Page": "Venusaur_(Pok%C3%A9mon)",
         "Types": [
@@ -67,7 +70,8 @@
             "Thick Fat"
         ]
     },
-    "Charmander": {
+    {
+        "Name": "Charmander",
         "Pokedex Entry": "#0004",
         "Pokemon Page": "Charmander_(Pok%C3%A9mon)",
         "Types": [
@@ -89,7 +93,8 @@
             "Solar Power"
         ]
     },
-    "Charmeleon": {
+    {
+        "Name": "Charmeleon",
         "Pokedex Entry": "#0005",
         "Pokemon Page": "Charmeleon_(Pok%C3%A9mon)",
         "Types": [
@@ -111,7 +116,8 @@
             "Solar Power"
         ]
     },
-    "Charizard": {
+    {
+        "Name": "Charizard",
         "Pokedex Entry": "#0006",
         "Pokemon Page": "Charizard_(Pok%C3%A9mon)",
         "Types": [
@@ -137,7 +143,8 @@
             "Drought"
         ]
     },
-    "Squirtle": {
+    {
+        "Name": "Squirtle",
         "Pokedex Entry": "#0007",
         "Pokemon Page": "Squirtle_(Pok%C3%A9mon)",
         "Types": [
@@ -159,7 +166,8 @@
             "Rain Dish"
         ]
     },
-    "Wartortle": {
+    {
+        "Name": "Wartortle",
         "Pokedex Entry": "#0008",
         "Pokemon Page": "Wartortle_(Pok%C3%A9mon)",
         "Types": [
@@ -181,7 +189,8 @@
             "Rain Dish"
         ]
     },
-    "Blastoise": {
+    {
+        "Name": "Blastoise",
         "Pokedex Entry": "#0009",
         "Pokemon Page": "Blastoise_(Pok%C3%A9mon)",
         "Types": [
@@ -205,7 +214,8 @@
             "Mega Launcher"
         ]
     },
-    "Caterpie": {
+    {
+        "Name": "Caterpie",
         "Pokedex Entry": "#0010",
         "Pokemon Page": "Caterpie_(Pok%C3%A9mon)",
         "Types": [
@@ -227,7 +237,8 @@
             "Run Away"
         ]
     },
-    "Metapod": {
+    {
+        "Name": "Metapod",
         "Pokedex Entry": "#0011",
         "Pokemon Page": "Metapod_(Pok%C3%A9mon)",
         "Types": [
@@ -247,7 +258,8 @@
             "Shed Skin"
         ]
     },
-    "Butterfree": {
+    {
+        "Name": "Butterfree",
         "Pokedex Entry": "#0012",
         "Pokemon Page": "Butterfree_(Pok%C3%A9mon)",
         "Types": [
@@ -269,7 +281,8 @@
             "Tinted Lens"
         ]
     },
-    "Weedle": {
+    {
+        "Name": "Weedle",
         "Pokedex Entry": "#0013",
         "Pokemon Page": "Weedle_(Pok%C3%A9mon)",
         "Types": [
@@ -291,7 +304,8 @@
             "Run Away"
         ]
     },
-    "Kakuna": {
+    {
+        "Name": "Kakuna",
         "Pokedex Entry": "#0014",
         "Pokemon Page": "Kakuna_(Pok%C3%A9mon)",
         "Types": [
@@ -311,7 +325,8 @@
             "Shed Skin"
         ]
     },
-    "Beedrill": {
+    {
+        "Name": "Beedrill",
         "Pokedex Entry": "#0015",
         "Pokemon Page": "Beedrill_(Pok%C3%A9mon)",
         "Types": [
@@ -335,7 +350,8 @@
             "Adaptability"
         ]
     },
-    "Pidgey": {
+    {
+        "Name": "Pidgey",
         "Pokedex Entry": "#0016",
         "Pokemon Page": "Pidgey_(Pok%C3%A9mon)",
         "Types": [
@@ -357,7 +373,8 @@
             "Big Pecks"
         ]
     },
-    "Pidgeotto": {
+    {
+        "Name": "Pidgeotto",
         "Pokedex Entry": "#0017",
         "Pokemon Page": "Pidgeotto_(Pok%C3%A9mon)",
         "Types": [
@@ -379,7 +396,8 @@
             "Big Pecks"
         ]
     },
-    "Pidgeot": {
+    {
+        "Name": "Pidgeot",
         "Pokedex Entry": "#0018",
         "Pokemon Page": "Pidgeot_(Pok%C3%A9mon)",
         "Types": [
@@ -403,7 +421,8 @@
             "No Guard"
         ]
     },
-    "Rattata": {
+    {
+        "Name": "Rattata",
         "Pokedex Entry": "#0019",
         "Pokemon Page": "Rattata_(Pok%C3%A9mon)",
         "Types": [
@@ -429,7 +448,8 @@
             "Thick Fat"
         ]
     },
-    "Raticate": {
+    {
+        "Name": "Raticate",
         "Pokedex Entry": "#0020",
         "Pokemon Page": "Raticate_(Pok%C3%A9mon)",
         "Types": [
@@ -455,7 +475,8 @@
             "Thick Fat"
         ]
     },
-    "Spearow": {
+    {
+        "Name": "Spearow",
         "Pokedex Entry": "#0021",
         "Pokemon Page": "Spearow_(Pok%C3%A9mon)",
         "Types": [
@@ -477,7 +498,8 @@
             "Sniper"
         ]
     },
-    "Fearow": {
+    {
+        "Name": "Fearow",
         "Pokedex Entry": "#0022",
         "Pokemon Page": "Fearow_(Pok%C3%A9mon)",
         "Types": [
@@ -499,7 +521,8 @@
             "Sniper"
         ]
     },
-    "Ekans": {
+    {
+        "Name": "Ekans",
         "Pokedex Entry": "#0023",
         "Pokemon Page": "Ekans_(Pok%C3%A9mon)",
         "Types": [
@@ -521,7 +544,8 @@
             "Unnerve"
         ]
     },
-    "Arbok": {
+    {
+        "Name": "Arbok",
         "Pokedex Entry": "#0024",
         "Pokemon Page": "Arbok_(Pok%C3%A9mon)",
         "Types": [
@@ -543,7 +567,8 @@
             "Unnerve"
         ]
     },
-    "Pikachu": {
+    {
+        "Name": "Pikachu",
         "Pokedex Entry": "#0025",
         "Pokemon Page": "Pikachu_(Pok%C3%A9mon)",
         "Types": [
@@ -565,7 +590,8 @@
             "Lightning Rod"
         ]
     },
-    "Raichu": {
+    {
+        "Name": "Raichu",
         "Pokedex Entry": "#0026",
         "Pokemon Page": "Raichu_(Pok%C3%A9mon)",
         "Types": [
@@ -589,7 +615,8 @@
             "Lightning Rod"
         ]
     },
-    "Sandshrew": {
+    {
+        "Name": "Sandshrew",
         "Pokedex Entry": "#0027",
         "Pokemon Page": "Sandshrew_(Pok%C3%A9mon)",
         "Types": [
@@ -615,7 +642,8 @@
             "Slush Rush"
         ]
     },
-    "Sandslash": {
+    {
+        "Name": "Sandslash",
         "Pokedex Entry": "#0028",
         "Pokemon Page": "Sandslash_(Pok%C3%A9mon)",
         "Types": [
@@ -641,7 +669,8 @@
             "Slush Rush"
         ]
     },
-    "Nidoran♀": {
+    {
+        "Name": "Nidoran♀",
         "Pokedex Entry": "#0029",
         "Pokemon Page": "Nidoran%E2%99%80_(Pok%C3%A9mon)",
         "Types": [
@@ -663,7 +692,8 @@
             "Hustle"
         ]
     },
-    "Nidorina": {
+    {
+        "Name": "Nidorina",
         "Pokedex Entry": "#0030",
         "Pokemon Page": "Nidorina_(Pok%C3%A9mon)",
         "Types": [
@@ -685,7 +715,8 @@
             "Hustle"
         ]
     },
-    "Nidoqueen": {
+    {
+        "Name": "Nidoqueen",
         "Pokedex Entry": "#0031",
         "Pokemon Page": "Nidoqueen_(Pok%C3%A9mon)",
         "Types": [
@@ -707,7 +738,8 @@
             "Sheer Force"
         ]
     },
-    "Nidoran♂": {
+    {
+        "Name": "Nidoran♂",
         "Pokedex Entry": "#0032",
         "Pokemon Page": "Nidoran%E2%99%82_(Pok%C3%A9mon)",
         "Types": [
@@ -729,7 +761,8 @@
             "Hustle"
         ]
     },
-    "Nidorino": {
+    {
+        "Name": "Nidorino",
         "Pokedex Entry": "#0033",
         "Pokemon Page": "Nidorino_(Pok%C3%A9mon)",
         "Types": [
@@ -751,7 +784,8 @@
             "Hustle"
         ]
     },
-    "Nidoking": {
+    {
+        "Name": "Nidoking",
         "Pokedex Entry": "#0034",
         "Pokemon Page": "Nidoking_(Pok%C3%A9mon)",
         "Types": [
@@ -773,7 +807,8 @@
             "Sheer Force"
         ]
     },
-    "Clefairy": {
+    {
+        "Name": "Clefairy",
         "Pokedex Entry": "#0035",
         "Pokemon Page": "Clefairy_(Pok%C3%A9mon)",
         "Types": [
@@ -795,7 +830,8 @@
             "Friend Guard"
         ]
     },
-    "Clefable": {
+    {
+        "Name": "Clefable",
         "Pokedex Entry": "#0036",
         "Pokemon Page": "Clefable_(Pok%C3%A9mon)",
         "Types": [
@@ -817,7 +853,8 @@
             "Unaware"
         ]
     },
-    "Vulpix": {
+    {
+        "Name": "Vulpix",
         "Pokedex Entry": "#0037",
         "Pokemon Page": "Vulpix_(Pok%C3%A9mon)",
         "Types": [
@@ -843,7 +880,8 @@
             "Snow Warning"
         ]
     },
-    "Ninetales": {
+    {
+        "Name": "Ninetales",
         "Pokedex Entry": "#0038",
         "Pokemon Page": "Ninetales_(Pok%C3%A9mon)",
         "Types": [
@@ -869,7 +907,8 @@
             "Snow Warning"
         ]
     },
-    "Jigglypuff": {
+    {
+        "Name": "Jigglypuff",
         "Pokedex Entry": "#0039",
         "Pokemon Page": "Jigglypuff_(Pok%C3%A9mon)",
         "Types": [
@@ -891,7 +930,8 @@
             "Friend Guard"
         ]
     },
-    "Wigglytuff": {
+    {
+        "Name": "Wigglytuff",
         "Pokedex Entry": "#0040",
         "Pokemon Page": "Wigglytuff_(Pok%C3%A9mon)",
         "Types": [
@@ -913,7 +953,8 @@
             "Frisk"
         ]
     },
-    "Zubat": {
+    {
+        "Name": "Zubat",
         "Pokedex Entry": "#0041",
         "Pokemon Page": "Zubat_(Pok%C3%A9mon)",
         "Types": [
@@ -935,7 +976,8 @@
             "Infiltrator"
         ]
     },
-    "Golbat": {
+    {
+        "Name": "Golbat",
         "Pokedex Entry": "#0042",
         "Pokemon Page": "Golbat_(Pok%C3%A9mon)",
         "Types": [
@@ -957,7 +999,8 @@
             "Infiltrator"
         ]
     },
-    "Oddish": {
+    {
+        "Name": "Oddish",
         "Pokedex Entry": "#0043",
         "Pokemon Page": "Oddish_(Pok%C3%A9mon)",
         "Types": [
@@ -979,7 +1022,8 @@
             "Run Away"
         ]
     },
-    "Gloom": {
+    {
+        "Name": "Gloom",
         "Pokedex Entry": "#0044",
         "Pokemon Page": "Gloom_(Pok%C3%A9mon)",
         "Types": [
@@ -1001,7 +1045,8 @@
             "Stench"
         ]
     },
-    "Vileplume": {
+    {
+        "Name": "Vileplume",
         "Pokedex Entry": "#0045",
         "Pokemon Page": "Vileplume_(Pok%C3%A9mon)",
         "Types": [
@@ -1023,7 +1068,8 @@
             "Effect Spore"
         ]
     },
-    "Paras": {
+    {
+        "Name": "Paras",
         "Pokedex Entry": "#0046",
         "Pokemon Page": "Paras_(Pok%C3%A9mon)",
         "Types": [
@@ -1045,7 +1091,8 @@
             "Damp"
         ]
     },
-    "Parasect": {
+    {
+        "Name": "Parasect",
         "Pokedex Entry": "#0047",
         "Pokemon Page": "Parasect_(Pok%C3%A9mon)",
         "Types": [
@@ -1067,7 +1114,8 @@
             "Damp"
         ]
     },
-    "Venonat": {
+    {
+        "Name": "Venonat",
         "Pokedex Entry": "#0048",
         "Pokemon Page": "Venonat_(Pok%C3%A9mon)",
         "Types": [
@@ -1089,7 +1137,8 @@
             "Run Away"
         ]
     },
-    "Venomoth": {
+    {
+        "Name": "Venomoth",
         "Pokedex Entry": "#0049",
         "Pokemon Page": "Venomoth_(Pok%C3%A9mon)",
         "Types": [
@@ -1111,7 +1160,8 @@
             "Wonder Skin"
         ]
     },
-    "Diglett": {
+    {
+        "Name": "Diglett",
         "Pokedex Entry": "#0050",
         "Pokemon Page": "Diglett_(Pok%C3%A9mon)",
         "Types": [
@@ -1135,7 +1185,8 @@
             "Sand Force"
         ]
     },
-    "Dugtrio": {
+    {
+        "Name": "Dugtrio",
         "Pokedex Entry": "#0051",
         "Pokemon Page": "Dugtrio_(Pok%C3%A9mon)",
         "Types": [
@@ -1159,7 +1210,8 @@
             "Sand Force"
         ]
     },
-    "Meowth": {
+    {
+        "Name": "Meowth",
         "Pokedex Entry": "#0052",
         "Pokemon Page": "Meowth_(Pok%C3%A9mon)",
         "Types": [
@@ -1183,7 +1235,8 @@
             "Rattled"
         ]
     },
-    "Persian": {
+    {
+        "Name": "Persian",
         "Pokedex Entry": "#0053",
         "Pokemon Page": "Persian_(Pok%C3%A9mon)",
         "Types": [
@@ -1209,7 +1262,8 @@
             "Rattled"
         ]
     },
-    "Psyduck": {
+    {
+        "Name": "Psyduck",
         "Pokedex Entry": "#0054",
         "Pokemon Page": "Psyduck_(Pok%C3%A9mon)",
         "Types": [
@@ -1231,7 +1285,8 @@
             "Swift Swim"
         ]
     },
-    "Golduck": {
+    {
+        "Name": "Golduck",
         "Pokedex Entry": "#0055",
         "Pokemon Page": "Golduck_(Pok%C3%A9mon)",
         "Types": [
@@ -1253,7 +1308,8 @@
             "Swift Swim"
         ]
     },
-    "Mankey": {
+    {
+        "Name": "Mankey",
         "Pokedex Entry": "#0056",
         "Pokemon Page": "Mankey_(Pok%C3%A9mon)",
         "Types": [
@@ -1275,7 +1331,8 @@
             "Defiant"
         ]
     },
-    "Primeape": {
+    {
+        "Name": "Primeape",
         "Pokedex Entry": "#0057",
         "Pokemon Page": "Primeape_(Pok%C3%A9mon)",
         "Types": [
@@ -1297,7 +1354,8 @@
             "Defiant"
         ]
     },
-    "Growlithe": {
+    {
+        "Name": "Growlithe",
         "Pokedex Entry": "#0058",
         "Pokemon Page": "Growlithe_(Pok%C3%A9mon)",
         "Types": [
@@ -1321,7 +1379,8 @@
             "Rock Head"
         ]
     },
-    "Arcanine": {
+    {
+        "Name": "Arcanine",
         "Pokedex Entry": "#0059",
         "Pokemon Page": "Arcanine_(Pok%C3%A9mon)",
         "Types": [
@@ -1345,7 +1404,8 @@
             "Rock Head"
         ]
     },
-    "Poliwag": {
+    {
+        "Name": "Poliwag",
         "Pokedex Entry": "#0060",
         "Pokemon Page": "Poliwag_(Pok%C3%A9mon)",
         "Types": [
@@ -1367,7 +1427,8 @@
             "Swift Swim"
         ]
     },
-    "Poliwhirl": {
+    {
+        "Name": "Poliwhirl",
         "Pokedex Entry": "#0061",
         "Pokemon Page": "Poliwhirl_(Pok%C3%A9mon)",
         "Types": [
@@ -1389,7 +1450,8 @@
             "Swift Swim"
         ]
     },
-    "Poliwrath": {
+    {
+        "Name": "Poliwrath",
         "Pokedex Entry": "#0062",
         "Pokemon Page": "Poliwrath_(Pok%C3%A9mon)",
         "Types": [
@@ -1411,7 +1473,8 @@
             "Swift Swim"
         ]
     },
-    "Abra": {
+    {
+        "Name": "Abra",
         "Pokedex Entry": "#0063",
         "Pokemon Page": "Abra_(Pok%C3%A9mon)",
         "Types": [
@@ -1433,7 +1496,8 @@
             "Magic Guard"
         ]
     },
-    "Kadabra": {
+    {
+        "Name": "Kadabra",
         "Pokedex Entry": "#0064",
         "Pokemon Page": "Kadabra_(Pok%C3%A9mon)",
         "Types": [
@@ -1455,7 +1519,8 @@
             "Magic Guard"
         ]
     },
-    "Alakazam": {
+    {
+        "Name": "Alakazam",
         "Pokedex Entry": "#0065",
         "Pokemon Page": "Alakazam_(Pok%C3%A9mon)",
         "Types": [
@@ -1479,7 +1544,8 @@
             "Trace"
         ]
     },
-    "Machop": {
+    {
+        "Name": "Machop",
         "Pokedex Entry": "#0066",
         "Pokemon Page": "Machop_(Pok%C3%A9mon)",
         "Types": [
@@ -1501,7 +1567,8 @@
             "Steadfast"
         ]
     },
-    "Machoke": {
+    {
+        "Name": "Machoke",
         "Pokedex Entry": "#0067",
         "Pokemon Page": "Machoke_(Pok%C3%A9mon)",
         "Types": [
@@ -1523,7 +1590,8 @@
             "Steadfast"
         ]
     },
-    "Machamp": {
+    {
+        "Name": "Machamp",
         "Pokedex Entry": "#0068",
         "Pokemon Page": "Machamp_(Pok%C3%A9mon)",
         "Types": [
@@ -1545,7 +1613,8 @@
             "Steadfast"
         ]
     },
-    "Bellsprout": {
+    {
+        "Name": "Bellsprout",
         "Pokedex Entry": "#0069",
         "Pokemon Page": "Bellsprout_(Pok%C3%A9mon)",
         "Types": [
@@ -1567,7 +1636,8 @@
             "Gluttony"
         ]
     },
-    "Weepinbell": {
+    {
+        "Name": "Weepinbell",
         "Pokedex Entry": "#0070",
         "Pokemon Page": "Weepinbell_(Pok%C3%A9mon)",
         "Types": [
@@ -1589,7 +1659,8 @@
             "Gluttony"
         ]
     },
-    "Victreebel": {
+    {
+        "Name": "Victreebel",
         "Pokedex Entry": "#0071",
         "Pokemon Page": "Victreebel_(Pok%C3%A9mon)",
         "Types": [
@@ -1611,7 +1682,8 @@
             "Gluttony"
         ]
     },
-    "Tentacool": {
+    {
+        "Name": "Tentacool",
         "Pokedex Entry": "#0072",
         "Pokemon Page": "Tentacool_(Pok%C3%A9mon)",
         "Types": [
@@ -1633,7 +1705,8 @@
             "Rain Dish"
         ]
     },
-    "Tentacruel": {
+    {
+        "Name": "Tentacruel",
         "Pokedex Entry": "#0073",
         "Pokemon Page": "Tentacruel_(Pok%C3%A9mon)",
         "Types": [
@@ -1655,7 +1728,8 @@
             "Rain Dish"
         ]
     },
-    "Geodude": {
+    {
+        "Name": "Geodude",
         "Pokedex Entry": "#0074",
         "Pokemon Page": "Geodude_(Pok%C3%A9mon)",
         "Types": [
@@ -1681,7 +1755,8 @@
             "Galvanize"
         ]
     },
-    "Graveler": {
+    {
+        "Name": "Graveler",
         "Pokedex Entry": "#0075",
         "Pokemon Page": "Graveler_(Pok%C3%A9mon)",
         "Types": [
@@ -1707,7 +1782,8 @@
             "Galvanize"
         ]
     },
-    "Golem": {
+    {
+        "Name": "Golem",
         "Pokedex Entry": "#0076",
         "Pokemon Page": "Golem_(Pok%C3%A9mon)",
         "Types": [
@@ -1733,7 +1809,8 @@
             "Galvanize"
         ]
     },
-    "Ponyta": {
+    {
+        "Name": "Ponyta",
         "Pokedex Entry": "#0077",
         "Pokemon Page": "Ponyta_(Pok%C3%A9mon)",
         "Types": [
@@ -1759,7 +1836,8 @@
             "Anticipation"
         ]
     },
-    "Rapidash": {
+    {
+        "Name": "Rapidash",
         "Pokedex Entry": "#0078",
         "Pokemon Page": "Rapidash_(Pok%C3%A9mon)",
         "Types": [
@@ -1785,7 +1863,8 @@
             "Anticipation"
         ]
     },
-    "Slowpoke": {
+    {
+        "Name": "Slowpoke",
         "Pokedex Entry": "#0079",
         "Pokemon Page": "Slowpoke_(Pok%C3%A9mon)",
         "Types": [
@@ -1809,7 +1888,8 @@
             "Regenerator"
         ]
     },
-    "Slowbro": {
+    {
+        "Name": "Slowbro",
         "Pokedex Entry": "#0080",
         "Pokemon Page": "Slowbro_(Pok%C3%A9mon)",
         "Types": [
@@ -1835,7 +1915,8 @@
             "Shell Armor"
         ]
     },
-    "Magnemite": {
+    {
+        "Name": "Magnemite",
         "Pokedex Entry": "#0081",
         "Pokemon Page": "Magnemite_(Pok%C3%A9mon)",
         "Types": [
@@ -1857,7 +1938,8 @@
             "Analytic"
         ]
     },
-    "Magneton": {
+    {
+        "Name": "Magneton",
         "Pokedex Entry": "#0082",
         "Pokemon Page": "Magneton_(Pok%C3%A9mon)",
         "Types": [
@@ -1879,7 +1961,8 @@
             "Analytic"
         ]
     },
-    "Farfetch'd": {
+    {
+        "Name": "Farfetch'd",
         "Pokedex Entry": "#0083",
         "Pokemon Page": "Farfetch%27d_(Pok%C3%A9mon)",
         "Types": [
@@ -1905,7 +1988,8 @@
             "Scrappy"
         ]
     },
-    "Doduo": {
+    {
+        "Name": "Doduo",
         "Pokedex Entry": "#0084",
         "Pokemon Page": "Doduo_(Pok%C3%A9mon)",
         "Types": [
@@ -1927,7 +2011,8 @@
             "Tangled Feet"
         ]
     },
-    "Dodrio": {
+    {
+        "Name": "Dodrio",
         "Pokedex Entry": "#0085",
         "Pokemon Page": "Dodrio_(Pok%C3%A9mon)",
         "Types": [
@@ -1949,7 +2034,8 @@
             "Tangled Feet"
         ]
     },
-    "Seel": {
+    {
+        "Name": "Seel",
         "Pokedex Entry": "#0086",
         "Pokemon Page": "Seel_(Pok%C3%A9mon)",
         "Types": [
@@ -1971,7 +2057,8 @@
             "Ice Body"
         ]
     },
-    "Dewgong": {
+    {
+        "Name": "Dewgong",
         "Pokedex Entry": "#0087",
         "Pokemon Page": "Dewgong_(Pok%C3%A9mon)",
         "Types": [
@@ -1993,7 +2080,8 @@
             "Ice Body"
         ]
     },
-    "Grimer": {
+    {
+        "Name": "Grimer",
         "Pokedex Entry": "#0088",
         "Pokemon Page": "Grimer_(Pok%C3%A9mon)",
         "Types": [
@@ -2019,7 +2107,8 @@
             "Power of Alchemy"
         ]
     },
-    "Muk": {
+    {
+        "Name": "Muk",
         "Pokedex Entry": "#0089",
         "Pokemon Page": "Muk_(Pok%C3%A9mon)",
         "Types": [
@@ -2045,7 +2134,8 @@
             "Power of Alchemy"
         ]
     },
-    "Shellder": {
+    {
+        "Name": "Shellder",
         "Pokedex Entry": "#0090",
         "Pokemon Page": "Shellder_(Pok%C3%A9mon)",
         "Types": [
@@ -2067,7 +2157,8 @@
             "Overcoat"
         ]
     },
-    "Cloyster": {
+    {
+        "Name": "Cloyster",
         "Pokedex Entry": "#0091",
         "Pokemon Page": "Cloyster_(Pok%C3%A9mon)",
         "Types": [
@@ -2089,7 +2180,8 @@
             "Overcoat"
         ]
     },
-    "Gastly": {
+    {
+        "Name": "Gastly",
         "Pokedex Entry": "#0092",
         "Pokemon Page": "Gastly_(Pok%C3%A9mon)",
         "Types": [
@@ -2109,7 +2201,8 @@
             "Levitate"
         ]
     },
-    "Haunter": {
+    {
+        "Name": "Haunter",
         "Pokedex Entry": "#0093",
         "Pokemon Page": "Haunter_(Pok%C3%A9mon)",
         "Types": [
@@ -2129,7 +2222,8 @@
             "Levitate"
         ]
     },
-    "Gengar": {
+    {
+        "Name": "Gengar",
         "Pokedex Entry": "#0094",
         "Pokemon Page": "Gengar_(Pok%C3%A9mon)",
         "Types": [
@@ -2153,7 +2247,8 @@
             "Levitate"
         ]
     },
-    "Onix": {
+    {
+        "Name": "Onix",
         "Pokedex Entry": "#0095",
         "Pokemon Page": "Onix_(Pok%C3%A9mon)",
         "Types": [
@@ -2175,7 +2270,8 @@
             "Weak Armor"
         ]
     },
-    "Drowzee": {
+    {
+        "Name": "Drowzee",
         "Pokedex Entry": "#0096",
         "Pokemon Page": "Drowzee_(Pok%C3%A9mon)",
         "Types": [
@@ -2197,7 +2293,8 @@
             "Inner Focus"
         ]
     },
-    "Hypno": {
+    {
+        "Name": "Hypno",
         "Pokedex Entry": "#0097",
         "Pokemon Page": "Hypno_(Pok%C3%A9mon)",
         "Types": [
@@ -2219,7 +2316,8 @@
             "Inner Focus"
         ]
     },
-    "Krabby": {
+    {
+        "Name": "Krabby",
         "Pokedex Entry": "#0098",
         "Pokemon Page": "Krabby_(Pok%C3%A9mon)",
         "Types": [
@@ -2241,7 +2339,8 @@
             "Sheer Force"
         ]
     },
-    "Kingler": {
+    {
+        "Name": "Kingler",
         "Pokedex Entry": "#0099",
         "Pokemon Page": "Kingler_(Pok%C3%A9mon)",
         "Types": [
@@ -2263,7 +2362,8 @@
             "Sheer Force"
         ]
     },
-    "Voltorb": {
+    {
+        "Name": "Voltorb",
         "Pokedex Entry": "#0100",
         "Pokemon Page": "Voltorb_(Pok%C3%A9mon)",
         "Types": [
@@ -2285,7 +2385,8 @@
             "Aftermath"
         ]
     },
-    "Electrode": {
+    {
+        "Name": "Electrode",
         "Pokedex Entry": "#0101",
         "Pokemon Page": "Electrode_(Pok%C3%A9mon)",
         "Types": [
@@ -2307,7 +2408,8 @@
             "Aftermath"
         ]
     },
-    "Exeggcute": {
+    {
+        "Name": "Exeggcute",
         "Pokedex Entry": "#0102",
         "Pokemon Page": "Exeggcute_(Pok%C3%A9mon)",
         "Types": [
@@ -2329,7 +2431,8 @@
             "Harvest"
         ]
     },
-    "Exeggutor": {
+    {
+        "Name": "Exeggutor",
         "Pokedex Entry": "#0103",
         "Pokemon Page": "Exeggutor_(Pok%C3%A9mon)",
         "Types": [
@@ -2353,7 +2456,8 @@
             "Harvest"
         ]
     },
-    "Cubone": {
+    {
+        "Name": "Cubone",
         "Pokedex Entry": "#0104",
         "Pokemon Page": "Cubone_(Pok%C3%A9mon)",
         "Types": [
@@ -2375,7 +2479,8 @@
             "Battle Armor"
         ]
     },
-    "Marowak": {
+    {
+        "Name": "Marowak",
         "Pokedex Entry": "#0105",
         "Pokemon Page": "Marowak_(Pok%C3%A9mon)",
         "Types": [
@@ -2401,7 +2506,8 @@
             "Rock Head"
         ]
     },
-    "Hitmonlee": {
+    {
+        "Name": "Hitmonlee",
         "Pokedex Entry": "#0106",
         "Pokemon Page": "Hitmonlee_(Pok%C3%A9mon)",
         "Types": [
@@ -2423,7 +2529,8 @@
             "Unburden"
         ]
     },
-    "Hitmonchan": {
+    {
+        "Name": "Hitmonchan",
         "Pokedex Entry": "#0107",
         "Pokemon Page": "Hitmonchan_(Pok%C3%A9mon)",
         "Types": [
@@ -2445,7 +2552,8 @@
             "Inner Focus"
         ]
     },
-    "Lickitung": {
+    {
+        "Name": "Lickitung",
         "Pokedex Entry": "#0108",
         "Pokemon Page": "Lickitung_(Pok%C3%A9mon)",
         "Types": [
@@ -2467,7 +2575,8 @@
             "Cloud Nine"
         ]
     },
-    "Koffing": {
+    {
+        "Name": "Koffing",
         "Pokedex Entry": "#0109",
         "Pokemon Page": "Koffing_(Pok%C3%A9mon)",
         "Types": [
@@ -2489,7 +2598,8 @@
             "Stench"
         ]
     },
-    "Weezing": {
+    {
+        "Name": "Weezing",
         "Pokedex Entry": "#0110",
         "Pokemon Page": "Weezing_(Pok%C3%A9mon)",
         "Types": [
@@ -2513,7 +2623,8 @@
             "Misty Surge"
         ]
     },
-    "Rhyhorn": {
+    {
+        "Name": "Rhyhorn",
         "Pokedex Entry": "#0111",
         "Pokemon Page": "Rhyhorn_(Pok%C3%A9mon)",
         "Types": [
@@ -2535,7 +2646,8 @@
             "Reckless"
         ]
     },
-    "Rhydon": {
+    {
+        "Name": "Rhydon",
         "Pokedex Entry": "#0112",
         "Pokemon Page": "Rhydon_(Pok%C3%A9mon)",
         "Types": [
@@ -2557,7 +2669,8 @@
             "Reckless"
         ]
     },
-    "Chansey": {
+    {
+        "Name": "Chansey",
         "Pokedex Entry": "#0113",
         "Pokemon Page": "Chansey_(Pok%C3%A9mon)",
         "Types": [
@@ -2579,7 +2692,8 @@
             "Healer"
         ]
     },
-    "Tangela": {
+    {
+        "Name": "Tangela",
         "Pokedex Entry": "#0114",
         "Pokemon Page": "Tangela_(Pok%C3%A9mon)",
         "Types": [
@@ -2601,7 +2715,8 @@
             "Regenerator"
         ]
     },
-    "Kangaskhan": {
+    {
+        "Name": "Kangaskhan",
         "Pokedex Entry": "#0115",
         "Pokemon Page": "Kangaskhan_(Pok%C3%A9mon)",
         "Types": [
@@ -2625,7 +2740,8 @@
             "Parental Bond"
         ]
     },
-    "Horsea": {
+    {
+        "Name": "Horsea",
         "Pokedex Entry": "#0116",
         "Pokemon Page": "Horsea_(Pok%C3%A9mon)",
         "Types": [
@@ -2647,7 +2763,8 @@
             "Damp"
         ]
     },
-    "Seadra": {
+    {
+        "Name": "Seadra",
         "Pokedex Entry": "#0117",
         "Pokemon Page": "Seadra_(Pok%C3%A9mon)",
         "Types": [
@@ -2669,7 +2786,8 @@
             "Damp"
         ]
     },
-    "Goldeen": {
+    {
+        "Name": "Goldeen",
         "Pokedex Entry": "#0118",
         "Pokemon Page": "Goldeen_(Pok%C3%A9mon)",
         "Types": [
@@ -2691,7 +2809,8 @@
             "Lightning Rod"
         ]
     },
-    "Seaking": {
+    {
+        "Name": "Seaking",
         "Pokedex Entry": "#0119",
         "Pokemon Page": "Seaking_(Pok%C3%A9mon)",
         "Types": [
@@ -2713,7 +2832,8 @@
             "Lightning Rod"
         ]
     },
-    "Staryu": {
+    {
+        "Name": "Staryu",
         "Pokedex Entry": "#0120",
         "Pokemon Page": "Staryu_(Pok%C3%A9mon)",
         "Types": [
@@ -2735,7 +2855,8 @@
             "Analytic"
         ]
     },
-    "Starmie": {
+    {
+        "Name": "Starmie",
         "Pokedex Entry": "#0121",
         "Pokemon Page": "Starmie_(Pok%C3%A9mon)",
         "Types": [
@@ -2757,7 +2878,8 @@
             "Analytic"
         ]
     },
-    "Mr. Mime": {
+    {
+        "Name": "Mr. Mime",
         "Pokedex Entry": "#0122",
         "Pokemon Page": "Mr._Mime_(Pok%C3%A9mon)",
         "Types": [
@@ -2783,7 +2905,8 @@
             "Ice Body"
         ]
     },
-    "Scyther": {
+    {
+        "Name": "Scyther",
         "Pokedex Entry": "#0123",
         "Pokemon Page": "Scyther_(Pok%C3%A9mon)",
         "Types": [
@@ -2805,7 +2928,8 @@
             "Steadfast"
         ]
     },
-    "Jynx": {
+    {
+        "Name": "Jynx",
         "Pokedex Entry": "#0124",
         "Pokemon Page": "Jynx_(Pok%C3%A9mon)",
         "Types": [
@@ -2827,7 +2951,8 @@
             "Dry Skin"
         ]
     },
-    "Electabuzz": {
+    {
+        "Name": "Electabuzz",
         "Pokedex Entry": "#0125",
         "Pokemon Page": "Electabuzz_(Pok%C3%A9mon)",
         "Types": [
@@ -2849,7 +2974,8 @@
             "Vital Spirit"
         ]
     },
-    "Magmar": {
+    {
+        "Name": "Magmar",
         "Pokedex Entry": "#0126",
         "Pokemon Page": "Magmar_(Pok%C3%A9mon)",
         "Types": [
@@ -2871,7 +2997,8 @@
             "Vital Spirit"
         ]
     },
-    "Pinsir": {
+    {
+        "Name": "Pinsir",
         "Pokedex Entry": "#0127",
         "Pokemon Page": "Pinsir_(Pok%C3%A9mon)",
         "Types": [
@@ -2895,7 +3022,8 @@
             "Aerilate"
         ]
     },
-    "Tauros": {
+    {
+        "Name": "Tauros",
         "Pokedex Entry": "#0128",
         "Pokemon Page": "Tauros_(Pok%C3%A9mon)",
         "Types": [
@@ -2919,7 +3047,8 @@
             "Cud Chew"
         ]
     },
-    "Magikarp": {
+    {
+        "Name": "Magikarp",
         "Pokedex Entry": "#0129",
         "Pokemon Page": "Magikarp_(Pok%C3%A9mon)",
         "Types": [
@@ -2941,7 +3070,8 @@
             "Rattled"
         ]
     },
-    "Gyarados": {
+    {
+        "Name": "Gyarados",
         "Pokedex Entry": "#0130",
         "Pokemon Page": "Gyarados_(Pok%C3%A9mon)",
         "Types": [
@@ -2965,7 +3095,8 @@
             "Mold Breaker"
         ]
     },
-    "Lapras": {
+    {
+        "Name": "Lapras",
         "Pokedex Entry": "#0131",
         "Pokemon Page": "Lapras_(Pok%C3%A9mon)",
         "Types": [
@@ -2987,7 +3118,8 @@
             "Hydration"
         ]
     },
-    "Ditto": {
+    {
+        "Name": "Ditto",
         "Pokedex Entry": "#0132",
         "Pokemon Page": "Ditto_(Pok%C3%A9mon)",
         "Types": [
@@ -3009,7 +3141,8 @@
             "Imposter"
         ]
     },
-    "Eevee": {
+    {
+        "Name": "Eevee",
         "Pokedex Entry": "#0133",
         "Pokemon Page": "Eevee_(Pok%C3%A9mon)",
         "Types": [
@@ -3031,7 +3164,8 @@
             "Anticipation"
         ]
     },
-    "Vaporeon": {
+    {
+        "Name": "Vaporeon",
         "Pokedex Entry": "#0134",
         "Pokemon Page": "Vaporeon_(Pok%C3%A9mon)",
         "Types": [
@@ -3053,7 +3187,8 @@
             "Hydration"
         ]
     },
-    "Jolteon": {
+    {
+        "Name": "Jolteon",
         "Pokedex Entry": "#0135",
         "Pokemon Page": "Jolteon_(Pok%C3%A9mon)",
         "Types": [
@@ -3075,7 +3210,8 @@
             "Quick Feet"
         ]
     },
-    "Flareon": {
+    {
+        "Name": "Flareon",
         "Pokedex Entry": "#0136",
         "Pokemon Page": "Flareon_(Pok%C3%A9mon)",
         "Types": [
@@ -3097,7 +3233,8 @@
             "Guts"
         ]
     },
-    "Porygon": {
+    {
+        "Name": "Porygon",
         "Pokedex Entry": "#0137",
         "Pokemon Page": "Porygon_(Pok%C3%A9mon)",
         "Types": [
@@ -3119,7 +3256,8 @@
             "Analytic"
         ]
     },
-    "Omanyte": {
+    {
+        "Name": "Omanyte",
         "Pokedex Entry": "#0138",
         "Pokemon Page": "Omanyte_(Pok%C3%A9mon)",
         "Types": [
@@ -3141,7 +3279,8 @@
             "Weak Armor"
         ]
     },
-    "Omastar": {
+    {
+        "Name": "Omastar",
         "Pokedex Entry": "#0139",
         "Pokemon Page": "Omastar_(Pok%C3%A9mon)",
         "Types": [
@@ -3163,7 +3302,8 @@
             "Weak Armor"
         ]
     },
-    "Kabuto": {
+    {
+        "Name": "Kabuto",
         "Pokedex Entry": "#0140",
         "Pokemon Page": "Kabuto_(Pok%C3%A9mon)",
         "Types": [
@@ -3185,7 +3325,8 @@
             "Weak Armor"
         ]
     },
-    "Kabutops": {
+    {
+        "Name": "Kabutops",
         "Pokedex Entry": "#0141",
         "Pokemon Page": "Kabutops_(Pok%C3%A9mon)",
         "Types": [
@@ -3207,7 +3348,8 @@
             "Weak Armor"
         ]
     },
-    "Aerodactyl": {
+    {
+        "Name": "Aerodactyl",
         "Pokedex Entry": "#0142",
         "Pokemon Page": "Aerodactyl_(Pok%C3%A9mon)",
         "Types": [
@@ -3231,7 +3373,8 @@
             "Tough Claws"
         ]
     },
-    "Snorlax": {
+    {
+        "Name": "Snorlax",
         "Pokedex Entry": "#0143",
         "Pokemon Page": "Snorlax_(Pok%C3%A9mon)",
         "Types": [
@@ -3253,7 +3396,8 @@
             "Gluttony"
         ]
     },
-    "Articuno": {
+    {
+        "Name": "Articuno",
         "Pokedex Entry": "#0144",
         "Pokemon Page": "Articuno_(Pok%C3%A9mon)",
         "Types": [
@@ -3277,7 +3421,8 @@
             "Snow Cloak"
         ]
     },
-    "Zapdos": {
+    {
+        "Name": "Zapdos",
         "Pokedex Entry": "#0145",
         "Pokemon Page": "Zapdos_(Pok%C3%A9mon)",
         "Types": [
@@ -3303,7 +3448,8 @@
             "Lightning Rod"
         ]
     },
-    "Moltres": {
+    {
+        "Name": "Moltres",
         "Pokedex Entry": "#0146",
         "Pokemon Page": "Moltres_(Pok%C3%A9mon)",
         "Types": [
@@ -3327,7 +3473,8 @@
             "Flame Body"
         ]
     },
-    "Dratini": {
+    {
+        "Name": "Dratini",
         "Pokedex Entry": "#0147",
         "Pokemon Page": "Dratini_(Pok%C3%A9mon)",
         "Types": [
@@ -3349,7 +3496,8 @@
             "Marvel Scale"
         ]
     },
-    "Dragonair": {
+    {
+        "Name": "Dragonair",
         "Pokedex Entry": "#0148",
         "Pokemon Page": "Dragonair_(Pok%C3%A9mon)",
         "Types": [
@@ -3371,7 +3519,8 @@
             "Marvel Scale"
         ]
     },
-    "Dragonite": {
+    {
+        "Name": "Dragonite",
         "Pokedex Entry": "#0149",
         "Pokemon Page": "Dragonite_(Pok%C3%A9mon)",
         "Types": [
@@ -3393,7 +3542,8 @@
             "Multiscale"
         ]
     },
-    "Mewtwo": {
+    {
+        "Name": "Mewtwo",
         "Pokedex Entry": "#0150",
         "Pokemon Page": "Mewtwo_(Pok%C3%A9mon)",
         "Types": [
@@ -3419,7 +3569,8 @@
             "Insomnia"
         ]
     },
-    "Mew": {
+    {
+        "Name": "Mew",
         "Pokedex Entry": "#0151",
         "Pokemon Page": "Mew_(Pok%C3%A9mon)",
         "Types": [
@@ -3439,7 +3590,8 @@
             "Synchronize"
         ]
     },
-    "Chikorita": {
+    {
+        "Name": "Chikorita",
         "Pokedex Entry": "#0152",
         "Pokemon Page": "Chikorita_(Pok%C3%A9mon)",
         "Types": [
@@ -3461,7 +3613,8 @@
             "Leaf Guard"
         ]
     },
-    "Bayleef": {
+    {
+        "Name": "Bayleef",
         "Pokedex Entry": "#0153",
         "Pokemon Page": "Bayleef_(Pok%C3%A9mon)",
         "Types": [
@@ -3483,7 +3636,8 @@
             "Leaf Guard"
         ]
     },
-    "Meganium": {
+    {
+        "Name": "Meganium",
         "Pokedex Entry": "#0154",
         "Pokemon Page": "Meganium_(Pok%C3%A9mon)",
         "Types": [
@@ -3505,7 +3659,8 @@
             "Leaf Guard"
         ]
     },
-    "Cyndaquil": {
+    {
+        "Name": "Cyndaquil",
         "Pokedex Entry": "#0155",
         "Pokemon Page": "Cyndaquil_(Pok%C3%A9mon)",
         "Types": [
@@ -3527,7 +3682,8 @@
             "Flash Fire"
         ]
     },
-    "Quilava": {
+    {
+        "Name": "Quilava",
         "Pokedex Entry": "#0156",
         "Pokemon Page": "Quilava_(Pok%C3%A9mon)",
         "Types": [
@@ -3549,7 +3705,8 @@
             "Flash Fire"
         ]
     },
-    "Typhlosion": {
+    {
+        "Name": "Typhlosion",
         "Pokedex Entry": "#0157",
         "Pokemon Page": "Typhlosion_(Pok%C3%A9mon)",
         "Types": [
@@ -3573,7 +3730,8 @@
             "Frisk"
         ]
     },
-    "Totodile": {
+    {
+        "Name": "Totodile",
         "Pokedex Entry": "#0158",
         "Pokemon Page": "Totodile_(Pok%C3%A9mon)",
         "Types": [
@@ -3595,7 +3753,8 @@
             "Sheer Force"
         ]
     },
-    "Croconaw": {
+    {
+        "Name": "Croconaw",
         "Pokedex Entry": "#0159",
         "Pokemon Page": "Croconaw_(Pok%C3%A9mon)",
         "Types": [
@@ -3617,7 +3776,8 @@
             "Sheer Force"
         ]
     },
-    "Feraligatr": {
+    {
+        "Name": "Feraligatr",
         "Pokedex Entry": "#0160",
         "Pokemon Page": "Feraligatr_(Pok%C3%A9mon)",
         "Types": [
@@ -3639,7 +3799,8 @@
             "Sheer Force"
         ]
     },
-    "Sentret": {
+    {
+        "Name": "Sentret",
         "Pokedex Entry": "#0161",
         "Pokemon Page": "Sentret_(Pok%C3%A9mon)",
         "Types": [
@@ -3661,7 +3822,8 @@
             "Frisk"
         ]
     },
-    "Furret": {
+    {
+        "Name": "Furret",
         "Pokedex Entry": "#0162",
         "Pokemon Page": "Furret_(Pok%C3%A9mon)",
         "Types": [
@@ -3683,7 +3845,8 @@
             "Frisk"
         ]
     },
-    "Hoothoot": {
+    {
+        "Name": "Hoothoot",
         "Pokedex Entry": "#0163",
         "Pokemon Page": "Hoothoot_(Pok%C3%A9mon)",
         "Types": [
@@ -3705,7 +3868,8 @@
             "Tinted Lens"
         ]
     },
-    "Noctowl": {
+    {
+        "Name": "Noctowl",
         "Pokedex Entry": "#0164",
         "Pokemon Page": "Noctowl_(Pok%C3%A9mon)",
         "Types": [
@@ -3727,7 +3891,8 @@
             "Tinted Lens"
         ]
     },
-    "Ledyba": {
+    {
+        "Name": "Ledyba",
         "Pokedex Entry": "#0165",
         "Pokemon Page": "Ledyba_(Pok%C3%A9mon)",
         "Types": [
@@ -3749,7 +3914,8 @@
             "Rattled"
         ]
     },
-    "Ledian": {
+    {
+        "Name": "Ledian",
         "Pokedex Entry": "#0166",
         "Pokemon Page": "Ledian_(Pok%C3%A9mon)",
         "Types": [
@@ -3771,7 +3937,8 @@
             "Iron Fist"
         ]
     },
-    "Spinarak": {
+    {
+        "Name": "Spinarak",
         "Pokedex Entry": "#0167",
         "Pokemon Page": "Spinarak_(Pok%C3%A9mon)",
         "Types": [
@@ -3793,7 +3960,8 @@
             "Sniper"
         ]
     },
-    "Ariados": {
+    {
+        "Name": "Ariados",
         "Pokedex Entry": "#0168",
         "Pokemon Page": "Ariados_(Pok%C3%A9mon)",
         "Types": [
@@ -3815,7 +3983,8 @@
             "Sniper"
         ]
     },
-    "Crobat": {
+    {
+        "Name": "Crobat",
         "Pokedex Entry": "#0169",
         "Pokemon Page": "Crobat_(Pok%C3%A9mon)",
         "Types": [
@@ -3837,7 +4006,8 @@
             "Infiltrator"
         ]
     },
-    "Chinchou": {
+    {
+        "Name": "Chinchou",
         "Pokedex Entry": "#0170",
         "Pokemon Page": "Chinchou_(Pok%C3%A9mon)",
         "Types": [
@@ -3859,7 +4029,8 @@
             "Water Absorb"
         ]
     },
-    "Lanturn": {
+    {
+        "Name": "Lanturn",
         "Pokedex Entry": "#0171",
         "Pokemon Page": "Lanturn_(Pok%C3%A9mon)",
         "Types": [
@@ -3881,7 +4052,8 @@
             "Water Absorb"
         ]
     },
-    "Pichu": {
+    {
+        "Name": "Pichu",
         "Pokedex Entry": "#0172",
         "Pokemon Page": "Pichu_(Pok%C3%A9mon)",
         "Types": [
@@ -3903,7 +4075,8 @@
             "Lightning Rod"
         ]
     },
-    "Cleffa": {
+    {
+        "Name": "Cleffa",
         "Pokedex Entry": "#0173",
         "Pokemon Page": "Cleffa_(Pok%C3%A9mon)",
         "Types": [
@@ -3925,7 +4098,8 @@
             "Friend Guard"
         ]
     },
-    "Igglybuff": {
+    {
+        "Name": "Igglybuff",
         "Pokedex Entry": "#0174",
         "Pokemon Page": "Igglybuff_(Pok%C3%A9mon)",
         "Types": [
@@ -3947,7 +4121,8 @@
             "Friend Guard"
         ]
     },
-    "Togepi": {
+    {
+        "Name": "Togepi",
         "Pokedex Entry": "#0175",
         "Pokemon Page": "Togepi_(Pok%C3%A9mon)",
         "Types": [
@@ -3969,7 +4144,8 @@
             "Super Luck"
         ]
     },
-    "Togetic": {
+    {
+        "Name": "Togetic",
         "Pokedex Entry": "#0176",
         "Pokemon Page": "Togetic_(Pok%C3%A9mon)",
         "Types": [
@@ -3991,7 +4167,8 @@
             "Super Luck"
         ]
     },
-    "Natu": {
+    {
+        "Name": "Natu",
         "Pokedex Entry": "#0177",
         "Pokemon Page": "Natu_(Pok%C3%A9mon)",
         "Types": [
@@ -4013,7 +4190,8 @@
             "Magic Bounce"
         ]
     },
-    "Xatu": {
+    {
+        "Name": "Xatu",
         "Pokedex Entry": "#0178",
         "Pokemon Page": "Xatu_(Pok%C3%A9mon)",
         "Types": [
@@ -4035,7 +4213,8 @@
             "Magic Bounce"
         ]
     },
-    "Mareep": {
+    {
+        "Name": "Mareep",
         "Pokedex Entry": "#0179",
         "Pokemon Page": "Mareep_(Pok%C3%A9mon)",
         "Types": [
@@ -4057,7 +4236,8 @@
             "Plus"
         ]
     },
-    "Flaaffy": {
+    {
+        "Name": "Flaaffy",
         "Pokedex Entry": "#0180",
         "Pokemon Page": "Flaaffy_(Pok%C3%A9mon)",
         "Types": [
@@ -4079,7 +4259,8 @@
             "Plus"
         ]
     },
-    "Ampharos": {
+    {
+        "Name": "Ampharos",
         "Pokedex Entry": "#0181",
         "Pokemon Page": "Ampharos_(Pok%C3%A9mon)",
         "Types": [
@@ -4103,7 +4284,8 @@
             "Mold Breaker"
         ]
     },
-    "Bellossom": {
+    {
+        "Name": "Bellossom",
         "Pokedex Entry": "#0182",
         "Pokemon Page": "Bellossom_(Pok%C3%A9mon)",
         "Types": [
@@ -4125,7 +4307,8 @@
             "Healer"
         ]
     },
-    "Marill": {
+    {
+        "Name": "Marill",
         "Pokedex Entry": "#0183",
         "Pokemon Page": "Marill_(Pok%C3%A9mon)",
         "Types": [
@@ -4147,7 +4330,8 @@
             "Sap Sipper"
         ]
     },
-    "Azumarill": {
+    {
+        "Name": "Azumarill",
         "Pokedex Entry": "#0184",
         "Pokemon Page": "Azumarill_(Pok%C3%A9mon)",
         "Types": [
@@ -4169,7 +4353,8 @@
             "Sap Sipper"
         ]
     },
-    "Sudowoodo": {
+    {
+        "Name": "Sudowoodo",
         "Pokedex Entry": "#0185",
         "Pokemon Page": "Sudowoodo_(Pok%C3%A9mon)",
         "Types": [
@@ -4191,7 +4376,8 @@
             "Rattled"
         ]
     },
-    "Politoed": {
+    {
+        "Name": "Politoed",
         "Pokedex Entry": "#0186",
         "Pokemon Page": "Politoed_(Pok%C3%A9mon)",
         "Types": [
@@ -4213,7 +4399,8 @@
             "Drizzle"
         ]
     },
-    "Hoppip": {
+    {
+        "Name": "Hoppip",
         "Pokedex Entry": "#0187",
         "Pokemon Page": "Hoppip_(Pok%C3%A9mon)",
         "Types": [
@@ -4235,7 +4422,8 @@
             "Infiltrator"
         ]
     },
-    "Skiploom": {
+    {
+        "Name": "Skiploom",
         "Pokedex Entry": "#0188",
         "Pokemon Page": "Skiploom_(Pok%C3%A9mon)",
         "Types": [
@@ -4257,7 +4445,8 @@
             "Infiltrator"
         ]
     },
-    "Jumpluff": {
+    {
+        "Name": "Jumpluff",
         "Pokedex Entry": "#0189",
         "Pokemon Page": "Jumpluff_(Pok%C3%A9mon)",
         "Types": [
@@ -4279,7 +4468,8 @@
             "Infiltrator"
         ]
     },
-    "Aipom": {
+    {
+        "Name": "Aipom",
         "Pokedex Entry": "#0190",
         "Pokemon Page": "Aipom_(Pok%C3%A9mon)",
         "Types": [
@@ -4301,7 +4491,8 @@
             "Skill Link"
         ]
     },
-    "Sunkern": {
+    {
+        "Name": "Sunkern",
         "Pokedex Entry": "#0191",
         "Pokemon Page": "Sunkern_(Pok%C3%A9mon)",
         "Types": [
@@ -4323,7 +4514,8 @@
             "Early Bird"
         ]
     },
-    "Sunflora": {
+    {
+        "Name": "Sunflora",
         "Pokedex Entry": "#0192",
         "Pokemon Page": "Sunflora_(Pok%C3%A9mon)",
         "Types": [
@@ -4345,7 +4537,8 @@
             "Early Bird"
         ]
     },
-    "Yanma": {
+    {
+        "Name": "Yanma",
         "Pokedex Entry": "#0193",
         "Pokemon Page": "Yanma_(Pok%C3%A9mon)",
         "Types": [
@@ -4367,7 +4560,8 @@
             "Frisk"
         ]
     },
-    "Wooper": {
+    {
+        "Name": "Wooper",
         "Pokedex Entry": "#0194",
         "Pokemon Page": "Wooper_(Pok%C3%A9mon)",
         "Types": [
@@ -4391,7 +4585,8 @@
             "Unaware"
         ]
     },
-    "Quagsire": {
+    {
+        "Name": "Quagsire",
         "Pokedex Entry": "#0195",
         "Pokemon Page": "Quagsire_(Pok%C3%A9mon)",
         "Types": [
@@ -4413,7 +4608,8 @@
             "Unaware"
         ]
     },
-    "Espeon": {
+    {
+        "Name": "Espeon",
         "Pokedex Entry": "#0196",
         "Pokemon Page": "Espeon_(Pok%C3%A9mon)",
         "Types": [
@@ -4435,7 +4631,8 @@
             "Magic Bounce"
         ]
     },
-    "Umbreon": {
+    {
+        "Name": "Umbreon",
         "Pokedex Entry": "#0197",
         "Pokemon Page": "Umbreon_(Pok%C3%A9mon)",
         "Types": [
@@ -4457,7 +4654,8 @@
             "Inner Focus"
         ]
     },
-    "Murkrow": {
+    {
+        "Name": "Murkrow",
         "Pokedex Entry": "#0198",
         "Pokemon Page": "Murkrow_(Pok%C3%A9mon)",
         "Types": [
@@ -4479,7 +4677,8 @@
             "Prankster"
         ]
     },
-    "Slowking": {
+    {
+        "Name": "Slowking",
         "Pokedex Entry": "#0199",
         "Pokemon Page": "Slowking_(Pok%C3%A9mon)",
         "Types": [
@@ -4503,7 +4702,8 @@
             "Regenerator"
         ]
     },
-    "Misdreavus": {
+    {
+        "Name": "Misdreavus",
         "Pokedex Entry": "#0200",
         "Pokemon Page": "Misdreavus_(Pok%C3%A9mon)",
         "Types": [
@@ -4523,7 +4723,8 @@
             "Levitate"
         ]
     },
-    "Unown": {
+    {
+        "Name": "Unown",
         "Pokedex Entry": "#0201",
         "Pokemon Page": "Unown_(Pok%C3%A9mon)",
         "Types": [
@@ -4543,7 +4744,8 @@
             "Levitate"
         ]
     },
-    "Wobbuffet": {
+    {
+        "Name": "Wobbuffet",
         "Pokedex Entry": "#0202",
         "Pokemon Page": "Wobbuffet_(Pok%C3%A9mon)",
         "Types": [
@@ -4565,7 +4767,8 @@
             "Telepathy"
         ]
     },
-    "Girafarig": {
+    {
+        "Name": "Girafarig",
         "Pokedex Entry": "#0203",
         "Pokemon Page": "Girafarig_(Pok%C3%A9mon)",
         "Types": [
@@ -4587,7 +4790,8 @@
             "Sap Sipper"
         ]
     },
-    "Pineco": {
+    {
+        "Name": "Pineco",
         "Pokedex Entry": "#0204",
         "Pokemon Page": "Pineco_(Pok%C3%A9mon)",
         "Types": [
@@ -4609,7 +4813,8 @@
             "Overcoat"
         ]
     },
-    "Forretress": {
+    {
+        "Name": "Forretress",
         "Pokedex Entry": "#0205",
         "Pokemon Page": "Forretress_(Pok%C3%A9mon)",
         "Types": [
@@ -4631,7 +4836,8 @@
             "Overcoat"
         ]
     },
-    "Dunsparce": {
+    {
+        "Name": "Dunsparce",
         "Pokedex Entry": "#0206",
         "Pokemon Page": "Dunsparce_(Pok%C3%A9mon)",
         "Types": [
@@ -4653,7 +4859,8 @@
             "Rattled"
         ]
     },
-    "Gligar": {
+    {
+        "Name": "Gligar",
         "Pokedex Entry": "#0207",
         "Pokemon Page": "Gligar_(Pok%C3%A9mon)",
         "Types": [
@@ -4675,7 +4882,8 @@
             "Immunity"
         ]
     },
-    "Steelix": {
+    {
+        "Name": "Steelix",
         "Pokedex Entry": "#0208",
         "Pokemon Page": "Steelix_(Pok%C3%A9mon)",
         "Types": [
@@ -4699,7 +4907,8 @@
             "Sand Force"
         ]
     },
-    "Snubbull": {
+    {
+        "Name": "Snubbull",
         "Pokedex Entry": "#0209",
         "Pokemon Page": "Snubbull_(Pok%C3%A9mon)",
         "Types": [
@@ -4721,7 +4930,8 @@
             "Rattled"
         ]
     },
-    "Granbull": {
+    {
+        "Name": "Granbull",
         "Pokedex Entry": "#0210",
         "Pokemon Page": "Granbull_(Pok%C3%A9mon)",
         "Types": [
@@ -4743,7 +4953,8 @@
             "Rattled"
         ]
     },
-    "Qwilfish": {
+    {
+        "Name": "Qwilfish",
         "Pokedex Entry": "#0211",
         "Pokemon Page": "Qwilfish_(Pok%C3%A9mon)",
         "Types": [
@@ -4765,7 +4976,8 @@
             "Intimidate"
         ]
     },
-    "Scizor": {
+    {
+        "Name": "Scizor",
         "Pokedex Entry": "#0212",
         "Pokemon Page": "Scizor_(Pok%C3%A9mon)",
         "Types": [
@@ -4789,7 +5001,8 @@
             "Technician"
         ]
     },
-    "Shuckle": {
+    {
+        "Name": "Shuckle",
         "Pokedex Entry": "#0213",
         "Pokemon Page": "Shuckle_(Pok%C3%A9mon)",
         "Types": [
@@ -4811,7 +5024,8 @@
             "Contrary"
         ]
     },
-    "Heracross": {
+    {
+        "Name": "Heracross",
         "Pokedex Entry": "#0214",
         "Pokemon Page": "Heracross_(Pok%C3%A9mon)",
         "Types": [
@@ -4835,7 +5049,8 @@
             "Skill Link"
         ]
     },
-    "Sneasel": {
+    {
+        "Name": "Sneasel",
         "Pokedex Entry": "#0215",
         "Pokemon Page": "Sneasel_(Pok%C3%A9mon)",
         "Types": [
@@ -4857,7 +5072,8 @@
             "Pickpocket"
         ]
     },
-    "Teddiursa": {
+    {
+        "Name": "Teddiursa",
         "Pokedex Entry": "#0216",
         "Pokemon Page": "Teddiursa_(Pok%C3%A9mon)",
         "Types": [
@@ -4879,7 +5095,8 @@
             "Honey Gather"
         ]
     },
-    "Ursaring": {
+    {
+        "Name": "Ursaring",
         "Pokedex Entry": "#0217",
         "Pokemon Page": "Ursaring_(Pok%C3%A9mon)",
         "Types": [
@@ -4901,7 +5118,8 @@
             "Unnerve"
         ]
     },
-    "Slugma": {
+    {
+        "Name": "Slugma",
         "Pokedex Entry": "#0218",
         "Pokemon Page": "Slugma_(Pok%C3%A9mon)",
         "Types": [
@@ -4923,7 +5141,8 @@
             "Weak Armor"
         ]
     },
-    "Magcargo": {
+    {
+        "Name": "Magcargo",
         "Pokedex Entry": "#0219",
         "Pokemon Page": "Magcargo_(Pok%C3%A9mon)",
         "Types": [
@@ -4945,7 +5164,8 @@
             "Weak Armor"
         ]
     },
-    "Swinub": {
+    {
+        "Name": "Swinub",
         "Pokedex Entry": "#0220",
         "Pokemon Page": "Swinub_(Pok%C3%A9mon)",
         "Types": [
@@ -4967,7 +5187,8 @@
             "Thick Fat"
         ]
     },
-    "Piloswine": {
+    {
+        "Name": "Piloswine",
         "Pokedex Entry": "#0221",
         "Pokemon Page": "Piloswine_(Pok%C3%A9mon)",
         "Types": [
@@ -4989,7 +5210,8 @@
             "Thick Fat"
         ]
     },
-    "Corsola": {
+    {
+        "Name": "Corsola",
         "Pokedex Entry": "#0222",
         "Pokemon Page": "Corsola_(Pok%C3%A9mon)",
         "Types": [
@@ -5015,7 +5237,8 @@
             "Cursed Body"
         ]
     },
-    "Remoraid": {
+    {
+        "Name": "Remoraid",
         "Pokedex Entry": "#0223",
         "Pokemon Page": "Remoraid_(Pok%C3%A9mon)",
         "Types": [
@@ -5037,7 +5260,8 @@
             "Moody"
         ]
     },
-    "Octillery": {
+    {
+        "Name": "Octillery",
         "Pokedex Entry": "#0224",
         "Pokemon Page": "Octillery_(Pok%C3%A9mon)",
         "Types": [
@@ -5059,7 +5283,8 @@
             "Moody"
         ]
     },
-    "Delibird": {
+    {
+        "Name": "Delibird",
         "Pokedex Entry": "#0225",
         "Pokemon Page": "Delibird_(Pok%C3%A9mon)",
         "Types": [
@@ -5081,7 +5306,8 @@
             "Insomnia"
         ]
     },
-    "Mantine": {
+    {
+        "Name": "Mantine",
         "Pokedex Entry": "#0226",
         "Pokemon Page": "Mantine_(Pok%C3%A9mon)",
         "Types": [
@@ -5103,7 +5329,8 @@
             "Water Veil"
         ]
     },
-    "Skarmory": {
+    {
+        "Name": "Skarmory",
         "Pokedex Entry": "#0227",
         "Pokemon Page": "Skarmory_(Pok%C3%A9mon)",
         "Types": [
@@ -5125,7 +5352,8 @@
             "Weak Armor"
         ]
     },
-    "Houndour": {
+    {
+        "Name": "Houndour",
         "Pokedex Entry": "#0228",
         "Pokemon Page": "Houndour_(Pok%C3%A9mon)",
         "Types": [
@@ -5147,7 +5375,8 @@
             "Unnerve"
         ]
     },
-    "Houndoom": {
+    {
+        "Name": "Houndoom",
         "Pokedex Entry": "#0229",
         "Pokemon Page": "Houndoom_(Pok%C3%A9mon)",
         "Types": [
@@ -5171,7 +5400,8 @@
             "Solar Power"
         ]
     },
-    "Kingdra": {
+    {
+        "Name": "Kingdra",
         "Pokedex Entry": "#0230",
         "Pokemon Page": "Kingdra_(Pok%C3%A9mon)",
         "Types": [
@@ -5193,7 +5423,8 @@
             "Damp"
         ]
     },
-    "Phanpy": {
+    {
+        "Name": "Phanpy",
         "Pokedex Entry": "#0231",
         "Pokemon Page": "Phanpy_(Pok%C3%A9mon)",
         "Types": [
@@ -5215,7 +5446,8 @@
             "Sand Veil"
         ]
     },
-    "Donphan": {
+    {
+        "Name": "Donphan",
         "Pokedex Entry": "#0232",
         "Pokemon Page": "Donphan_(Pok%C3%A9mon)",
         "Types": [
@@ -5237,7 +5469,8 @@
             "Sand Veil"
         ]
     },
-    "Porygon2": {
+    {
+        "Name": "Porygon2",
         "Pokedex Entry": "#0233",
         "Pokemon Page": "Porygon2_(Pok%C3%A9mon)",
         "Types": [
@@ -5259,7 +5492,8 @@
             "Analytic"
         ]
     },
-    "Stantler": {
+    {
+        "Name": "Stantler",
         "Pokedex Entry": "#0234",
         "Pokemon Page": "Stantler_(Pok%C3%A9mon)",
         "Types": [
@@ -5281,7 +5515,8 @@
             "Sap Sipper"
         ]
     },
-    "Smeargle": {
+    {
+        "Name": "Smeargle",
         "Pokedex Entry": "#0235",
         "Pokemon Page": "Smeargle_(Pok%C3%A9mon)",
         "Types": [
@@ -5303,7 +5538,8 @@
             "Moody"
         ]
     },
-    "Tyrogue": {
+    {
+        "Name": "Tyrogue",
         "Pokedex Entry": "#0236",
         "Pokemon Page": "Tyrogue_(Pok%C3%A9mon)",
         "Types": [
@@ -5325,7 +5561,8 @@
             "Vital Spirit"
         ]
     },
-    "Hitmontop": {
+    {
+        "Name": "Hitmontop",
         "Pokedex Entry": "#0237",
         "Pokemon Page": "Hitmontop_(Pok%C3%A9mon)",
         "Types": [
@@ -5347,7 +5584,8 @@
             "Steadfast"
         ]
     },
-    "Smoochum": {
+    {
+        "Name": "Smoochum",
         "Pokedex Entry": "#0238",
         "Pokemon Page": "Smoochum_(Pok%C3%A9mon)",
         "Types": [
@@ -5369,7 +5607,8 @@
             "Hydration"
         ]
     },
-    "Elekid": {
+    {
+        "Name": "Elekid",
         "Pokedex Entry": "#0239",
         "Pokemon Page": "Elekid_(Pok%C3%A9mon)",
         "Types": [
@@ -5391,7 +5630,8 @@
             "Vital Spirit"
         ]
     },
-    "Magby": {
+    {
+        "Name": "Magby",
         "Pokedex Entry": "#0240",
         "Pokemon Page": "Magby_(Pok%C3%A9mon)",
         "Types": [
@@ -5413,7 +5653,8 @@
             "Vital Spirit"
         ]
     },
-    "Miltank": {
+    {
+        "Name": "Miltank",
         "Pokedex Entry": "#0241",
         "Pokemon Page": "Miltank_(Pok%C3%A9mon)",
         "Types": [
@@ -5435,7 +5676,8 @@
             "Sap Sipper"
         ]
     },
-    "Blissey": {
+    {
+        "Name": "Blissey",
         "Pokedex Entry": "#0242",
         "Pokemon Page": "Blissey_(Pok%C3%A9mon)",
         "Types": [
@@ -5457,7 +5699,8 @@
             "Healer"
         ]
     },
-    "Raikou": {
+    {
+        "Name": "Raikou",
         "Pokedex Entry": "#0243",
         "Pokemon Page": "Raikou_(Pok%C3%A9mon)",
         "Types": [
@@ -5481,7 +5724,8 @@
             "Volt Absorb"
         ]
     },
-    "Entei": {
+    {
+        "Name": "Entei",
         "Pokedex Entry": "#0244",
         "Pokemon Page": "Entei_(Pok%C3%A9mon)",
         "Types": [
@@ -5505,7 +5749,8 @@
             "Flash Fire"
         ]
     },
-    "Suicune": {
+    {
+        "Name": "Suicune",
         "Pokedex Entry": "#0245",
         "Pokemon Page": "Suicune_(Pok%C3%A9mon)",
         "Types": [
@@ -5529,7 +5774,8 @@
             "Water Absorb"
         ]
     },
-    "Larvitar": {
+    {
+        "Name": "Larvitar",
         "Pokedex Entry": "#0246",
         "Pokemon Page": "Larvitar_(Pok%C3%A9mon)",
         "Types": [
@@ -5551,7 +5797,8 @@
             "Sand Veil"
         ]
     },
-    "Pupitar": {
+    {
+        "Name": "Pupitar",
         "Pokedex Entry": "#0247",
         "Pokemon Page": "Pupitar_(Pok%C3%A9mon)",
         "Types": [
@@ -5571,7 +5818,8 @@
             "Shed Skin"
         ]
     },
-    "Tyranitar": {
+    {
+        "Name": "Tyranitar",
         "Pokedex Entry": "#0248",
         "Pokemon Page": "Tyranitar_(Pok%C3%A9mon)",
         "Types": [
@@ -5595,7 +5843,8 @@
             "Sand Stream"
         ]
     },
-    "Lugia": {
+    {
+        "Name": "Lugia",
         "Pokedex Entry": "#0249",
         "Pokemon Page": "Lugia_(Pok%C3%A9mon)",
         "Types": [
@@ -5617,7 +5866,8 @@
             "Multiscale"
         ]
     },
-    "Ho-Oh": {
+    {
+        "Name": "Ho-Oh",
         "Pokedex Entry": "#0250",
         "Pokemon Page": "Ho-Oh_(Pok%C3%A9mon)",
         "Types": [
@@ -5639,7 +5889,8 @@
             "Regenerator"
         ]
     },
-    "Celebi": {
+    {
+        "Name": "Celebi",
         "Pokedex Entry": "#0251",
         "Pokemon Page": "Celebi_(Pok%C3%A9mon)",
         "Types": [
@@ -5659,4 +5910,4 @@
             "Natural Cure"
         ]
     }
-}
+]
