@@ -9,7 +9,7 @@ from utils import api_url, fetchText
 
 
 def scrape_episodes(file):
-    num = 274
+    num = 276
     with open(file,"w") as json_file:
         final_document={}
         for episode in get_list_episodes(api_url,"List_of_animated_series_episodes"):
@@ -18,9 +18,9 @@ def scrape_episodes(file):
                 html = fetchText(api_url+episode)
 
                 episode_info = get_table(BeautifulSoup(html,"html.parser"))
-                episode_info["Characters"] = get_characters(html,episode)
-                episode_info["Plot"] = get_plot_from_episode(html,episode)
-                episode_info["Major events"] = get_major_events(html, episode)
+                episode_info["Characters"] = get_characters(html)
+                episode_info["Plot"] = get_plot_from_episode(html)
+                episode_info["Major events"] = get_major_events(html)
 
                 final_document[episode]=episode_info
             except Exception as error:
@@ -46,7 +46,7 @@ def scrape_characters(file):
                 html = fetchText(api_url+character_code)
 
                 character_info = get_character_table_info(html,character_code)
-                character_info["Character Code"] = character_code
+                #character_info["Character Code"] = character_code
                 character_info["Name"] = character
                 character_info["Role"] = role
                 character_info["First Appearance"]=first_appearance

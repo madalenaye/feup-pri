@@ -25,6 +25,7 @@ def extract_age(string):
 def dataset_processing_characters(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
+    df = df.rename_axis("Character Code")
     # Extract 'Age' from the string or list of strings
     #df["Age"]= df["Age"].apply(extract_age)
     # Merge 'Animated debut' and 'Debut' columns since they mean the same thing
@@ -40,6 +41,7 @@ def dataset_processing_characters(path_to_file):
 def dataset_processing_series(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
+    df = df.rename_axis("Episode Code")
     # Extract 'Japan' and 'United States' dates from the nested dictionaries
     df['First broadcast Japan'] = df['First broadcast'].apply(lambda x: x.get('Japan') if isinstance(x, dict) else None)
     df['First broadcast United States'] = df['First broadcast'].apply(lambda x: x.get('United States') if isinstance(x, dict) else None)
@@ -74,11 +76,12 @@ def dataset_processing_series(path_to_file):
 def dataset_processing_pokemon(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
-    df = df.reset_index(names="Name")
+    df = df.rename_axis("Name")
     split = pd.DataFrame(df['Stats'].to_list(), columns = ['Image', 'Abilities'])
-    df = pd.concat([df, split], axis=1)
-    df = df.rename_axis(None)
-    print(df.head())
+    df["Image"] = df["Stats"].apply(lambda x: x[0])
+    df["Abilities"] = df["Stats"].apply(lambda x: x[1])
+    #df = pd.concat([df, split], axis=1)
+    return df
 
 #def main():
 #    pokemon_processing("documents/pokemons.json")
