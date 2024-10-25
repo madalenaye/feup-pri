@@ -9,11 +9,10 @@ from utils import api_url, fetchText
 
 
 def scrape_episodes(file):
-    num = 276
+    num = 1085
     with open(file,"w") as json_file:
         final_document={}
         for episode in get_list_episodes(api_url,"List_of_animated_series_episodes"):
-            print(episode)
             try:
                 html = fetchText(api_url+episode)
 
