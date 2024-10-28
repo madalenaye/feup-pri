@@ -67,7 +67,7 @@ def scrape_characters(file):
         return final_document
     
 def scrape_pokemon(file):
-    num = 251
+    num = 809
     with open(file,"w") as json_file:
         final_document={}
         for pokedex_entry, pokemon, pokemon_page, pokemon_types in get_list_pokemon(api_url, 'List_of_Pok%C3%A9mon_by_National_Pok%C3%A9dex_number'):

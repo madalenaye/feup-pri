@@ -29,7 +29,7 @@ print(args)
 if args.scrape_characters:
     scrape.scrape_characters(args.character_file)
 if args.scrape_pokemon:
-    scrape.scrape_characters(args.pokemon_file)
+    scrape.scrape_pokemon(args.pokemon_file)
 if args.scrape_episodes:
     scrape.scrape_episodes(args.episode_file)
 
