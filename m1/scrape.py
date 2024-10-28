@@ -52,7 +52,7 @@ def scrape_characters(file):
                 character_info["Character"]=get_character_character(html,character_code)
                 character_info["History"]=get_character_history(html,character_code)
                 final_document[character_code]=character_info
-                if character_code == "Captain_(EP274)":
+                if character_code == "Caster":
                     break
             except Exception as error:
                 print("Error in character: "+character)
