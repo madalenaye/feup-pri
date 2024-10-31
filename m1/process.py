@@ -34,7 +34,7 @@ def dataset_processing_characters(path_to_file):
     # Drop unnecessary columns
     df.drop(columns=["Game counterpart","Manga counterpart(s)","Manga series","Games","Generation","Counterpart(s)"],inplace=True)
     # Fill NaN values with 'Unknown
-    df.fillna(value="Unknown",inplace=True) 
+    #df.fillna(value="Unknown",inplace=True) 
     return df
 # Processes the dataset obtained from the series json file
 # Arg path_to_file: string path to the json file
@@ -67,6 +67,7 @@ def dataset_processing_series(path_to_file):
     for key in df["Credits"][0].keys():
         df[key] = df["Credits"].apply(lambda x: x.get(key) if isinstance(x, dict) else None)
 
+    df = df.drop(["First broadcast", "Characters", "English themes", "Japanese themes", "Credits"], axis=1)
     df["Plot Word Count"] = df["Plot"].apply(lambda x: len(x.split(" ")))
 
     # Fill NaN values with 'Unknown'
@@ -81,6 +82,8 @@ def dataset_processing_pokemon(path_to_file):
     df["Image"] = df["Stats"].apply(lambda x: x[0])
     df["Abilities"] = df["Stats"].apply(lambda x: x[1])
     #df = pd.concat([df, split], axis=1)
+    df = df.drop(["Stats"], axis=1)
+
     return df
 
 #def main():
