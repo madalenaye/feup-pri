@@ -30,7 +30,7 @@
     "add-field": [
         {
             "name": "Name",
-            "type": "text",
+            "type": "string",
             "indexed": true
         },
         {

@@ -41,7 +41,7 @@ def dataset_processing_characters(path_to_file):
 def dataset_processing_series(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
-    df = df.rename_axis("Episode Code")
+    df = df.rename_axis("id")
     # Extract 'Japan' and 'United States' dates from the nested dictionaries
     df['First broadcast Japan'] = df['First broadcast'].apply(lambda x: x.get('Japan') if isinstance(x, dict) else None)
     df['First broadcast United States'] = df['First broadcast'].apply(lambda x: x.get('United States') if isinstance(x, dict) else None)
@@ -72,6 +72,7 @@ def dataset_processing_series(path_to_file):
 
     # Fill NaN values with 'Unknown'
     #df.fillna(value="Unknown",inplace=True)
+    df.columns = map(str.lower, df.columns)
     return df
 
 def dataset_processing_pokemon(path_to_file):
