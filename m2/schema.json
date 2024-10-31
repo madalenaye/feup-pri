@@ -1,0 +1,31 @@
+{
+    "add-field": [
+        {
+            "name": "Name",
+            "type": "solr.TextField",
+            "indexed": true
+        },
+        {
+            "name": "Subtitle",
+            "type": "solr.TextField",
+            "indexed": true
+        },
+        {
+            "name": "Plot",
+            "type": "solr.TextField",
+            "indexed": true
+        },
+        {
+            "name": "Major events",
+            "type": "solr.TextField",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "students",
+            "type": "numStudents",
+            "indexed": true,
+            "multiValued": false
+        }
+    ]
+}
