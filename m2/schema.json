@@ -1,31 +1,58 @@
 {
+    "add-field-type": [
+        {
+            "name":"text",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            }
+        },
+        {
+            "name": "int",
+            "class": "solr.IntPointField"
+        }
+    ],
     "add-field": [
         {
             "name": "Name",
-            "type": "solr.TextField",
+            "type": "text",
             "indexed": true
         },
         {
             "name": "Subtitle",
-            "type": "solr.TextField",
+            "type": "text",
             "indexed": true
         },
         {
             "name": "Plot",
-            "type": "solr.TextField",
+            "type": "text",
             "indexed": true
         },
         {
             "name": "Major events",
-            "type": "solr.TextField",
+            "type": "text",
             "indexed": true,
             "multiValued": true
         },
         {
-            "name": "students",
-            "type": "numStudents",
-            "indexed": true,
-            "multiValued": false
+            "name": "Broadcast Delay",
+            "type": "int",
+            "indexed": false
         }
     ]
 }
