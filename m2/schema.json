@@ -29,30 +29,35 @@
     ],
     "add-field": [
         {
-            "name": "Name",
+            "name": "name",
             "type": "string",
             "indexed": true
         },
         {
-            "name": "Subtitle",
+            "name": "subtitle",
             "type": "text",
             "indexed": true
         },
         {
-            "name": "Plot",
+            "name": "plot",
             "type": "text",
             "indexed": true
         },
         {
-            "name": "Major events",
+            "name": "major events",
             "type": "text",
             "indexed": true,
             "multiValued": true
         },
         {
-            "name": "Broadcast Delay",
+            "name": "broadcast delay",
             "type": "int",
             "indexed": false
+        },
+        {
+            "name": "code",
+            "type": "string",
+            "indexed": true
         }
     ]
 }
