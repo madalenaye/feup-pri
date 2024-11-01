@@ -2,7 +2,7 @@
 
 cd ~/solr-9.7.0/bin
 
-./solr stop
+./solr stop --all
 ./solr start &
 
 sleep 5
@@ -15,5 +15,5 @@ cd ~/feup-pri/m2
 curl -X POST -H 'Content-type:application/json' --data-binary @./schema.json http://localhost:8983/solr/pokemon/schema
 
 curl -X POST -H 'Content-type:application/json' \
-    --data-binary @data/episodes_final.json \
+    --data-binary @new_episodes.json \
     http://localhost:8983/solr/pokemon/update?commit=true

@@ -58,6 +58,40 @@
             "name": "code",
             "type": "string",
             "indexed": true
+        },
+        {
+            "name": "Gender",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "Debut",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "Character",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "History",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name": "English voice actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "Japanese voice actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
         }
     ]
 }
