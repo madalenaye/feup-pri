@@ -24,6 +24,14 @@ def merge_humans(episodes, characters):
     for episode_data in episodes:
         episode_data["human characters"] = list(map(lambda x: merge_single_human(x, characters), episode_data["human characters"]))
 
+##def find_pokemon(code,pokemons):
+  #  for pokemon in pokemons:
+   #     if pokemon["Pokemon Code"] == code:
+   #         return pokemon
+    #return None    
+#def merge_pokemons(episodes,pokemon):
+ #   for episode_data in episodes:
+  #      episode_data["pokemon characters"] = list(map(lambda x: merge_single_pokemon(x, pokemon), episode_data["pokemon characters"]))
 with open("data/episodes_final.json", "r") as episode_file, open("data/characters_final.json") as character_file:
     episodes = json.load(episode_file)
     characters = json.load(character_file)
