@@ -25,7 +25,17 @@
         {
             "name": "int",
             "class": "solr.IntPointField"
+        },
+        {
+            "name":"float",
+            "class": "solr.FloatPointField"
+        },
+        {
+            "name":"date",
+            "class":"solr.DatePointField"
         }
+
+
     ],
     "add-field": [
         {
@@ -92,6 +102,107 @@
             "type": "string",
             "indexed": true,
             "multiValued": true
+        },
+        {
+            "name": "first broadcast japan",
+            "type": "date",
+            "indexed" :true
+        },
+        {
+            "name" : "first broadcast united states",
+            "type": "date",
+            "indexed": true
+        },
+        {
+            "name" : "Name",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "Pokedex Entry",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name": "Pokemon Page",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "Types",
+            "type": "string",
+            "indexed": false,
+            "multiValued": true
+        },
+        {
+            "name": "Blurb",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name":"Biology",
+            "type":"text",
+            "indexed":true
+        },
+        {
+            "name": "Image",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" :"Abilities",
+            "type": "string",
+            "indexed":true,
+            "multiValued": true
+        },
+        {
+            "name" : "english theme opening",
+            "type": "string",
+            "indexed": true
+
+        },
+        {
+            "name" : "english theme ending",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "japanese theme opening",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "japanese theme ending",
+            "type": "string",
+            "indexed": true
+
+        },
+        {
+            "name" : "animation",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "screenplay",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "storyboard",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "assistant director",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "animation directors",
+            "type": "string",
+            "indexed": true
         }
+
+
     ]
 }

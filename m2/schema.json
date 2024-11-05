@@ -33,15 +33,8 @@
         {
             "name":"date",
             "class":"solr.DatePointField"
-        },
-        {
-            "name":"string",
-            "class":"solr.StrField"
-        },
-        {
-            "name":"boolean",
-            "class":"solr.BoolField"
         }
+        
 
 
     ],
