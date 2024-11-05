@@ -25,7 +25,25 @@
         {
             "name": "int",
             "class": "solr.IntPointField"
+        },
+        {
+            "name":"float",
+            "class": "solr.FloatPointField"
+        },
+        {
+            "name":"date",
+            "class":"solr.DatePointField"
+        },
+        {
+            "name":"string",
+            "class":"solr.StrField"
+        },
+        {
+            "name":"boolean",
+            "class":"solr.BoolField"
         }
+
+
     ],
     "add-field": [
         {
@@ -92,6 +110,57 @@
             "type": "string",
             "indexed": true,
             "multiValued": true
+        },
+        {
+            "name": "first broadcast japan",
+            "type": "date",
+            "indexed" :true
+        },
+        {
+            "name" : "first broadcast united states",
+            "type": "date",
+            "indexed": true
+        },
+        {
+            "name" : "Name",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "Pokedex Entry",
+            "type": "string"
+        },
+        {
+            "name": "Pokemon Page",
+            "type": "string"
+        },
+        {
+            "name" : "Types",
+            "type": "string",
+            "multiValued": true
+        },
+        {
+            "name": "Blurb",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name":"Biology",
+            "type":"text",
+            "indexed":true
+        },
+        {
+            "name": "Image",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" :"Abilities",
+            "type": "string",
+            "multiValued": true
         }
+        
+
+
     ]
 }
