@@ -1,0 +1,97 @@
+{
+    "add-field-type": [
+        {
+            "name":"text",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            }
+        },
+        {
+            "name": "int",
+            "class": "solr.IntPointField"
+        }
+    ],
+    "add-field": [
+        {
+            "name": "name",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "subtitle",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "plot",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "major events",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "broadcast delay",
+            "type": "int",
+            "indexed": false
+        },
+        {
+            "name": "code",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "Gender",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "Debut",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "Character",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "History",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name": "English voice actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "Japanese voice actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        }
+    ]
+}
