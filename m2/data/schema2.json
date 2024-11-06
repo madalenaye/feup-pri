@@ -1,0 +1,233 @@
+{
+    "add-field-type": [
+        {
+            "name":"text",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class": "solr.BeiderMorseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class": "solr.BeiderMorseFilterFactory"}
+                ]
+            }
+        },
+        {
+            "name": "int",
+            "class": "solr.IntPointField"
+        },
+        {
+            "name":"float",
+            "class": "solr.FloatPointField"
+        },
+        {
+            "name":"date",
+            "class":"solr.DatePointField"
+        },
+        {
+            "name":"auto-complete",
+            "class":"solr.StrField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.NGramTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class": "solr.BeiderMorseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.NGramTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class": "solr.BeiderMorseFilterFactory"}
+                ]
+            }
+        }
+
+    ],
+    "add-field": [
+        {
+            "name": "name",
+            "type": "auto-complete",
+            "indexed": true
+        },
+        {
+            "name": "subtitle",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "plot",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "major events",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "broadcast delay",
+            "type": "int",
+            "indexed": false
+        },
+        {
+            "name": "code",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "Gender",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "Debut",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "Character",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "History",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name": "English voice actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "Japanese voice actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "first broadcast japan",
+            "type": "date",
+            "indexed" :true
+        },
+        {
+            "name" : "first broadcast united states",
+            "type": "date",
+            "indexed": true
+        },
+        {
+            "name" : "Name",
+            "type": "auto-complete",
+            "indexed": true
+        },
+        {
+            "name": "Pokedex Entry",
+            "type": "auto-complete",
+            "indexed": false
+        },
+        {
+            "name": "Pokemon Page",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "Types",
+            "type": "auto-complete",
+            "indexed": false,
+            "multiValued": true
+        },
+        {
+            "name": "Blurb",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name":"Biology",
+            "type":"text",
+            "indexed":true
+        },
+        {
+            "name": "Image",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" :"Abilities",
+            "type": "auto-complete",
+            "indexed":true,
+            "multiValued": true
+        },
+        {
+            "name" : "english theme opening",
+            "type": "string",
+            "indexed": true
+
+        },
+        {
+            "name" : "english theme ending",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "japanese theme opening",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "japanese theme ending",
+            "type": "string",
+            "indexed": true
+
+        },
+        {
+            "name" : "animation",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "screenplay",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "storyboard",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "assistant director",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name" : "animation directors",
+            "type": "string",
+            "indexed": true
+        }
+
+
+    ]
+}
