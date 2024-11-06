@@ -65,7 +65,7 @@
     "add-field": [
         {
             "name": "name",
-            "type": "string",
+            "type": "auto-complete",
             "indexed": true
         },
         {
