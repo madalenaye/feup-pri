@@ -8,9 +8,12 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
+
+                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.PorterStemFilterFactory"},
+                    {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
-                    {"class":"solr.LowerCaseFilterFactory"},
-                    {"class": "solr.BeiderMorseFilterFactory"}
+                    {"class":"solr.LowerCaseFilterFactory"}
                 ]
             },
             "queryAnalyzer":{
@@ -18,9 +21,11 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
+                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class": "solr.BeiderMorseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
-                    {"class":"solr.LowerCaseFilterFactory"},
-                    {"class": "solr.BeiderMorseFilterFactory"}
+                    {"class":"solr.LowerCaseFilterFactory"}
                 ]
             }
         },
