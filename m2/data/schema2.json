@@ -38,7 +38,7 @@
         },
         {
             "name":"auto-complete",
-            "class":"solr.StrField",
+            "class":"solr.TextField",
             "indexAnalyzer":{
                 "tokenizer":{
                     "class":"solr.NGramTokenizerFactory"
@@ -51,7 +51,7 @@
             },
             "queryAnalyzer":{
                 "tokenizer":{
-                    "class":"solr.NGramTokenizerFactory"
+                    "class":"solr.NGramTokenizerFactory" 
                 },
                 "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
@@ -65,7 +65,7 @@
     "add-field": [
         {
             "name": "name",
-            "type": "auto-complete",
+            "type": "string",
             "indexed": true
         },
         {
