@@ -113,7 +113,7 @@
         },
         {
             "name": "Character",
-            "type": "string",
+            "type": "text",
             "indexed": true
         },
         {
@@ -230,6 +230,11 @@
         {
             "name" : "animation directors",
             "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "index",
+            "type": "int",
             "indexed": true
         }
 
