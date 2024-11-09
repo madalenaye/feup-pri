@@ -84,7 +84,7 @@
         },
         {
             "name": "Character",
-            "type": "string",
+            "type": "text",
             "indexed": true
         },
         {
