@@ -1,0 +1,4 @@
+{
+    "query": "{!parent which=\"index:[* TO 20]\" score=total}Biology:aggression",
+    "fields": "id, score"
+}
