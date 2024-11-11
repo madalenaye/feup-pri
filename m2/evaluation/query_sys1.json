@@ -1,0 +1,5 @@
+{
+    "query": "plot:(steal AND pokemon)",
+    "filter": "index:[* TO 20]",
+    "fields": "id, score"
+}
