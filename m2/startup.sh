@@ -19,6 +19,6 @@ curl -X POST -H 'Content-type:application/json' --data-binary @./data/schema2.js
 sleep 2
 
 # Post the documents
-curl -X POST -H 'Content-type:application/json' --data-binary @./data/docs/new_episodes.json http://localhost:8983/solr/episodes/update?commit=true
+docker exec -it pokemon_the_series bin/post -c episodes /data/docs/new_episodes.json
 
 echo "Schema and documents have been posted."
