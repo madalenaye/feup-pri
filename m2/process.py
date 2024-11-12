@@ -14,17 +14,16 @@ def convert_to_iso(episodes):
 def add_index(episodes):
     counter = 1
     for episode in episodes:
-        temp = episode["id"]
-        episode["ep_code"] = temp;
-        episode["id"] = counter
-        counter += 1
+        episode["index"] = counter;
+        episode["season"] = episode["id"][:2];
+        counter += 1;
     
     return episodes
 
 with open('data/docs/new_episodes.json') as file:
     episodes = json.load(file)
 
-episodes = add_index(episodes) #convert_to_iso(add_index(episodes))
+episodes = add_index(convert_to_iso(add_index(episodes))) 
 
 with open('data/docs/new_episodes.json', 'w') as file:
     json.dump(episodes, file, indent=4)
