@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Startup with Docker
-docker run -p 8983:8983 --name pokemon_the_series -v ${PWD}:/data -d solr:9 solr-precreate episodes
+docker run -p 8983:8983 --name pokemon_the_series -v ${PWD}/data:/data -d solr:9 solr-precreate episodes
 
 # Wait for Solr to start
 echo "Waiting for Solr to start..."
@@ -19,6 +19,6 @@ curl -X POST -H 'Content-type:application/json' --data-binary @./data/schema2.js
 sleep 2
 
 # Post the documents
-docker exec -it pokemon_the_series bin/post -c episodes /data/docs/new_episodes.json
+docker exec -it pokemon_the_series bin/solr post -f -c episodes /data/docs/new_episodes.json
 
 echo "Schema and documents have been posted."
