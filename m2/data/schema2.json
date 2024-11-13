@@ -89,8 +89,34 @@
                     {"class": "solr.BeiderMorseFilterFactory"}
                 ]
             }
+        },
+        {
+            "name": "season",
+            "class": "solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.EdgeNGramTokenizerFactory",
+                    "minGramSize": 1,
+                    "maxGramSize": 2
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory"},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.EdgeNGramTokenizerFactory",
+                    "minGramSize": 1,
+                    "maxGramSize": 2
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory"},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            }
         }
-
+                
     ],
     "add-field": [
         {
@@ -261,6 +287,11 @@
             "name": "index",
             "type": "int",
             "indexed": true
+        },
+        {
+            "name":"season",
+            "type":"season",
+            "indexed":true
         }
 
 

@@ -5,7 +5,7 @@ cd ~/solr-9.7.0/bin
 ./solr stop --all
 ./solr start &
 
-sleep 5
+sleep 10
 
 ./solr delete -c episodes
 ./solr create -c episodes
