@@ -1,8 +1,8 @@
-./query_solr.py --query query_sys1.json --uri http://localhost:8983/solr --collection episodes | \
-./solr2trec.py > results_sys1_trec.txt
+./query_solr.py --query steal/query_simple.json --uri http://localhost:8983/solr --collection episodes | \
+./solr2trec.py > steal/results_simple_trec.txt
 
-cat qrels.txt | ./qrels2trec.py > qrels_trec.txt
+cat steal/qrels.txt | ./qrels2trec.py > steal/qrels_trec.txt
 
-trec_eval qrels_trec.txt results_sys1_trec.txt
+trec_eval steal/qrels_trec.txt steal/results_simple_trec.txt
 
-cat results_sys1_trec.txt | ./plot_pr.py --qrels qrels_trec.txt --output prec_rec_sys1.png
+cat steal/results_simple_trec.txt | ./plot_pr.py --qrels steal/qrels_trec.txt --output steal/prec_rec_sys1.png

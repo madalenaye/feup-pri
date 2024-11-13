@@ -12,7 +12,7 @@ def qrels_to_trec(qrels: list) -> None:
     """
     for line in qrels:
         doc_id = line.strip()
-        print(f"0 0 {doc_id} 1")
+        print(f"0 0 {doc_id}")
 
 
 if __name__ == "__main__":

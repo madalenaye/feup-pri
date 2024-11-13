@@ -1,0 +1,9 @@
+{
+  "query": "plot:(steal AND pokemon) major_events:(steal AND pokemon) name:(steal AND pokemon)",
+  "filter": "-_nest_path_:*",
+  "fields": "id, score",
+  "limit": 30,
+  "params": {
+    "q.op": "OR"
+  }
+}
