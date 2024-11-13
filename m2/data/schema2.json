@@ -11,7 +11,6 @@
 
                     {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"}
                 ]
@@ -22,7 +21,33 @@
                 },
                 "filters":[
                     {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
-                    {"class": "solr.BeiderMorseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"},
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            }
+        },
+        {
+            "name":"simplerText",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+
+                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.PorterStemFilterFactory"},
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
                     {"class":"solr.PorterStemFilterFactory"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"}
@@ -113,7 +138,7 @@
         },
         {
             "name": "Character",
-            "type": "text",
+            "type": "simplerText",
             "indexed": true
         },
         {
@@ -166,12 +191,12 @@
         },
         {
             "name": "Blurb",
-            "type": "text",
+            "type": "simplerText",
             "indexed": true
         },
         {
             "name":"Biology",
-            "type":"text",
+            "type":"simplerText",
             "indexed":true
         },
         {
