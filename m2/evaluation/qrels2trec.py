@@ -11,8 +11,9 @@ def qrels_to_trec(qrels: list) -> None:
     - qrels: A list of qrel lines (document IDs) from standard input.
     """
     for line in qrels:
-        doc_id = line.strip()
-        print(f"0 0 {doc_id}")
+        doc_id = line.strip().split()
+        if (doc_id[1] == "1"):
+            print(f"0 0 {doc_id[0]} 1")
 
 
 if __name__ == "__main__":

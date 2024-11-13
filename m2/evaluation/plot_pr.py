@@ -50,6 +50,7 @@ def main(qrels_file: str, output_file: str):
 
         # Recall: relevant docs so far / total relevant docs in qrels
         recall.append(relevant_count / len(y_true))
+        print(f"precision {precision[-1]} at recall {recall[-1]}")
 
     # Compute Mean Average Precision (MAP) as the mean of precision values for relevant documents
     map_score = np.sum(relevant_ranks) / len(y_true) if relevant_ranks else 0
