@@ -10,9 +10,10 @@
                 "filters":[
 
                     {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
-                    {"class":"solr.PorterStemFilterFactory"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
-                    {"class":"solr.LowerCaseFilterFactory"}
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
                 ]
             },
             "queryAnalyzer":{
@@ -21,9 +22,10 @@
                 },
                 "filters":[
                     {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
-                    {"class":"solr.PorterStemFilterFactory"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
-                    {"class":"solr.LowerCaseFilterFactory"}
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
                 ]
             }
         },
