@@ -1,0 +1,14 @@
+{
+    "query": "catch strong pokemon",
+    "filter": "-_nest_path_:*",
+    "fields": "id, score",
+    "limit": 30,
+    "params": {
+      "defType": "edismax",
+      "q.op": "AND",
+      "qf": "name^10 major_events^30 plot^3",
+      "pf": "plot^15 major_events^15",
+      "ps": "6"
+    }
+  }
+  
