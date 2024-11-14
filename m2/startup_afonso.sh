@@ -12,7 +12,7 @@ sleep 10
 
 cd ~/feup-pri/m2
 
-curl -X POST -H 'Content-type:application/json' --data-binary @data/schema2.json http://localhost:8983/solr/episodes/schema
+curl -X POST -H 'Content-type:application/json' --data-binary @data/schema.json http://localhost:8983/solr/episodes/schema
 
 curl -X POST -H 'Content-type:application/json' \
     --data-binary @data/docs/new_episodes.json \
