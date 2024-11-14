@@ -1,0 +1,10 @@
+{
+    "query": "plot:((joins OR leaves) AND (ash OR group)) major_events:((joins OR leaves) AND (ash OR group)) name:((joins OR leaves) AND (ash OR group))",
+    "filter": "-_nest_path_:*",
+    "fields": "id, score",
+    "limit": 30,
+    "params": {
+      "q.op": "OR"
+    }
+  }
+  
