@@ -1,0 +1,12 @@
+{
+    "query": "pikachu \"quick attack\"",
+    "filter": "-_nest_path_:*",
+    "fields": "id, score",
+    "limit": 30,
+    "params": {
+      "defType": "edismax",
+      "q.op": "AND",
+      "qf": "name major_events plot"
+    }
+  }
+  
