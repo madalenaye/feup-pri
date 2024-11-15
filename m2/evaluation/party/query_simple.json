@@ -1,5 +1,5 @@
 {
-    "query": "(leaves OR joins) (ash OR group)",
+    "query": "(leave OR join) group",
     "filter": "-_nest_path_:*",
     "fields": "id, score",
     "limit": 30,
