@@ -78,7 +78,9 @@
                 "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
-                    {"class": "solr.BeiderMorseFilterFactory"}
+                    {"class": "solr.BeiderMorseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"},
+                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"}
                 ]
             },
             "queryAnalyzer":{
@@ -88,7 +90,9 @@
                 "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
-                    {"class": "solr.BeiderMorseFilterFactory"}
+                    {"class": "solr.BeiderMorseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"},
+                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"}
                 ]
             }
         },
@@ -137,7 +141,7 @@
             "indexed": true
         },
         {
-            "name": "major events",
+            "name": "major_events",
             "type": "text",
             "indexed": true,
             "multiValued": true

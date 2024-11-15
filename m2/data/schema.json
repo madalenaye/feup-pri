@@ -54,7 +54,7 @@
             "indexed": true
         },
         {
-            "name": "major events",
+            "name": "major_events",
             "type": "text",
             "indexed": true,
             "multiValued": true

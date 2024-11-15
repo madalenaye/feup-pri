@@ -1,5 +1,5 @@
 {
-    "query": "steal pokemon",
+    "query": "pikachu \"quick attack\"",
     "filter": "-_nest_path_:*",
     "fields": "id, score",
     "limit": 30,

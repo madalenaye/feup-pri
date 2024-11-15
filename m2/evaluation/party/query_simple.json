@@ -1,0 +1,12 @@
+{
+    "query": "(leave OR join) group",
+    "filter": "-_nest_path_:*",
+    "fields": "id, score",
+    "limit": 30,
+    "params": {
+      "defType": "edismax",
+      "qf": "plot major_events name",
+      "q.op": "AND"
+    }
+  }
+  
