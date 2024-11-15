@@ -29,45 +29,7 @@
                 ]
             }
         },
-        {
-            "name":"simplerText",
-            "class":"solr.TextField",
-            "indexAnalyzer":{
-                "tokenizer":{
-                    "class":"solr.StandardTokenizerFactory"
-                },
-                "filters":[
-
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
-                    {"class":"solr.PorterStemFilterFactory"},
-                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
-                    {"class":"solr.LowerCaseFilterFactory"}
-                ]
-            },
-            "queryAnalyzer":{
-                "tokenizer":{
-                    "class":"solr.StandardTokenizerFactory"
-                },
-                "filters":[
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
-                    {"class":"solr.PorterStemFilterFactory"},
-                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
-                    {"class":"solr.LowerCaseFilterFactory"}
-                ]
-            }
-        },
-        {
-            "name": "int",
-            "class": "solr.IntPointField"
-        },
-        {
-            "name":"float",
-            "class": "solr.FloatPointField"
-        },
-        {
-            "name":"date",
-            "class":"solr.DatePointField"
-        },
+        
         {
             "name":"auto-complete",
             "class":"solr.TextField",
@@ -150,7 +112,7 @@
         },
         {
             "name": "broadcast delay",
-            "type": "int",
+            "type": "pint",
             "indexed": false
         },
         {
@@ -172,7 +134,7 @@
         },
         {
             "name": "Character",
-            "type": "simplerText",
+            "type": "text",
             "indexed": true
         },
         {
@@ -194,12 +156,12 @@
         },
         {
             "name": "first broadcast japan",
-            "type": "date",
+            "type": "pdate",
             "indexed" :true
         },
         {
             "name" : "first broadcast united states",
-            "type": "date",
+            "type": "pdate",
             "indexed": true
         },
         {
@@ -225,12 +187,12 @@
         },
         {
             "name": "Blurb",
-            "type": "simplerText",
+            "type": "text",
             "indexed": true
         },
         {
             "name":"Biology",
-            "type":"simplerText",
+            "type":"text",
             "indexed":true
         },
         {
@@ -293,7 +255,7 @@
         },
         {
             "name": "index",
-            "type": "int",
+            "type": "pint",
             "indexed": true
         },
         {
