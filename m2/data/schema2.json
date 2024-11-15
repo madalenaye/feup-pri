@@ -73,26 +73,28 @@
             "class":"solr.TextField",
             "indexAnalyzer":{
                 "tokenizer":{
-                    "class":"solr.NGramTokenizerFactory"
+                    "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"}
+                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
                 ]
             },
             "queryAnalyzer":{
                 "tokenizer":{
-                    "class":"solr.NGramTokenizerFactory" 
+                    "class":"solr.StandardTokenizerFactory" 
                 },
                 "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"}
+                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
                 ]
             }
         },
