@@ -6,9 +6,9 @@
     "params": {
       "defType": "edismax",
       "q.op": "AND",
-      "qf": "name^10 major_events^7 plot^2",
-      "pf": "plot^15",
+      "qf": "name^10 major_events^30 plot^3",
+      "pf": "plot^15 major_events^15",
       "ps": "6"
     }
-  }
+}
   
