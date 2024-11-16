@@ -3,12 +3,12 @@ import pandas as pd
 
 def convert_to_iso(episodes):
     for episode in episodes:
-        print(pd.to_datetime(episode["first broadcast japan"], unit='ms').isoformat())
-        if(episode["first broadcast japan"]):
-            episode["first broadcast japan"] = pd.to_datetime(episode["first broadcast japan"], unit='ms').isoformat()
+        print(pd.to_datetime(episode["first_broadcast_japan"], unit='ms').isoformat())
+        if(episode["first_broadcast_japan"]):
+            episode["first_broadcast_japan"] = pd.to_datetime(episode["first_broadcast_japan"], unit='ms').isoformat()
 
-        if(episode["first broadcast united states"]):
-            episode["first broadcast united states"] = pd.to_datetime(episode["first broadcast united states"], unit='ms').isoformat()
+        if(episode["first_broadcast_united_states"]):
+            episode["first_broadcast_united_states"] = pd.to_datetime(episode["first_broadcast_united_states"], unit='ms').isoformat()
     return episodes
 
 def process_episodes(episodes):

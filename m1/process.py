@@ -1,6 +1,10 @@
 import re
 import pandas as pd
 
+def join_and_lower_case(string): 
+    lst = string.split(" ")
+    lst = list(map(str.lower, lst))
+    return "_".join(lst)
 
 def extract_age(string):
     print(type(string))
@@ -25,7 +29,7 @@ def extract_age(string):
 def dataset_processing_characters(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
-    df = df.rename_axis("Character Code")
+    df = df.rename_axis("character_code")
     # Extract 'Age' from the string or list of strings
     #df["Age"]= df["Age"].apply(extract_age)
     # Merge 'Animated debut' and 'Debut' columns since they mean the same thing
@@ -35,6 +39,7 @@ def dataset_processing_characters(path_to_file):
     df.drop(columns=["Game counterpart","Manga counterpart(s)","Manga series","Games","Generation","Counterpart(s)"],inplace=True)
     # Fill NaN values with 'Unknown
     #df.fillna(value="Unknown",inplace=True) 
+    df.columns = map(join_and_lower_case, df.columns)
     return df
 # Processes the dataset obtained from the series json file
 # Arg path_to_file: string path to the json file
@@ -72,19 +77,19 @@ def dataset_processing_series(path_to_file):
 
     # Fill NaN values with 'Unknown'
     #df.fillna(value="Unknown",inplace=True)
-    df.columns = map(str.lower, df.columns)
+    df.columns = map(join_and_lower_case, df.columns)
     return df
 
 def dataset_processing_pokemon(path_to_file):
     df = pd.read_json(path_to_file)
     df = df.transpose()
-    df = df.rename_axis("Name")
+    df = df.rename_axis("name")
     split = pd.DataFrame(df['Stats'].to_list(), columns = ['Image', 'Abilities'])
     df["Image"] = df["Stats"].apply(lambda x: x[0])
     df["Abilities"] = df["Stats"].apply(lambda x: x[1])
     #df = pd.concat([df, split], axis=1)
     df = df.drop(["Stats"], axis=1)
-
+    df.columns = map(join_and_lower_case, df.columns)
     return df
 
 #def main():
