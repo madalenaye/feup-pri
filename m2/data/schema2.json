@@ -62,7 +62,7 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
-                    {"class":"sorl.BeiderMorseFilterFactory"},
+                    {"class":"solr.BeiderMorseFilterFactory"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"}
                 ]
@@ -72,7 +72,7 @@
                     "class":"solr.StandardTokenizerFactory" 
                 },
                 "filters":[
-                    {"class":"sorl.BeiderMorseFilterFactory"},
+                    {"class":"solr.BeiderMorseFilterFactory"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"}
                 ]
@@ -90,7 +90,7 @@
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "preserveOriginal": true}
+                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 5, "preserveOriginal": true}
                 ]
             },
             "queryAnalyzer":{
@@ -101,7 +101,7 @@
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "preserveOriginal": true}
+                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 5, "preserveOriginal": true}
                 ]
             }
         },
