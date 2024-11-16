@@ -175,7 +175,7 @@
             "name": "gender",
             "type": "string",
             "indexed": true,
-            "multiValued": false
+            "multiValued": true
         },
         {
             "name": "debut",
