@@ -139,6 +139,12 @@
             "type": "auto-complete",
             "indexed": true
         },
+        {
+            "name": "title_query",
+            "type": "textNoSynonyms",
+            "indexed": true,
+            "stored": false
+        },
        
         {
             "name": "name",

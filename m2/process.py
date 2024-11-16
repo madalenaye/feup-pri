@@ -14,11 +14,12 @@ def convert_to_iso(episodes):
 def process_episodes(episodes):
     counter = 1
     for episode in episodes:
-        episode["index"] = counter;
-        episode["epcode"] = episode["id"];
-        episode["title"] = episode["name"];
-        del episode["name"];
-        counter += 1;
+        episode["index"] = counter
+        episode["epcode"] = episode["id"]
+        episode["title"] = episode["name"]
+        episode["title_query"] = episode["title"]
+        del episode["name"]
+        counter += 1
 
     return episodes
 
