@@ -123,12 +123,12 @@
         },
         {
             "name": "plot",
-            "type": "text",
+            "type": "textNoSynonyms",
             "indexed": true
         },
         {
             "name": "major_events",
-            "type": "text",
+            "type": "textNoSynonyms",
             "indexed": true,
             "multiValued": true
         },
