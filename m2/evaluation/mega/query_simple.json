@@ -6,7 +6,7 @@
     "params": {
       "defType": "edismax",
       "q.op": "AND",
-      "qf": "name major_events plot"
+      "qf": "title major_events plot"
     }
   }
   

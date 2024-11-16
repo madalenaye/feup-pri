@@ -5,7 +5,7 @@
     "limit": 30,
     "params": {
       "defType": "edismax",
-      "qf": "plot major_events name",
+      "qf": "title major_events name",
       "q.op": "AND"
     }
   }

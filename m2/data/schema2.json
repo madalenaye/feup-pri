@@ -148,7 +148,7 @@
         {
             "name": "subtitle",
             "type": "text",
-            "indexed": true
+            "indexed": false
         },
         {
             "name": "plot",
@@ -169,18 +169,18 @@
         {
             "name": "code",
             "type": "string",
-            "indexed": true
+            "indexed": false
         },
         {
             "name": "gender",
             "type": "string",
             "indexed": true,
-            "multiValued": true
+            "multiValued": false
         },
         {
             "name": "debut",
             "type": "string",
-            "indexed": true,
+            "indexed": false,
             "multiValued": true
         },
         {
@@ -245,55 +245,55 @@
         {
             "name" :"abilities",
             "type": "auto-complete",
-            "indexed":true,
+            "indexed":false,
             "multiValued": true
         },
         {
             "name" : "english_theme_opening",
             "type": "string",
-            "indexed": true
+            "indexed": false
 
         },
         {
             "name" : "english_theme_ending",
             "type": "string",
-            "indexed": true
+            "indexed": false
         },
         {
             "name" : "japanese_theme_opening",
             "type": "string",
-            "indexed": true
+            "indexed": false
         },
         {
             "name" : "japanese_theme_ending",
             "type": "string",
-            "indexed": true
+            "indexed": false
 
         },
         {
             "name" : "animation",
             "type": "string",
-            "indexed": true
+            "indexed": false
         },
         {
             "name" : "screenplay",
             "type": "string",
-            "indexed": true
+            "indexed": false
         },
         {
             "name" : "storyboard",
             "type": "string",
-            "indexed": true
+            "indexed": false
         },
         {
             "name" : "assistant_director",
             "type": "string",
-            "indexed": true
+            "indexed": false
         },
         {
             "name" : "animation_directors",
             "type": "string",
-            "indexed": true
+            "indexed": false
         },
         {
             "name": "index",
