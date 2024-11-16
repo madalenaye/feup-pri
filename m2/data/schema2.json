@@ -55,7 +55,7 @@
             }
         },
         {
-            "name": "name",
+            "name": "names",
             "class":"solr.TextField",
             "indexAnalyzer":{
                 "tokenizer":{
@@ -137,8 +137,14 @@
     ],
     "add-field": [
         {
+            "name": "title",
+            "type": "auto-complete",
+            "indexed": true
+        },
+       
+        {
             "name": "name",
-            "type": "name",
+            "type": "names",
             "indexed": true
         },
         {
@@ -158,7 +164,7 @@
             "multiValued": true
         },
         {
-            "name": "broadcast delay",
+            "name": "broadcast_delay",
             "type": "pint",
             "indexed": false
         },
@@ -168,104 +174,100 @@
             "indexed": true
         },
         {
-            "name": "Gender",
+            "name": "gender",
             "type": "string",
             "indexed": true,
             "multiValued": true
         },
         {
-            "name": "Debut",
+            "name": "debut",
             "type": "string",
             "indexed": true,
             "multiValued": true
         },
         {
-            "name": "Character",
+            "name": "character",
             "type": "textNoSynonyms",
             "indexed": true
         },
         {
-            "name": "English voice actor",
+            "name": "english_voice_actor",
             "type": "string",
             "indexed": true,
             "multiValued": true
         },
         {
-            "name": "Japanese voice actor",
+            "name": "japanese_voice_actor",
             "type": "string",
             "indexed": true,
             "multiValued": true
         },
         {
-            "name": "first broadcast japan",
+            "name": "first_broadcast_japan",
             "type": "pdate",
             "indexed" :true
         },
         {
-            "name" : "first broadcast united states",
+            "name" : "first_broadcast_united_states",
             "type": "pdate",
             "indexed": true
         },
+      
         {
-            "name" : "Name",
-            "type": "name",
-            "indexed": true
-        },
-        {
-            "name": "Pokedex Entry",
+            "name": "pokedex_entry",
             "type": "auto-complete",
             "indexed": false
         },
         {
-            "name": "Pokemon Page",
+            "name": "pokemon_page",
             "type": "string",
             "indexed": false
         },
         {
-            "name" : "Types",
+            "name" : "types",
             "type": "auto-complete",
             "indexed": false,
             "multiValued": true
         },
         {
-            "name": "Blurb",
+            "name": "blurb",
             "type": "text",
             "indexed": true
         },
         {
-            "name":"Biology",
+            "name":"biology",
             "type":"text",
             "indexed":true
         },
         {
-            "name": "Image",
+            "name": "image",
             "type": "string",
             "indexed": false
         },
         {
-            "name" :"Abilities",
+            "name" :"abilities",
             "type": "auto-complete",
             "indexed":true,
             "multiValued": true
         },
         {
-            "name" : "english theme opening",
+            "name" : "english_theme_opening",
             "type": "string",
             "indexed": true
 
         },
         {
-            "name" : "english theme ending",
+            "name" : "english_theme_ending",
             "type": "string",
             "indexed": true
         },
         {
-            "name" : "japanese theme opening",
+            "name" : "japanese_theme_opening",
             "type": "string",
             "indexed": true
         },
         {
-            "name" : "japanese theme ending",
+            "name" : "japanese_theme_ending",
             "type": "string",
             "indexed": true
 
@@ -286,12 +288,12 @@
             "indexed": true
         },
         {
-            "name" : "assistant director",
+            "name" : "assistant_director",
             "type": "string",
             "indexed": true
         },
         {
-            "name" : "animation directors",
+            "name" : "animation_directors",
             "type": "string",
             "indexed": true
         },

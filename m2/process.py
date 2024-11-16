@@ -11,19 +11,21 @@ def convert_to_iso(episodes):
             episode["first broadcast united states"] = pd.to_datetime(episode["first broadcast united states"], unit='ms').isoformat()
     return episodes
 
-def add_index(episodes):
+def process_episodes(episodes):
     counter = 1
     for episode in episodes:
         episode["index"] = counter;
         episode["epcode"] = episode["id"];
+        episode["title"] = episode["name"];
+        del episode["name"];
         counter += 1;
-    
+
     return episodes
 
 with open('data/docs/new_episodes.json') as file:
     episodes = json.load(file)
 
-episodes = add_index(add_index(episodes))##convert_to_iso(add_index(episodes))) 
+episodes = process_episodes(convert_to_iso(episodes)) 
 
 with open('data/docs/new_episodes.json', 'w') as file:
     json.dump(episodes, file, indent=4)
