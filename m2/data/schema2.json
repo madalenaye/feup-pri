@@ -8,8 +8,7 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
-
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"}
@@ -21,7 +20,7 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"}
@@ -29,45 +28,7 @@
                 ]
             }
         },
-        {
-            "name":"simplerText",
-            "class":"solr.TextField",
-            "indexAnalyzer":{
-                "tokenizer":{
-                    "class":"solr.StandardTokenizerFactory"
-                },
-                "filters":[
-
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
-                    {"class":"solr.PorterStemFilterFactory"},
-                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
-                    {"class":"solr.LowerCaseFilterFactory"}
-                ]
-            },
-            "queryAnalyzer":{
-                "tokenizer":{
-                    "class":"solr.StandardTokenizerFactory"
-                },
-                "filters":[
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
-                    {"class":"solr.PorterStemFilterFactory"},
-                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
-                    {"class":"solr.LowerCaseFilterFactory"}
-                ]
-            }
-        },
-        {
-            "name": "int",
-            "class": "solr.IntPointField"
-        },
-        {
-            "name":"float",
-            "class": "solr.FloatPointField"
-        },
-        {
-            "name":"date",
-            "class":"solr.DatePointField"
-        },
+        
         {
             "name":"auto-complete",
             "class":"solr.TextField",
@@ -80,7 +41,7 @@
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
                     {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
                 ]
             },
@@ -93,7 +54,7 @@
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
                     {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
                 ]
             }
@@ -150,7 +111,7 @@
         },
         {
             "name": "broadcast delay",
-            "type": "int",
+            "type": "pint",
             "indexed": false
         },
         {
@@ -172,7 +133,7 @@
         },
         {
             "name": "Character",
-            "type": "simplerText",
+            "type": "text",
             "indexed": true
         },
         {
@@ -194,12 +155,12 @@
         },
         {
             "name": "first broadcast japan",
-            "type": "date",
+            "type": "pdate",
             "indexed" :true
         },
         {
             "name" : "first broadcast united states",
-            "type": "date",
+            "type": "pdate",
             "indexed": true
         },
         {
@@ -225,12 +186,12 @@
         },
         {
             "name": "Blurb",
-            "type": "simplerText",
+            "type": "text",
             "indexed": true
         },
         {
             "name":"Biology",
-            "type":"simplerText",
+            "type":"text",
             "indexed":true
         },
         {
@@ -293,7 +254,7 @@
         },
         {
             "name": "index",
-            "type": "int",
+            "type": "pint",
             "indexed": true
         },
         {
@@ -301,7 +262,5 @@
             "type":"season",
             "indexed":true
         }
-
-
     ]
 }

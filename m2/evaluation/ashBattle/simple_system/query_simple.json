@@ -1,10 +1,12 @@
 {
-    "query": "plot:(Ash && wins && gym && battle) major_events:(earns && badge && gym && battle) name:(ash)",
+    "query": "ash wins gym battles",
     "filter": "-_nest_path_:*",
     "fields": "id, score",
     "limit": 30,
     "params": {
-      "q.op": "OR"
+      "defType": "edismax",
+      "q.op": "AND",
+      "qf": "name major_events plot"
     }
   }
   

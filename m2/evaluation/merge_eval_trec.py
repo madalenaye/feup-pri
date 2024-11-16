@@ -17,6 +17,7 @@ with open(args.qrel_file_txt, 'r') as qrel1:
     qrel_lines = qrel1.readlines();
     with open(args.qrel_file2_txt, 'r') as qrel2:
         qrel_lines2 = qrel2.readlines();
+        qrel_lines2.append("\n");
         with open(args.output_merged_qrels_txt, 'w') as output_qrel:
             for line in qrel_lines:
                 if line not in qrel_lines2:
