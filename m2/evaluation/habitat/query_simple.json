@@ -1,0 +1,8 @@
+{
+    "query" : "{!parent which='-_nest_path_:* *:*' score=total}{!edismax qf='Biology Blurb'}(live OR found) sea",
+    "fields" : "id, score",
+    "limit" : 30,
+    "params": {
+        "q.op": "AND"
+      }
+}

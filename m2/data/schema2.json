@@ -8,8 +8,34 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
+                    {"class":"solr.FlattenGraphFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
 
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
+                ]
+            }
+        },
+        {
+            "name":"textNoSynonyms",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"}
@@ -21,7 +47,6 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"}
@@ -29,7 +54,6 @@
                 ]
             }
         },
-        
         {
             "name":"auto-complete",
             "class":"solr.TextField",
@@ -42,7 +66,6 @@
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
                     {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
                 ]
             },
@@ -55,7 +78,6 @@
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
                     {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
                 ]
             }
@@ -101,12 +123,12 @@
         },
         {
             "name": "plot",
-            "type": "text",
+            "type": "textNoSynonyms",
             "indexed": true
         },
         {
             "name": "major_events",
-            "type": "text",
+            "type": "textNoSynonyms",
             "indexed": true,
             "multiValued": true
         },
@@ -134,13 +156,8 @@
         },
         {
             "name": "Character",
-            "type": "text",
+            "type": "textNoSynonyms",
             "indexed": true
-        },
-        {
-            "name": "History",
-            "type": "string",
-            "indexed": false
         },
         {
             "name": "English voice actor",
