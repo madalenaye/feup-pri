@@ -55,6 +55,33 @@
             }
         },
         {
+            "name": "name",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"sorl.BeiderMorseFilterFactory"},
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory" 
+                },
+                "filters":[
+                    {"class":"sorl.BeiderMorseFilterFactory"},
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+                ]
+            }
+
+        },
+        {
             "name":"auto-complete",
             "class":"solr.TextField",
             "indexAnalyzer":{
@@ -64,9 +91,8 @@
                 "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
-                    {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
+                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "preserveOriginal": true}
                 ]
             },
             "queryAnalyzer":{
@@ -76,20 +102,19 @@
                 "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
-                    {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
+                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "preserveOriginal": true}
                 ]
             }
         },
         {
-            "name": "season",
+            "name": "epcode",
             "class": "solr.TextField",
             "indexAnalyzer":{
                 "tokenizer":{
                     "class":"solr.EdgeNGramTokenizerFactory",
                     "minGramSize": 1,
-                    "maxGramSize": 2
+                    "maxGramSize": 5
                 },
                 "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory"},
@@ -100,7 +125,7 @@
                 "tokenizer":{
                     "class":"solr.EdgeNGramTokenizerFactory",
                     "minGramSize": 1,
-                    "maxGramSize": 2
+                    "maxGramSize": 5
                 },
                 "filters":[
                     {"class":"solr.ASCIIFoldingFilterFactory"},
@@ -113,7 +138,7 @@
     "add-field": [
         {
             "name": "name",
-            "type": "auto-complete",
+            "type": "name",
             "indexed": true
         },
         {
@@ -183,7 +208,7 @@
         },
         {
             "name" : "Name",
-            "type": "auto-complete",
+            "type": "name",
             "indexed": true
         },
         {
@@ -276,9 +301,10 @@
             "indexed": true
         },
         {
-            "name":"season",
-            "type":"season",
+            "name":"epcode",
+            "type":"epcode",
             "indexed":true
         }
+      
     ]
 }

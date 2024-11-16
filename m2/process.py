@@ -15,7 +15,7 @@ def add_index(episodes):
     counter = 1
     for episode in episodes:
         episode["index"] = counter;
-        episode["season"] = episode["id"][:2];
+        episode["epcode"] = episode["id"];
         counter += 1;
     
     return episodes
@@ -23,7 +23,7 @@ def add_index(episodes):
 with open('data/docs/new_episodes.json') as file:
     episodes = json.load(file)
 
-episodes = add_index(convert_to_iso(add_index(episodes))) 
+episodes = add_index(add_index(episodes))##convert_to_iso(add_index(episodes))) 
 
 with open('data/docs/new_episodes.json', 'w') as file:
     json.dump(episodes, file, indent=4)
