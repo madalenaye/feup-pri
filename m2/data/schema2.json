@@ -8,8 +8,7 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
-
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"}
@@ -21,7 +20,7 @@
                     "class":"solr.StandardTokenizerFactory"
                 },
                 "filters":[
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
                     {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"}
@@ -42,7 +41,7 @@
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
                     {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
                 ]
             },
@@ -55,7 +54,7 @@
                     {"class":"solr.LowerCaseFilterFactory"},
                     {"class": "solr.BeiderMorseFilterFactory"},
                     {"class":"solr.PorterStemFilterFactory"},
-                    {"class" : "solr.ManagedSynonymFilterFactory", "managed":"english"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
                     {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 3, "preserveOriginal": true}
                 ]
             }
