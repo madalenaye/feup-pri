@@ -1,0 +1,11 @@
+{
+    "query": "angry",
+    "filter": "{!collapse field='image'}",
+    "fields": "id, score name",
+    "limit": 30,
+    "params": {
+      "defType": "edismax",
+      "q.op": "OR",
+      "qf": "biology blurb"
+    }
+  }
