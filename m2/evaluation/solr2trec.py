@@ -5,7 +5,7 @@ import json
 import sys
 
 
-def solr_to_trec(solr_response, run_id="run0"):
+def solr_to_trec(solr_response, query_id, run_id="run0"):
     """
     Converts Solr search results to TREC format and writes the results to STDOUT.
 
@@ -26,7 +26,10 @@ def solr_to_trec(solr_response, run_id="run0"):
 
         # Enumerate through the results and write them in TREC format
         for rank, doc in enumerate(docs, start=1):
-            print(f"0 Q0 {doc['id']} {rank} {doc['score']} {run_id}")
+            if "name" in doc:
+                print(f"{query_id} Q0 {doc['name']} {rank} {doc['score']} {run_id}")
+            else:
+                print(f"{query_id} Q0 {doc['id']} {rank} {doc['score']} {run_id}")
 
     except KeyError:
         print("Error: Invalid Solr response format. 'docs' key not found.")
@@ -44,6 +47,11 @@ if __name__ == "__main__":
         default="run0",
         help="Experiment or system identifier (default: run0).",
     )
+    parser.add_argument(
+        "--query-id",
+        type=int,
+        help="Query identifier.",
+    )
 
     # Parse command-line arguments
     args = parser.parse_args()
@@ -52,4 +60,4 @@ if __name__ == "__main__":
     solr_response = json.load(sys.stdin)
 
     # Convert Solr results to TREC format and write to STDOUT
-    solr_to_trec(solr_response, args.run_id)
+    solr_to_trec(solr_response, args.query_id, args.run_id)
