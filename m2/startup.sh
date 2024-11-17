@@ -16,7 +16,7 @@ docker cp data/synonyms.txt pokemon_the_series:/var/solr/data/episodes/conf/syno
 docker cp data/pokemon_synonyms.txt pokemon_the_series:/var/solr/data/episodes/conf/pokemon_synonyms.txt
 
 # Post the schema
-curl -X POST -H 'Content-type:application/json' --data-binary @./data/schema2.json http://localhost:8983/solr/episodes/schema
+curl -X POST -H 'Content-type:application/json' --data-binary @./data/schema.json http://localhost:8983/solr/episodes/schema
 
 # Wait for a moment to ensure the schema is applied
 sleep 2
