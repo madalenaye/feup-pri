@@ -12,6 +12,9 @@ done
 
 echo "Solr is up and running."
 
+docker cp data/synonyms.txt pokemon_the_series:/var/solr/data/episodes/conf/synonyms.txt
+docker cp data/pokemon_synonyms.txt pokemon_the_series:/var/solr/data/episodes/conf/pokemon_synonyms.txt
+
 # Post the schema
 curl -X POST -H 'Content-type:application/json' --data-binary @./data/schema2.json http://localhost:8983/solr/episodes/schema
 
@@ -19,8 +22,6 @@ curl -X POST -H 'Content-type:application/json' --data-binary @./data/schema2.js
 sleep 2
 
 # Post the documents
-docker cp data/synonyms.txt pokemon_the_series:/var/solr/data/episodes/conf/synonyms.txt
-
 docker exec -it pokemon_the_series bin/solr post -f -c episodes /data/docs/new_episodes.json
 
 docker restart pokemon_the_series

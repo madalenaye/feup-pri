@@ -29,6 +29,35 @@
             }
         },
         {
+            "name":"pokemonText",
+            "positionIncrementGap": 100,
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"pokemon_synonyms.txt", "ignoreCase": true, "expand": true},
+                    {"class":"solr.FlattenGraphFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
+                ]
+            }
+        },
+        {
             "name":"textNoSynonyms",
             "class":"solr.TextField",
             "indexAnalyzer":{
@@ -158,12 +187,12 @@
         },
         {
             "name": "plot",
-            "type": "textNoSynonyms",
+            "type": "pokemonText",
             "indexed": true
         },
         {
             "name": "major_events",
-            "type": "textNoSynonyms",
+            "type": "pokemonText",
             "indexed": true,
             "multiValued": true
         },
