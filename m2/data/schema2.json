@@ -221,7 +221,7 @@
         {
             "name": "character",
             "type": "textNoSynonyms",
-            "indexed": true
+            "indexed": false
         },
         {
             "name": "english_voice_actor",
