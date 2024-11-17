@@ -26,7 +26,7 @@ def process_episodes(episodes):
 with open('data/docs/new_episodes.json') as file:
     episodes = json.load(file)
 
-episodes = process_episodes(episodes)#convert_to_iso(episodes)) 
+episodes = process_episodes(convert_to_iso(episodes)) 
 
 with open('data/docs/new_episodes.json', 'w') as file:
     json.dump(episodes, file, indent=4)
