@@ -69,7 +69,7 @@ def main(qrels_file: str, output_file: str):
         recall_levels,
         interpolated_precision,
         drawstyle="steps-post",
-        label=f"MAP: {map_score:.4f}, AUC: {auc_score:.4f}",
+        label=f"AvP: {map_score:.4f}, AUC: {auc_score:.4f}",
         linewidth=1,
     )
 
