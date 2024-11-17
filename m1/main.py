@@ -22,6 +22,7 @@ parser.add_argument("-p", "--pokemon-types", nargs='?', const="typefig.png")
 parser.add_argument("-c", "--word-cloud", nargs='?', const="wordcloud.png")
 parser.add_argument("--scatter-episode-plot", nargs='?', const="scatterfig.png")
 parser.add_argument("--correlation", nargs='?', const="jaccard_indexes.json")
+parser.add_argument("--sentiment-analysis", nargs='?', const="sentiment.png")
 
 args = parser.parse_args()
 print(args)
@@ -68,3 +69,6 @@ if args.scatter_episode_plot:
 
 if args.correlation:
     character_correlation.get_correlations(character_df, episode_df, args.correlation)
+
+if args.sentiment_analysis:
+    plots.plot_sentiment(pokemon_df, "biology", args.sentiment_analysis)

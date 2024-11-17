@@ -2,7 +2,21 @@ from matplotlib import pyplot as plt
 import numpy as np
 from wordcloud import WordCloud
 import re
+import seaborn as sns
 import matplotlib.pyplot as plt
+import nltk
+nltk.download('vader_lexicon')
+nltk.download('punkt_tab')
+nltk.download('stopwords')
+nltk.download('wordnet')
+
+
+from nltk.sentiment.vader import SentimentIntensityAnalyzer
+from nltk.corpus import stopwords
+
+from nltk.tokenize import word_tokenize
+
+from nltk.stem import WordNetLemmatizer
 
 
 def plot_word_cloud(df, column, file):
@@ -122,4 +136,33 @@ def plot_scatter_events(episodes, file):
     episodes_new["Major Event Amount"] = episodes_new["Major events"].apply(lambda x: len(x))
     plot = episodes_new.plot.scatter("Plot Word Count", "Major Event Amount")
     plot.get_figure().savefig(file)
+    plt.clf()
+    
+
+analyzer = SentimentIntensityAnalyzer()
+def get_sentiment(text):
+    scores = analyzer.polarity_scores(text)
+    compound = scores['compound']
+    if compound > 0.5:  
+        return 2
+    elif compound < -0.5:  
+        return 0
+    else: 
+        return 1
+
+
+def plot_sentiment(df, column, file):
+    new_df = df.copy()
+    new_df['Sentiment'] = new_df[column].apply(get_sentiment)
+    sentiment_counts = new_df['Sentiment'].value_counts()
+    
+    sentiment_labels = {0: 'Negative', 1: 'Neutral', 2: 'Positive'}
+    sns.barplot(x=sentiment_counts.index, y=sentiment_counts.values, palette='coolwarm')
+    plt.xticks(ticks=[0, 1, 2], labels=[sentiment_labels[i] for i in range(3)])
+    
+    plt.title('Sentiment Distribution for Pokémon Biology')
+    plt.xlabel('Sentiment')
+    plt.ylabel('Count')
+
+    plt.savefig(file)
     plt.clf()
