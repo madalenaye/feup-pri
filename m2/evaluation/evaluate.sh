@@ -1,7 +1,7 @@
 #!/bin/bash
 # Check if the correct number of arguments is provided
 if [ "$#" -ne 2 ]; then
-    echo "Usage: $0  <query_name> <complex|simple>"
+    echo "Usage: $0  <query_folder> <complex|simple>"
     exit 1
 fi
 

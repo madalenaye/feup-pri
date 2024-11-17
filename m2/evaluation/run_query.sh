@@ -1,6 +1,6 @@
 # Run the query and process the results
 if [ "$#" -ne 2 ]; then
-    echo "Usage: $0 <query_name> <complex|simple>"
+    echo "Usage: $0 <query_folder> <complex|simple>"
     exit 1
 fi
 
