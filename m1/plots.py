@@ -6,17 +6,9 @@ import seaborn as sns
 import matplotlib.pyplot as plt
 import nltk
 nltk.download('vader_lexicon')
-nltk.download('punkt_tab')
-nltk.download('stopwords')
-nltk.download('wordnet')
 
 
 from nltk.sentiment.vader import SentimentIntensityAnalyzer
-from nltk.corpus import stopwords
-
-from nltk.tokenize import word_tokenize
-
-from nltk.stem import WordNetLemmatizer
 
 
 def plot_word_cloud(df, column, file):
@@ -160,7 +152,7 @@ def plot_sentiment(df, column, file):
     sns.barplot(x=sentiment_counts.index, y=sentiment_counts.values, palette='coolwarm')
     plt.xticks(ticks=[0, 1, 2], labels=[sentiment_labels[i] for i in range(3)])
     
-    plt.title('Sentiment Distribution for Pokémon Biology')
+    plt.title('Sentiment Distribution for Pokémon Episodes')
     plt.xlabel('Sentiment')
     plt.ylabel('Count')
 

@@ -71,4 +71,4 @@ if args.correlation:
     character_correlation.get_correlations(character_df, episode_df, args.correlation)
 
 if args.sentiment_analysis:
-    plots.plot_sentiment(pokemon_df, "biology", args.sentiment_analysis)
+    plots.plot_sentiment(episode_df, "plot", args.sentiment_analysis)
