@@ -1,25 +1,21 @@
 #!/bin/bash
 # Check if the correct number of arguments is provided
-if [ "$#" -ne 4 ]; then
-    echo "Usage: $0  <query_response_eval_trec.txt> <qrels_file_in.txt> <qrels_trec_file_out.txt> <output_image>"
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0  <query_name> <complex|simple>"
     exit 1
 fi
 
 # Assign input arguments to variables
-RESULTS_FILE=$1
-QRELS_FILE=$2
-TEMP_TREC_TXT_FILE=$3
-OUTPUT_IMAGE=$4
-
-
+QUERY_NAME=$1
+QUERY_TYPE=$2
 
 # Process the qrels file
-cat "$QRELS_FILE" | ./qrels2trec.py > "$TEMP_TREC_TXT_FILE"
+cat "$1/qrels.txt" | ./qrels2trec.py > "$1/qrels_trec.txt"
 
 # Evaluate the results
-trec_eval "$TEMP_TREC_TXT_FILE" "$RESULTS_FILE"
+trec_eval "$1/qrels_trec.txt" "$1/results_$2_trec.txt"
 
 # Plot the precision-recall curve
-cat "$RESULTS_FILE" | ./plot_pr.py --qrels "$TEMP_TREC_TXT_FILE" --output "$OUTPUT_IMAGE"
+cat "$1/results_$2_trec.txt" | ./plot_pr.py --qrels "$1/qrels_trec.txt" --output "$1/prec_rec_$2.png"
 
 echo "Evaluation and plotting completed successfully."
