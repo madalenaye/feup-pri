@@ -1,4 +1,6 @@
 .vscode
 __pycache__/
 /m2/data/docs/new_episodes.json
+/m3/data/docs/new_episodes.json
+/m3/data/docs/semantic_episodes.json
 **/.DS_Store

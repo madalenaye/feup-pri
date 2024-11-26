@@ -5,12 +5,21 @@ if [ "$#" -ne 2 ]; then
     exit 1
 fi
 
-# Assign input arguments to variables
-QUERY_NAME=$1
-QUERY_TYPE=$2
+case "$1" in
+   "steal") ID=1
+   ;;
+   "party") ID=2
+   ;;
+   "ashBattle") ID=3
+   ;;
+   "mega") ID=4
+   ;;
+   "angry") ID=5
+   ;;
+esac
 
 # Process the qrels file
-cat "$1/qrels.txt" | ./qrels2trec.py > "$1/qrels_trec.txt"
+cat "$1/qrels.txt" | ./qrels2trec.py --query-id $ID > "$1/qrels_trec.txt"
 
 # Evaluate the results
 trec_eval "$1/qrels_trec.txt" "$1/results_$2_trec.txt"

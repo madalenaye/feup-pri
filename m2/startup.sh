@@ -1,4 +1,19 @@
 #!/bin/bash
+# Check if the correct number of arguments is provided
+if [ "$#" -ne 1 ]; then
+    echo "Usage: $0 <complex|simple>"
+    exit 1
+fi
+
+case "$1" in
+   "complex") SCHEMA="schema2.json"
+   ;;
+   "simple") SCHEMA="schema.json"
+   ;;
+   *) echo "No valid schema type provided."
+   exit -1
+   ;;
+esac
 
 # Startup with Docker
 docker run -p 8983:8983 --name pokemon_the_series -v ${PWD}/data:/data -d solr:9 solr-precreate episodes
@@ -16,7 +31,7 @@ docker cp data/synonyms.txt pokemon_the_series:/var/solr/data/episodes/conf/syno
 docker cp data/pokemon_synonyms.txt pokemon_the_series:/var/solr/data/episodes/conf/pokemon_synonyms.txt
 
 # Post the schema
-curl -X POST -H 'Content-type:application/json' --data-binary @./data/schema.json http://localhost:8983/solr/episodes/schema
+curl -X POST -H 'Content-type:application/json' --data-binary @./data/$SCHEMA http://localhost:8983/solr/episodes/schema
 
 # Wait for a moment to ensure the schema is applied
 sleep 2
