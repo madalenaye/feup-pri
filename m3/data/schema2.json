@@ -1,0 +1,345 @@
+{
+    "add-field-type": [
+        {
+            "name":"text",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"synonyms.txt", "ignoreCase": true, "expand": true},
+                    {"class":"solr.FlattenGraphFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
+                ]
+            }
+        },
+        {
+            "name":"pokemonText",
+            "positionIncrementGap": 100,
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.SynonymGraphFilterFactory", "synonyms":"pokemon_synonyms.txt", "ignoreCase": true, "expand": true},
+                    {"class":"solr.FlattenGraphFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
+                ]
+            }
+        },
+        {
+            "name":"textNoSynonyms",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"}
+
+                ]
+            }
+        },
+        {
+            "name": "names",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.BeiderMorseFilterFactory"},
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory" 
+                },
+                "filters":[
+                    {"class":"solr.BeiderMorseFilterFactory"},
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            }
+
+        },
+        {
+            "name":"auto-complete",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"},
+                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 5, "preserveOriginal": true}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory" 
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"},
+                    {"class":"solr.PorterStemFilterFactory"},
+                    {"class": "solr.EdgeNGramFilterFactory", "minGramSize": 1, "maxGramSize": 5, "preserveOriginal": true}
+                ]
+            }
+        },
+        {
+            "name": "epcode",
+            "class": "solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.EdgeNGramTokenizerFactory",
+                    "minGramSize": 1,
+                    "maxGramSize": 5
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory"},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.EdgeNGramTokenizerFactory",
+                    "minGramSize": 1,
+                    "maxGramSize": 5
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory"},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            }
+        }
+                
+    ],
+    "add-field": [
+        {
+            "name": "title",
+            "type": "auto-complete",
+            "indexed": true
+        },
+        {
+            "name": "title_query",
+            "type": "textNoSynonyms",
+            "indexed": true,
+            "stored": false
+        },
+       
+        {
+            "name": "name",
+            "type": "names",
+            "indexed": true
+        },
+        {
+            "name": "subtitle",
+            "type": "text",
+            "indexed": false
+        },
+        {
+            "name": "plot",
+            "type": "pokemonText",
+            "indexed": true
+        },
+        {
+            "name": "major_events",
+            "type": "pokemonText",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "broadcast_delay",
+            "type": "pint",
+            "indexed": false
+        },
+        {
+            "name": "code",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name": "gender",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "debut",
+            "type": "string",
+            "indexed": false,
+            "multiValued": true
+        },
+        {
+            "name": "character",
+            "type": "textNoSynonyms",
+            "indexed": false
+        },
+        {
+            "name": "english_voice_actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "japanese_voice_actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "first_broadcast_japan",
+            "type": "pdate",
+            "indexed" :true
+        },
+        {
+            "name" : "first_broadcast_united_states",
+            "type": "pdate",
+            "indexed": true
+        },
+      
+        {
+            "name": "pokedex_entry",
+            "type": "auto-complete",
+            "indexed": false
+        },
+        {
+            "name": "pokemon_page",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "types",
+            "type": "auto-complete",
+            "indexed": false,
+            "multiValued": true
+        },
+        {
+            "name": "blurb",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name":"biology",
+            "type":"text",
+            "indexed":true
+        },
+        {
+            "name": "image",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" :"abilities",
+            "type": "auto-complete",
+            "indexed":false,
+            "multiValued": true
+        },
+        {
+            "name" : "english_theme_opening",
+            "type": "string",
+            "indexed": false
+
+        },
+        {
+            "name" : "english_theme_ending",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "japanese_theme_opening",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "japanese_theme_ending",
+            "type": "string",
+            "indexed": false
+
+        },
+        {
+            "name" : "animation",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "screenplay",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "storyboard",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "assistant_director",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "animation_directors",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name": "index",
+            "type": "pint",
+            "indexed": true
+        },
+        {
+            "name":"epcode",
+            "type":"epcode",
+            "indexed":true
+        }
+      
+    ]
+}

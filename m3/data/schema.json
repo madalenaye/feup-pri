@@ -1,0 +1,190 @@
+{
+    "add-field-type": [
+        {
+            "name":"text",
+            "class":"solr.TextField",
+            "indexAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            },
+            "queryAnalyzer":{
+                "tokenizer":{
+                    "class":"solr.StandardTokenizerFactory"
+                },
+                "filters":[
+                    {"class":"solr.ASCIIFoldingFilterFactory", "preserveOriginal":true},
+                    {"class":"solr.LowerCaseFilterFactory"}
+                ]
+            }
+        }
+
+    ],
+    "add-field": [
+        {
+            "name": "subtitle",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "plot",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name": "major_events",
+            "type": "text",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "broadcast_delay",
+            "type": "pint",
+            "indexed": false
+        },
+        {
+            "name": "code",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "gender",
+            "type": "string",
+            "indexed": false,
+            "multiValued": true
+        },
+        {
+            "name": "debut",
+            "type": "string",
+            "indexed": false,
+            "multiValued": true
+        },
+        {
+            "name": "character",
+            "type": "text",
+            "indexed": false
+        },
+        {
+            "name": "english_voice_actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "japanese_voice_actor",
+            "type": "string",
+            "indexed": true,
+            "multiValued": true
+        },
+        {
+            "name": "first_broadcast_japan",
+            "type": "pdate",
+            "indexed" :true
+        },
+        {
+            "name" : "first_broadcast_united_states",
+            "type": "pdate",
+            "indexed": true
+        },
+        {
+            "name" : "name",
+            "type": "string",
+            "indexed": true
+        },
+        {
+            "name": "pokedex_entry",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name": "pokemon_page",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "types",
+            "type": "string",
+            "indexed": false,
+            "multiValued": true
+        },
+        {
+            "name": "blurb",
+            "type": "text",
+            "indexed": true
+        },
+        {
+            "name":"biology",
+            "type":"text",
+            "indexed":true
+        },
+        {
+            "name": "image",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" :"abilities",
+            "type": "string",
+            "indexed":false,
+            "multiValued": true
+        },
+        {
+            "name" : "english_theme_opening",
+            "type": "string",
+            "indexed": false
+
+        },
+        {
+            "name" : "english_theme_ending",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "japanese_theme_opening",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "japanese_theme_ending",
+            "type": "string",
+            "indexed": false
+
+        },
+        {
+            "name" : "animation",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "screenplay",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "storyboard",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "assistant_director",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name" : "animation_directors",
+            "type": "string",
+            "indexed": false
+        },
+        {
+            "name": "index",
+            "type": "pint",
+            "indexed": true
+        }
+
+
+    ]
+}
