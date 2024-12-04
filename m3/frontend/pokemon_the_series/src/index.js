@@ -4,17 +4,15 @@ import './css/index.css';
 import 'tailwindcss/tailwind.css';
 import './components/WelcomePage.js';
 import reportWebVitals from './reportWebVitals';
-import WelcomePage from './components/WelcomePage.js';
-import { BrowserRouter as Router, Routes, Route } from "react-router";
-
+import Navigator from './components/Navigator.js'
+import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
 root.render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<WelcomePage/>} />
-      </Routes>
-    </Router>
+    <BrowserRouter>
+      <Navigator/>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
