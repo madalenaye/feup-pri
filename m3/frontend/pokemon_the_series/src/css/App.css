@@ -34,19 +34,97 @@
 }
 .main-menu {
   display: grid;
-  grid-template-columns:[left] 1fr [middle] 1fr [right]; /* Two equal columns */
-  grid-template-rows: [top] 10% [middle1] 85% [middle2] auto [bottom]; /* One row */
-  gap: 10px; 
+  grid-template-columns:[left] 1fr [right]; /* One column */
+  grid-template-rows: [top] 10% [middle1] 85% [middle2] auto [bottom];
+}
+.main-menu-content{
+  grid-column: left/right; 
+  grid-row: middle1/middle2;
 }
 
-.main-menu-item1 {
-  grid-column: left/middle; /* Place in the first column */
-  grid-row: middle1/middle2; /* Place in the first row */
+.search-bar{
+  display: grid;
+  grid-template-columns: [searchBarLeft] 65px [betweenIconInput] 1fr [betweenInputIcon] 60px [searchBarRight];
+  grid-template-rows: [top] 65px [bottom];
+  grid-area:middle1row / middle1col / middle2row / middle2col;
+  object-fit: contain;
+  align-items: center;
 }
+.search-bar-icon{
+  position: relative;
+  max-width: none;
+  max-height: none;
+  height:100%;
+  width: 100%;
+  right:50%;
+  grid-column:searchBarLeft/betweenIconInput;
+  grid-row:top/bottom;
 
-.main-menu-item2 {
-  grid-column: middle/right; /* Place in the second column */
-  grid-row: middle1/middle2; /* Place in the first row */
+}
+.search-bar-button{
+  grid-column:betweenInputIcon/searchBarRight;
+  grid-row:top/bottom;
+  transform:scale(0.7);
+  justify-self: center;
+}
+.search-bar-input{
+  height:80%;
+  display: flex;
+  flex-direction: row;
+  border-top-right-radius:10px;
+  border-bottom-right-radius:10px;
+  grid-area: top / searchBarLeft / bottom / searchBarRight;
+  object-fit: contain;
+  justify-items: stretch;
+
+}
+.search-bar-placeholder{
+  width:30px;
+  background-color: white;
+  justify-self: stretch;
+  align-self: stretch;
+}
+.search-bar-text-field{
+  width:98%;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  justify-self: stretch;
+  align-self:stretch;
+  
+  
+}
+.search-bar-text-field:focus{
+  outline: none;
+}
+.search-engine-container{
+  display: grid;
+  grid-template-columns: [left] 0.3fr [middle1col] 1fr [middle2col] 0.3fr [right];
+  grid-template-rows: [top] 0.35fr [middle1row] 0.15fr [middle2row] auto [bottom];
+  align-items: center;
+}
+.search-engine-tips{
+  display: flex;
+  flex-direction: row;
+  width: 90%;
+  grid-column: middle1col/middle2col;
+  grid-row: middle2row/botom;
+  justify-self: center;
+  border-radius: 20px;
+  border-width: 0.1cm;
+  align-content: center;
+ 
+  
+}
+.tip-item{
+  width:100%;
+  height:40%;
+  justify-content: center;
+}
+.tip-image{
+  
+  height: 100%;
+  object-fit: contain;
+
 }
 #badge{
   width: 35%;
@@ -94,7 +172,9 @@
 .pulse{
   animation: fadeIn 1s ease-in-out infinite alternate
 }
-
+.scale-50{
+  transform:scale(0.5);
+}
 .absolute-bottom{
   position: absolute;
   bottom: 5%; /* Position the element at the bottom */
