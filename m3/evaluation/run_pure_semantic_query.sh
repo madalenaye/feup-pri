@@ -18,5 +18,5 @@ case "$1" in
 esac
 
 python3 query_pure_semantic.py --query "$1/query_pure_semantic.json" --uri http://localhost:8983/solr --collection episodes | \
-python3 solr2trec.py --query-id $ID > "$1/results_pure_semantic.txt"
+python3 solr2trec.py --query-id $ID > "$1/results_pure_semantic_trec.txt"
 
