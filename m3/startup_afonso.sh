@@ -15,10 +15,8 @@ cd ~/feup-pri/m3
 cp data/synonyms.txt /home/onso/solr-9.7.0/server/solr/episodes/conf/synonyms.txt
 cp data/pokemon_synonyms.txt /home/onso/solr-9.7.0/server/solr/episodes/conf/pokemon_synonyms.txt
 
-
-
 curl -X POST -H 'Content-type:application/json' --data-binary @data/semantic_schema.json http://localhost:8983/solr/episodes/schema
 
 curl -X POST -H 'Content-type:application/json' \
-    --data-binary @data/docs/semantic_episodes.json \
+    --data-binary @data/docs/chunked_episodes.json \
     http://localhost:8983/solr/episodes/update?commit=true
