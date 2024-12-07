@@ -1,3 +1,5 @@
+@import url('https://fonts.cdnfonts.com/css/pokemon-solid');
+
 .App {
   text-align: center;
 }
@@ -76,7 +78,6 @@
   grid-area: top / searchBarLeft / bottom / searchBarRight;
   object-fit: contain;
   justify-items: stretch;
-
 }
 .search-bar-placeholder{
   width:30px;
@@ -99,32 +100,72 @@
 .search-engine-container{
   display: grid;
   grid-template-columns: [left] 0.3fr [middle1col] 1fr [middle2col] 0.3fr [right];
-  grid-template-rows: [top] 0.35fr [middle1row] 0.15fr [middle2row] auto [bottom];
+  grid-template-rows: [top] 0.45fr [middle1row] 0.15fr [middle2row] auto [bottom];
   align-items: center;
-}
-.search-engine-tips{
-  display: flex;
-  flex-direction: row;
-  width: 90%;
-  grid-column: middle1col/middle2col;
-  grid-row: middle2row/botom;
-  justify-self: center;
-  border-radius: 20px;
-  border-width: 0.1cm;
-  align-content: center;
- 
-  
-}
-.tip-item{
-  width:100%;
-  height:40%;
   justify-content: center;
 }
-.tip-image{
-  
-  height: 100%;
+.above-search-tab{
+  grid-area:top/middle1col/middle1row/middle2col;
   object-fit: contain;
+  width: 40vw;
+  justify-self: center;
+  align-self: center;
+}
+.search-engine-tips{
+  display: grid;
+  width: 85%;
+  height:35vh;
+  justify-self: center;
+  align-content: center;
+  grid-column: middle1col/middle2col;
+  grid-row: middle2row/botom;
+  grid-template-columns: [tipsLeft] 0.3fr [tipsMiddle1] 0.4fr [tipsMiddle2] 0.3fr [tipsRight];
+  grid-template-rows:[tipsTop] 0.15fr [topMiddle] 0.8fr [tipsBottom];
+  border-radius: 20px;
+  border-width: 0.1cm;
+  box-shadow: 0 0px 30px black;
+  overflow: auto; /* Ensure content does not overflow */
 
+}
+
+
+.tip-image{
+  grid-area: tipsTop/tipsMiddle2/tipsBottom/tipsRight;
+  justify-self: end;
+  align-self: end;
+  margin:0;
+  right:0;
+  height:25vh;
+  opacity: 0.2;
+  object-fit: contain;
+}
+.tip-intro{
+  grid-area:tipsTop/tipsLeft/topMiddle/tipsMiddle2;
+  margin:5%;
+  justify-self: start;
+  align-self: start;
+  font-family: 'Pokemon Solid', sans-serif;
+  font-size: 1.5em;
+  object-fit: contain;
+  overflow-wrap: break-word; /* Handle long words */
+  word-wrap: break-word; /* Handle long words */
+  hyphens: auto; /* Enable hyphenation */
+}
+
+.tip-text{
+  grid-area:topMiddle/tipsLeft/topBottom/tipsRight;
+  margin-left:5%;
+  margin-right:5%;
+  margin-top:2%;
+  font-size: 1.5em;
+  align-self: start;
+  justify-self: center;
+  text-align: center;
+  font-size: 1em;
+  object-fit: contain;
+  overflow-wrap: break-word; /* Handle long words */
+  word-wrap: break-word; /* Handle long words */
+  hyphens: auto; /* Enable hyphenation */
 }
 #badge{
   width: 35%;
@@ -161,6 +202,7 @@
   border-left-width: 0.1cm;
   border-right-width: 0.1cm;
 }
+
 .footer{
   background-color: #cc0000;
   justify-items:end;
