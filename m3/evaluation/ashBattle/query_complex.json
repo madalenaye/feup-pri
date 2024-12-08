@@ -1,0 +1,14 @@
+{
+  "query": "ash wins gym battles",
+  "filter": "-_nest_path_:*",
+  "fields": "id, score",
+  "limit": 30,
+  "params": {
+    "defType": "edismax",
+    "q.op": "AND",
+    "qf": "title_query^7 major_events^10 plot^4",
+    "pf": "plot^25 major_events^25",
+    "ps": "6"
+  }
+}
+  
