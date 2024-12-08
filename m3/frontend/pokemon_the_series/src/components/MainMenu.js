@@ -38,11 +38,3 @@ export default function MainMenu() {
       </div>
     );
 }
-
-
-function SearchEngineName({src,classList}){
-    const classlist = [...classList];
-    return (
-        <img className={classlist.join(" ")} src={src} alt="Website name"/>
-    )
-}

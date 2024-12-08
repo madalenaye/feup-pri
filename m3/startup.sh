@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # create semantic episodes file
-cat data/docs/new_episodes.json | python3 get_embeddings.py > data/semantic_episodes.json
+# cat data/docs/new_episodes.json | python3 get_embeddings.py
+#Execute above command first to create the semantic episodes file
 # Startup with Docker
 docker run -p 8983:8983 --name pokemon_the_series -v ${PWD}/data:/data -d solr:9 solr-precreate episodes
 
@@ -24,7 +25,7 @@ curl -X POST -H 'Content-type:application/json' --data-binary @./data/semantic_s
 sleep 2
 
 # Post the documents
-docker exec -it pokemon_the_series bin/solr post -f -c episodes /data/out/semantic_episodes.json
+docker exec -it pokemon_the_series bin/solr post -f -c episodes /data/docs/chunked_episodes.json
 
 docker restart pokemon_the_series
 echo "Schema and documents have been posted."

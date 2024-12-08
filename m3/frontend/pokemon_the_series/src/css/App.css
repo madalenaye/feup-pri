@@ -128,7 +128,7 @@
   border-color: white;
   box-shadow: 0 0px 30px black;
   overflow: auto; /* Ensure content does not overflow */
-
+  scrollbar-width: none;
 }
 
 
@@ -144,6 +144,7 @@
 }
 .tip-intro{
   grid-area:tipsTop/tipsLeft/topMiddle/tipsMiddle2;
+  width:auto;
   margin:5%;
   justify-self: start;
   align-self: start;
@@ -153,13 +154,13 @@
   overflow-wrap: break-word; /* Handle long words */
   word-wrap: break-word; /* Handle long words */
   hyphens: auto; /* Enable hyphenation */
+  
 }
 
 .tip-text{
   grid-area:topMiddle/tipsLeft/topBottom/tipsRight;
-  margin-left:5%;
-  margin-right:5%;
   margin-top:2%;
+  width: 90%;
   font-size: 1.5em;
   align-self: start;
   justify-self: center;
