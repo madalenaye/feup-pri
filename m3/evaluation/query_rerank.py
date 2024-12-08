@@ -6,7 +6,7 @@ import requests
 from sentence_transformers import SentenceTransformer
 
 def text_to_embedding(text):
-    model = SentenceTransformer('all-mpnet-base-v2')
+    model = SentenceTransformer('msmarco-distilbert-dot-v5')
     embedding = model.encode(text, convert_to_tensor=False).tolist()
     
     # Convert the embedding to the expected format
@@ -28,9 +28,9 @@ def fetch_solr_results(query_file, solr_uri, collection):
     # Load the query parameters from the JSON file
     try:
         query_params = json.load(open(query_file))
-        embedding = text_to_embedding(query_params["querytext"])
-        del query_params["querytext"]
-        query_params["query"] += embedding
+        embedding = text_to_embedding(query_params["query"])
+
+        query_params["params"]["rqq"] = f"{{!parent which=\"plot:*\" score=total}}{{!knn f=vector topK=100}}{embedding}"
     except FileNotFoundError:
         print(f"Error: Query file {query_file} not found.")
         sys.exit(1)

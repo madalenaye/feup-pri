@@ -3,7 +3,7 @@ import json
 from sentence_transformers import SentenceTransformer
 
 # Load the SentenceTransformer model
-model = SentenceTransformer('msmarco-distilbert-dot-v5')
+model = SentenceTransformer('all-mpnet-base-v2')
 
 def get_embedding(text):
     # The model.encode() method already returns a list of floats
@@ -36,5 +36,5 @@ if __name__ == "__main__":
 
     # Output updated JSON to STDOUT
     #json.dump(data, sys.stdout, indent=4, ensure_ascii=False)
-    with open('data/docs/chunked_episodes.json', 'w') as file:
+    with open('data/docs/chunked_episodes_2.json', 'w') as file:
         json.dump(data, file, indent=4, ensure_ascii=False)
