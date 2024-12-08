@@ -5,3 +5,4 @@ __pycache__/
 /m3/data/docs/semantic_episodes.json
 /m3/frontend/pokemon_the_series/node_modules/
 **/.DS_Store
+/m3/data/docs/chunked_episodes.json

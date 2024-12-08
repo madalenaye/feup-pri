@@ -12,6 +12,9 @@ sleep 10
 
 cd ~/feup-pri/m2
 
+cp data/synonyms.txt ~/solr-9.7.0/server/solr/episodes/conf/synonyms.txt
+cp data/pokemon_synonyms.txt ~/solr-9.7.0/server/solr/episodes/conf/pokemon_synonyms.txt
+
 curl -X POST -H 'Content-type:application/json' --data-binary @data/schema.json http://localhost:8983/solr/episodes/schema
 
 curl -X POST -H 'Content-type:application/json' \
