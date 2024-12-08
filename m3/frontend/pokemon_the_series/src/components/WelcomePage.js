@@ -14,7 +14,7 @@ export default function WelcomePage() {
       const pressText = clicked.querySelector("#PressAnywhereToContinue")
       pressText.classList.add("animate-ping")
       setTimeout(()=>{
-        navigate("/MainMenu")
+        navigate("/mainmenu")
       },900)
     }
     

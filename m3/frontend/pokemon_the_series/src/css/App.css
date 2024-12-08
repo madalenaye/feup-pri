@@ -43,7 +43,21 @@
   grid-column: left/right; 
   grid-row: middle1/middle2;
 }
-
+.search-loading{
+  grid-column:betweenInputIcon/searchBarRight;
+  grid-row:top/bottom;
+  align-self: center;
+  justify-self: center;
+  justify-items: center;
+  align-items: center;
+  margin:0;
+  padding:0;
+}
+.search-loading-icon{
+  width: 45px;
+  height: 45px;
+  object-fit: contain;
+}
 .search-bar{
   display: grid;
   grid-template-columns: [searchBarLeft] 65px [betweenIconInput] 1fr [betweenInputIcon] 60px [searchBarRight];

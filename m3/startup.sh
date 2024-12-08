@@ -25,7 +25,7 @@ curl -X POST -H 'Content-type:application/json' --data-binary @./data/semantic_s
 sleep 2
 
 # Post the documents
-docker exec -it pokemon_the_series bin/solr post -f -c episodes /data/docs/chunked_episodes.json
+docker exec -it pokemon_the_series bin/solr post -f -c episodes /data/docs/chunked_episodes_2.json
 
 docker restart pokemon_the_series
 echo "Schema and documents have been posted."

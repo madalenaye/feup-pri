@@ -1,11 +1,18 @@
+import { useLocation } from "react-router-dom";
 export default function SearchResultsPage() {
+  const location = useLocation();
+  const { docs } = location.state;
   return (
-    <form className="search-bar" onSubmit={(e)=>{e.preventDefault()}}>
-        <div className="search-bar-input">
-          <div className="search-bar-placeholder"/>
-          <input type="text" className="search-bar-text-field" placeholder="Make your query here!" required/>
-        </div>
-        <button type="submit" className="search-bar-button" > <SearchIcon src={Search} classList={["select"]}/></button>
-    </form>
+    <div>
+      {docs.map((doc) =>{
+        return (
+          <div key={doc.id}>
+            <h2>{doc.id}</h2>
+            <p>{doc.title}</p>
+            <p>{doc.plot}</p>
+          </div>
+        );
+      })}
+    </div>
   );
 }
