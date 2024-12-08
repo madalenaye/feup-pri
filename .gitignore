@@ -5,3 +5,4 @@ __pycache__/
 /m3/data/docs/semantic_episodes.json
 **/.DS_Store
 /m3/data/docs/chunked_episodes.json
+/m3/data/docs/chunked_episodes_2.json
