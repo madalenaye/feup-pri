@@ -9,6 +9,6 @@
       "qf": "title_query^7 major_events^10 plot^4",
       "pf": "plot^25 major_events^25",
       "ps": "6",
-      "rq": "{!rerank reRankQuery=$rqq reRankWeight=0.1}"
+      "rq": "{!rerank reRankQuery=$rqq reRankWeight=0.2}"
     }
   }

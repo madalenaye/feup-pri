@@ -6,7 +6,7 @@ import requests
 from sentence_transformers import SentenceTransformer
 
 def text_to_embedding(text):
-    model = SentenceTransformer('msmarco-distilbert-dot-v5')
+    model = SentenceTransformer('all-mpnet-base-v2')
     embedding = model.encode(text, convert_to_tensor=False).tolist()
     
     # Convert the embedding to the expected format
