@@ -116,6 +116,7 @@
   display: grid;
   width: 85%;
   height:35vh;
+  background-color: rgba(252,255,255,0.5);
   justify-self: center;
   align-content: center;
   grid-column: middle1col/middle2col;
@@ -124,6 +125,7 @@
   grid-template-rows:[tipsTop] 0.15fr [topMiddle] 0.8fr [tipsBottom];
   border-radius: 20px;
   border-width: 0.1cm;
+  border-color: white;
   box-shadow: 0 0px 30px black;
   overflow: auto; /* Ensure content does not overflow */
 

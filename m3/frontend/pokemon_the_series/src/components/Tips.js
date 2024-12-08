@@ -15,7 +15,7 @@ export default function Tips({classList=[]}){
     return (
         <AnimatePresence>
           {tipId === 0 && (
-            <motion.div key="tip0" initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }} className={classlist.join(" ") + " bg-yellow-300 opacity-90"} onClick={clickHandler} >
+            <motion.div key="tip0" initial={{ scale: 0 }} animate={{ scale: 1 }} exit={{ scale: 0 }} className={classlist.join(" ")} onClick={clickHandler} >
               <h1 className="tip-intro">Did you know: Pokémon means 'Pocket Monsters'!</h1>
               <p className="tip-text">
                 Pokémon is an abbreviation of 'Poketto Monsutā' which means 'Pocket Monster' in Japanese. Because they fit in your pocket, of course! Although luckily they live in Poke balls, imagine the mess if they used your pockets as a loo...
@@ -29,7 +29,7 @@ export default function Tips({classList=[]}){
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               exit={{ scale: 0 }}
-              className={classlist.join(" ") + " bg-red-300 opacity-90"}
+              className={classlist.join(" ")}
               onClick={clickHandler}
             >
               <h1 className="tip-intro">Did you know: Lots of Pokémon names are puns!</h1>
