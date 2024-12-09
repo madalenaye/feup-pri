@@ -10,5 +10,6 @@ pip install django
 
 5. To run the server:
 ```py 
-python manage.py runserver
+python manage.py runserver 5001
 ```
+5001 is the port number you want to initialze the server at
