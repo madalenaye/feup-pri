@@ -30,7 +30,7 @@ def fetch_solr_results(query_file, solr_uri, collection):
         query_params = json.load(open(query_file))
         embedding = text_to_embedding(query_params["query"])
 
-        query_params["params"]["rqq"] = f"{{!parent which=\"plot:*\" score=total}}{{!knn f=vector topK=100}}{embedding}"
+        query_params["params"]["rqq"] = f"{{!parent which=\"plot:*\" score=max}}{{!knn f=vector topK=100}}{embedding}"
     except FileNotFoundError:
         print(f"Error: Query file {query_file} not found.")
         sys.exit(1)
