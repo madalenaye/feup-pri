@@ -1,6 +1,9 @@
 {
     "add-requesthandler": {
-        "name": "/mlt",
-        "class": "solr.MoreLikeThisHandler"
+      "name": "/mlt",
+      "class": "solr.MoreLikeThisHandler",
+      "defaults": {
+        "mlt.fl": "title, plot, major_events"
+      }
     }
 }

@@ -23,4 +23,3 @@ def query(request):
             return HttpResponse(json.dumps(results), content_type="application/json")
         except json.JSONDecodeError:
             return HttpResponse("Invalid JSON", status=400)
-

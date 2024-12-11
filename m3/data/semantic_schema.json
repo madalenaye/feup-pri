@@ -192,8 +192,7 @@
             "name": "title_query",
             "type": "textNoSynonyms",
             "indexed": true,
-            "stored": false,
-            "termVectors": true
+            "stored": false
         },
        
         {
@@ -204,8 +203,7 @@
         {
             "name": "subtitle",
             "type": "text",
-            "indexed": false,
-            "termVectors": true
+            "indexed": false
         },
         {
             "name": "plot",
