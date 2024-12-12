@@ -11,7 +11,8 @@ mlt = {
         "mlt.mindf": 6,
         "mlt.qf": "plot^8 title^2 major_events^5",
         "sort": "score desc",
-        "rows": 5
+        "rows": 5,
+        "fl": "id, score"
     }
 }
 
@@ -35,7 +36,7 @@ def fetch_solr_results(episode, solr_uri, collection):
         result = []
         results.append({
             "id": episode["id"],
-            "related": [{"id": docs[i]["id"]} for i in range(len(docs))]
+            "related": [{"id": docs[i]["id"], "score:": docs[i]["score"]} for i in range(len(docs))]
         })
         return result
 
