@@ -1,0 +1,9 @@
+{
+    "query": "{!parent which=\"plot:*\" score=max}{!knn f=vector topK=500}",
+    "fields": "id, score",
+    "limit": 30,
+    "querytext": "ash wins gym battles",
+    "params": {
+    }
+  }
+  

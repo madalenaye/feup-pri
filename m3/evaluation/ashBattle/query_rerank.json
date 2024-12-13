@@ -1,5 +1,5 @@
 {
-    "query": "steal pokemon",
+    "query": "ash wins gym battles",
     "filter": "-_nest_path_:*",
     "fields": "id, title, score",
     "limit": 30,
