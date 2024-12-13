@@ -42,6 +42,9 @@
 .main-menu-content{
   grid-column: left/right; 
   grid-row: middle1/middle2;
+  width:100%;
+  height:100%;
+  object-fit: contain;
 }
 .top-bar{
   background-color: #cc0000 ;
@@ -72,7 +75,7 @@
 }
 .topbar-title{
   grid-area:top/middlecol1/bottom/middlecol2;
-  width:250px;
+  width:18vw;
   height:auto;
   padding:1;
   justify-self: center;
@@ -85,6 +88,9 @@
   grid-template-columns: [left] 0.45fr [middle1] 0.52fr [middle2] 0.03fr [right];
   justify-items: center;
   align-items: center;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
 }
 .pokedex-images.spin{
   grid-area: titleLine/left/descriptionLine/middle1;
@@ -121,21 +127,49 @@
   width: 100%;
   height: 100%; 
   align-items: center;
-  justify-items: center;
+  justify-content: center;
  
+}
+.pokedex-items-list-wrapper{
+  display:grid;
+  grid-template-columns: [left] 1fr [right];
+  grid-template-rows: [top] 0.1fr [middlerow] auto [bottom];
+  width: 95%;
+  height: 95%; 
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.8);
+  box-shadow: 0 0px 30px black inset;
+}
+
+.pokedex-items-list-filters{
+  display:flex;
+  flex-direction: row;
+  justify-items: start;
+  align-items: center;
+  grid-area:top/left/middlerow/right;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100%;
+  width:auto;
+  padding-top:2%;
+  padding-left:5%;
+  flex-wrap: wrap;
+}
+.no-outline{
+  outline: none;
 }
 .pokedex-items-list{
   display:flex;
   flex-direction:column;
-  background-color: rgba(255,255,255,0.8);
-  width: 95%;
-  height: 100%; 
-  border-radius: 20px;
-  margin:2.5%;
+  grid-area:middlerow/left/bottom/right;
+  margin-top:0%;
+  margin-bottom:1%;
+  margin-left: 0.5%;
+  margin-right: 0.5%;
   overflow: auto;
   scrollbar-width: none;
   padding:2%;
-  box-shadow: 0 0px 30px black inset;
+  padding-top:0%;
 }
 .pokedex-items-list-item{
   margin:1%;
@@ -195,11 +229,12 @@
 }
 .pokedex-text-box.description{
   grid-area: descriptionLine/left/bottom/middle1;
-  margin-bottom: 5px;
+  margin-bottom: 5%;
   justify-items: left;
   align-items: center;
-  height:80%;
+  height:100%;
   width:90%;
+
 }
 .pokedex-text-box.title{
   grid-area: top/left/titleLine/middle1;

@@ -14,11 +14,18 @@ import UnovaBadges from "../images/unova-badges.png"
 import Zcrystals from "../images/zcrystals.png"
 import WildSearch from "../images/wildsearchresults.jpg"
 import SearchResults from "../images/SearchResults.png";
+import FilterImage from "../images/filter.png"
+import Filters from "./Filters.js";
+import { filterProps } from "framer-motion";
 
 export default function SearchResultsPage() {
   const location = useLocation();
   const [hoveredDoc, setHoveredDoc] = useState(null);
   const { docs } = location.state;
+  const [sortedDocs, setSortedDocs] = useState(Array.from(docs));
+  const [docsByRel, setDocsByRel] = useState(Array.from(docs));
+  const [limitDocs, setLimitDocs] = useState(30);
+  const toSortDocs = [...sortedDocs]
   let chosen = 0;
   const handleMouseEnter = (doc) => {
     setHoveredDoc(doc);
@@ -63,6 +70,38 @@ export default function SearchResultsPage() {
   const badgeClickHandler = ()=>{
     console.warn("clicked")
   }
+  const sortByEpcode = (docA,docB)=>{
+    return docA.id.localeCompare(docB.id);
+  }
+  /*const sortByRelevance = (docA,docB)=>{
+    console.log(docA.score)
+    console.log(docB.score)
+    return docA.score - docB.score;
+  }*/
+  const sortByTitle = (docA,docB)=>{
+    return docA.title.localeCompare(docB.title);
+  }
+  
+  const filterHandler = (selectedOrderType)=>{
+    console.log(toSortDocs)
+    switch(selectedOrderType){
+      case "relevance":
+        setSortedDocs(docsByRel);
+        break;
+      case "epcode":
+        setSortedDocs(toSortDocs.sort(sortByEpcode));
+        break;
+      case "title":
+        setSortedDocs(toSortDocs.sort(sortByTitle));
+        break;
+      default:
+        break;
+    }
+  }  
+  const limitHandler = (newLimit)=>{
+    console.log("newLimit:",newLimit)
+    setLimitDocs(newLimit);
+  }
   const badgeProps = {
     src:badge,
     id:"header-logo",
@@ -83,6 +122,15 @@ export default function SearchResultsPage() {
     alt:"Title for the page as Search results",
     className:"topbar-title"
   }
+  const filterProps={
+    className:"no-outline"
+  }
+  
+  const filterCallbacks = {
+    filterHandler:filterHandler,
+    limitHandler:limitHandler
+  }
+  console.log("actual limit:",limitDocs)
   
   return (
     <div className="main-menu h-screen">
@@ -127,19 +175,24 @@ export default function SearchResultsPage() {
               )
             }
             <div className="pokedex-items-list-container">
-               <ul className="pokedex-items-list">
-               {  
-                  docs.map((doc)=>{
-                    return (
-                      <li className="pokedex-items-list-item"  key={doc.id} onMouseEnter={() => handleMouseEnter(doc)}>
-                          <Image props={itemLogoProps} classList={["pokedex-items-list-item-logo"]}/>
-                          <div className="pokedex-items-list-item-id">{doc.id}</div>
-                          <div className="pokedex-items-list-item-title">{doc.title}</div>
-                      </li>
-                    );
-                  })
-                }
-               </ul>
+              <div className="pokedex-items-list-wrapper">
+                <div className="pokedex-items-list-filters">
+                    <Filters props={filterProps} callbacks={filterCallbacks}/>
+                </div>
+                <ul className="pokedex-items-list">
+                {  
+                    sortedDocs.slice(0,limitDocs).map((doc)=>{
+                      return (
+                        <li className="pokedex-items-list-item"  key={doc.id} onMouseEnter={() => handleMouseEnter(doc)}>
+                            <Image props={itemLogoProps} classList={["pokedex-items-list-item-logo"]}/>
+                            <div className="pokedex-items-list-item-id">{doc.id}</div>
+                            <div className="pokedex-items-list-item-title">{doc.title}</div>
+                        </li>
+                      );
+                    })
+                  }
+                </ul>
+               </div>
             </div>
         </div>
         <footer className="footer">
