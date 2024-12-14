@@ -16,6 +16,8 @@ case "$1" in
    ;;
    "angry") ID=5
    ;;
+   "stealneed") ID=6
+   ;;
 esac
 
 # Process the qrels file

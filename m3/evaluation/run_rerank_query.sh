@@ -15,6 +15,8 @@ case "$1" in
    ;;
    "angry") ID=5
    ;;
+   "stealneed") ID=6
+   ;;
 esac
 
 python3 query_rerank.py --query "$1/query_rerank.json" --uri http://localhost:8983/solr --collection episodes | \
