@@ -14,14 +14,12 @@ import UnovaBadges from "../images/unova-badges.png"
 import Zcrystals from "../images/zcrystals.png"
 import WildSearch from "../images/wildsearchresults.jpg"
 import SearchResults from "../images/SearchResults.png";
-import FilterImage from "../images/filter.png"
 import Filters from "./Filters.js";
-import { filterProps } from "framer-motion";
 
 export default function SearchResultsPage() {
   const location = useLocation();
   const [hoveredDoc, setHoveredDoc] = useState(null);
-  const { docs } = location.state;
+  const { docs,isEpisode } = location.state;
   const [sortedDocs, setSortedDocs] = useState(Array.from(docs));
   const [docsByRel, setDocsByRel] = useState(Array.from(docs));
   const [limitDocs, setLimitDocs] = useState(30);
@@ -70,16 +68,16 @@ export default function SearchResultsPage() {
   const badgeClickHandler = ()=>{
     console.warn("clicked")
   }
-  const sortByEpcode = (docA,docB)=>{
-    return docA.id.localeCompare(docB.id);
+  const sortByCode = (docA,docB)=>{
+    return isEpisode?docA.id.localeCompare(docB.id):docA.pokedex_entry.localeCompare(docB.pokedex_entry);
   }
   /*const sortByRelevance = (docA,docB)=>{
     console.log(docA.score)
     console.log(docB.score)
     return docA.score - docB.score;
   }*/
-  const sortByTitle = (docA,docB)=>{
-    return docA.title.localeCompare(docB.title);
+  const sortByName = (docA,docB)=>{
+    return isEpisode?docA.title.localeCompare(docB.title):docA.name.localeCompare(docB.name);
   }
   
   const filterHandler = (selectedOrderType)=>{
@@ -88,11 +86,11 @@ export default function SearchResultsPage() {
       case "relevance":
         setSortedDocs(docsByRel);
         break;
-      case "epcode":
-        setSortedDocs(toSortDocs.sort(sortByEpcode));
+      case "id":
+        setSortedDocs(toSortDocs.sort(sortByCode));
         break;
-      case "title":
-        setSortedDocs(toSortDocs.sort(sortByTitle));
+      case "name":
+        setSortedDocs(toSortDocs.sort(sortByName));
         break;
       default:
         break;
@@ -142,15 +140,18 @@ export default function SearchResultsPage() {
         <div className="main-menu-content pokedex-results">
             {
               hoveredDoc?
-              <Image props={{src:determineRegionBadges(hoveredDoc)}} classList={["pokedex-images spin"]}/>
+                isEpisode?
+                  <Image props={{src:determineRegionBadges(hoveredDoc)}} classList={["pokedex-images spin"]}/>
+                  :
+                  <Image props={{src:hoveredDoc.image,className:"pokedex-images"}}/>
               :
               <Image props={defaultProps} classList={["pokedex-images"]}/>
             }
             {
-              hoveredDoc? 
+              hoveredDoc?
               (
                 <div className="pokedex-text-box title">
-                  <p className="pokedex-text-box-text title">{hoveredDoc.title}</p>
+                  <p className="pokedex-text-box-text title">{isEpisode?hoveredDoc.title:hoveredDoc.name}</p>
                 </div>
               )
               :
@@ -164,7 +165,7 @@ export default function SearchResultsPage() {
               hoveredDoc? 
               (
                 <div className="pokedex-text-box description">
-                  <p className="pokedex-text-box-text">{hoveredDoc.plot}</p>
+                  <p className="pokedex-text-box-text">{isEpisode?hoveredDoc.plot:hoveredDoc.biology}</p>
                 </div>
               )
               :
@@ -185,8 +186,8 @@ export default function SearchResultsPage() {
                       return (
                         <li className="pokedex-items-list-item"  key={doc.id} onMouseEnter={() => handleMouseEnter(doc)}>
                             <Image props={itemLogoProps} classList={["pokedex-items-list-item-logo"]}/>
-                            <div className="pokedex-items-list-item-id">{doc.id}</div>
-                            <div className="pokedex-items-list-item-title">{doc.title}</div>
+                            <div className="pokedex-items-list-item-id">{isEpisode?doc.id:doc.pokedex_entry}</div>
+                            <div className="pokedex-items-list-item-title">{ isEpisode?doc.title:doc.name}</div>
                         </li>
                       );
                     })

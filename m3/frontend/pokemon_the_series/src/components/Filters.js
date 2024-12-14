@@ -16,8 +16,8 @@ export default function Filters({props={},callbacks={}}){
             &nbsp;
             <select name="orderBy" {...props} onChange={onChangeHandler} >
                 <option value="relevance" defaultValue="revelance">Relevance</option>
-                <option value="epcode">Episode Code</option>
-                <option value="title">Episode Name</option>
+                <option value="id">Code</option>
+                <option value="name">Name</option>
             </select>
             &nbsp;
             Limit:

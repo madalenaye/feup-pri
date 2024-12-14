@@ -286,6 +286,48 @@
   align-items: center;
   
 }
+.search-bar-switch-container{
+  grid-area:top/betweenInputIcon/bottom/searchBarRight;
+  position:relavive;
+  display:flex;
+  flex-direction: row;
+  translate:70px 0px;
+  width:115%;
+  height:50%;
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.8);
+  box-shadow: 0 0 8px black inset;
+  align-items: center;
+  
+}
+.search-bar-switch{
+  border-radius: 20px;
+  width:35%;
+  height:75%;
+  margin:8%;
+  box-shadow: 0 0 5px black;
+  object-fit: contain;
+  translate: 0,0;
+  rotate:0deg;
+  transition-property: translate,rotate;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  align-items: center;
+}
+.search-bar-switch.activated{
+  translate:145% 0;
+  rotate:180deg;
+}
+.search-bar-switch-text{
+  font-size:0.8em;
+  font-family: 'Pokemon Solid', sans-serif;
+  transform:translate(0,0);
+  transition:transform 0.5s ease-in-out;
+  z-index: -1;
+}
+.search-bar-switch-text.activated{
+  transform:translate(-100%,0);
+}
 .search-bar-icon{
   position: relative;
   max-width: none;

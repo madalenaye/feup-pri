@@ -4,24 +4,33 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import {useState} from 'react';
 import LoadingBall from './LoadingBall';
+import Image from './Image'
+import Pokeball from "../images/pokeball.png"
 export default function SearchBar() {
   const navigate = useNavigate();
   const [loading, setLoading] = useState(false);
+  const [isEpisode, setIsEpisode] = useState(false);
   function handleResponse(response){
+    if(!response) {
+      console.warn("No response given from the server")
+      throw new Error("No response");
+    };
     const responseData = response.data;
     const docs = responseData.response.docs
-    navigate('/searchresults', { state: { docs } });
+    navigate('/searchresults', { state: { docs, isEpisode} });
   }
 
   async function onSubmitRequest(event){
     event.preventDefault();
     const formField = event.target.querySelector('.search-bar-text-field');
     const query = formField.value;
+    const requestEndpoint = isEpisode?'http://127.0.0.1:5001/queryEpisodes/':'http://127.0.0.1:5001/queryPokemons/'
+    console.log(requestEndpoint)
     let response;
     try {
       setLoading(true);
       response = await axios.post(
-        'http://127.0.0.1:5001/query/',
+        requestEndpoint,
         { "query":query },
         {
           headers: {
@@ -37,6 +46,14 @@ export default function SearchBar() {
     }
     
   }
+  const switchClickHandler=()=>{    
+    setIsEpisode(!isEpisode);
+  }
+  const pokeballprops={
+    src:Pokeball,
+    className: isEpisode?"search-bar-switch activated":"search-bar-switch",
+    onClick:switchClickHandler
+  }
   return (
     <form className="search-bar" onSubmit={onSubmitRequest}>
         <SearchBarIcon src={pokedexSearchBar} classList={["search-bar-icon"]}/>
@@ -51,6 +68,10 @@ export default function SearchBar() {
           :
           <button type="submit" className="search-bar-button" > <SearchIcon src={Search} classList={["select"]}/></button>
         }
+        <div className='search-bar-switch-container'>
+          <Image props={pokeballprops}/>
+          <div className={isEpisode?"search-bar-switch-text activated":"search-bar-switch-text"}>{isEpisode?"EP":"Poké"}</div>
+        </div>
     </form>
   );
 }
