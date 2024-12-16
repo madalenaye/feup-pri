@@ -61,7 +61,7 @@ export default function SearchBar() {
         <SearchBarIcon src={pokedexSearchBar} classList={["search-bar-icon"]}/>
         <div className="search-bar-input">
           <div className="search-bar-placeholder"/>
-          <input type="text" className="search-bar-text-field" placeholder="Make your query here!" value={sessionStorage.getItem("lastQuery")} required/>
+          <input type="text" className="search-bar-text-field" placeholder="Make your query here!" defaultValue={sessionStorage.getItem("lastQuery")} required/>
         </div>
         {
           loading
