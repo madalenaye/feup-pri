@@ -1,5 +1,7 @@
 import json 
 import pandas as pd
+import urllib.request
+import urllib.parse
 
 def convert_to_iso(episodes):
     for episode in episodes:
@@ -11,6 +13,18 @@ def convert_to_iso(episodes):
             episode["first_broadcast_united_states"] = pd.to_datetime(episode["first_broadcast_united_states"], unit='ms').isoformat()
     return episodes
 
+def fetchImage(title):
+    encoded_title = urllib.parse.quote(title)
+    url = f"https://bulbapedia.bulbagarden.net/w/api.php?action=query&titles={encoded_title}&redirects&prop=pageimages&format=json&pithumbsize=10000"
+    req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0'})
+    with urllib.request.urlopen(req) as url:
+        pageid, pageContent = list(json.load(url)["query"]["pages"].items())[0]
+        print(pageContent);
+        return pageContent["thumbnail"]["source"];
+def addImageEp(document):
+    return fetchImage(document["id"])
+
+    return human_characters;
 def process_episodes(episodes):
     counter = 1
     for episode in episodes:
@@ -28,6 +42,7 @@ def process_episodes(episodes):
                 episode["paragraphs"].append(episode["plot"][last_paragraph:(idx+1)])
                 last_paragraph = idx+1
         episode["paragraphs"].append(episode["plot"][last_paragraph:len(episode["plot"])])
+        episode["image"] = addImageEp(episode);
 
         counter += 1
 
@@ -40,3 +55,6 @@ episodes = process_episodes(convert_to_iso(episodes))
 
 with open('data/docs/new_episodes.json', 'w') as file:
     json.dump(episodes, file, indent=4)
+
+
+
