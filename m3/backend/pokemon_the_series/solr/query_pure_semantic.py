@@ -45,7 +45,6 @@ def fetch_solr_results(query_info_json, solr_uri, collection):
 
     # Fetch and print the results as JSON
     results = response.json()
-    print(json.dumps(results, indent=2))
     return results
 
 if __name__ == "__main__":

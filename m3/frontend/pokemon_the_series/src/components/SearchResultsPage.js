@@ -1,4 +1,4 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react"
 import Video from "./Video";
 import Image from "./Image";
@@ -18,16 +18,21 @@ import Filters from "./Filters.js";
 
 export default function SearchResultsPage() {
   const location = useLocation();
+  const navigate = useNavigate();
   const [hoveredDoc, setHoveredDoc] = useState(null);
   const { docs,isEpisode } = location.state;
   const [sortedDocs, setSortedDocs] = useState(Array.from(docs));
-  const [docsByRel, setDocsByRel] = useState(Array.from(docs));
+  const [docsByRel, _] = useState(Array.from(docs));
   const [limitDocs, setLimitDocs] = useState(30);
+  const [pokemonType,setType] = useState("");
   const toSortDocs = [...sortedDocs]
   let chosen = 0;
   const handleMouseEnter = (doc) => {
     setHoveredDoc(doc);
   };
+  const clickHandler = (doc)=>{
+    navigate("/document",{state:{doc,isEpisode}});
+  }
   const determineRegionBadges = (doc)=>{
     const id = doc.id;
     const season = id.substring(0,2);
@@ -36,7 +41,6 @@ export default function SearchResultsPage() {
         chosen = Math.random();
         if(chosen <=0.3){
           return KantoBadges;
-
         }
         else if(chosen >=0.6){
           return JohtoBadges;
@@ -66,7 +70,7 @@ export default function SearchResultsPage() {
     }
   }
   const badgeClickHandler = ()=>{
-    console.warn("clicked")
+    navigate("/mainmenu");
   }
   const sortByCode = (docA,docB)=>{
     return isEpisode?docA.id.localeCompare(docB.id):docA.pokedex_entry.localeCompare(docB.pokedex_entry);
@@ -100,6 +104,10 @@ export default function SearchResultsPage() {
     console.log("newLimit:",newLimit)
     setLimitDocs(newLimit);
   }
+  const typeHandler = (newType)=>{
+    console.log(newType);
+    setType(newType);
+  }
   const badgeProps = {
     src:badge,
     id:"header-logo",
@@ -126,8 +134,10 @@ export default function SearchResultsPage() {
   
   const filterCallbacks = {
     filterHandler:filterHandler,
-    limitHandler:limitHandler
+    limitHandler:limitHandler,
+    typeHandler:typeHandler
   }
+
   console.log("actual limit:",limitDocs)
   
   return (
@@ -165,7 +175,22 @@ export default function SearchResultsPage() {
               hoveredDoc? 
               (
                 <div className="pokedex-text-box description">
-                  <p className="pokedex-text-box-text">{isEpisode?hoveredDoc.plot:hoveredDoc.biology}</p>
+                  
+                    {
+                      isEpisode?
+                      <ul className="pokedex-text-box-text">
+                        {
+                          hoveredDoc.major_events.map((event)=>{
+                            return <li key={event}>{event}</li>;
+                          })
+                        }
+                      </ul>
+                      :
+                      <p className="pokedex-text-box-text">
+                        {hoveredDoc.blurb}
+                      </p>
+                    }
+                  
                 </div>
               )
               :
@@ -178,13 +203,26 @@ export default function SearchResultsPage() {
             <div className="pokedex-items-list-container">
               <div className="pokedex-items-list-wrapper">
                 <div className="pokedex-items-list-filters">
-                    <Filters props={filterProps} callbacks={filterCallbacks}/>
+                    <Filters props={filterProps} callbacks={filterCallbacks} isEpisode={isEpisode}/>
                 </div>
                 <ul className="pokedex-items-list">
                 {  
-                    sortedDocs.slice(0,limitDocs).map((doc)=>{
+                    sortedDocs.slice(0,limitDocs).filter((doc)=>{
+                        let res = false;
+                        if (!isEpisode){
+                          doc.types.forEach(type => {
+                              const standardized = pokemonType.toLowerCase();
+                              const compare = type.toLowerCase();
+                              if(compare.includes(standardized)) res = true;
+                          });
+                          return res;
+                        }
+                        else{
+                          return true;
+                        }
+                    }).map((doc)=>{
                       return (
-                        <li className="pokedex-items-list-item"  key={doc.id} onMouseEnter={() => handleMouseEnter(doc)}>
+                        <li className="pokedex-items-list-item"  key={doc.id} onMouseEnter={() => handleMouseEnter(doc)} onClick={()=>clickHandler(doc)}>
                             <Image props={itemLogoProps} classList={["pokedex-items-list-item-logo"]}/>
                             <div className="pokedex-items-list-item-id">{isEpisode?doc.id:doc.pokedex_entry}</div>
                             <div className="pokedex-items-list-item-title">{ isEpisode?doc.title:doc.name}</div>

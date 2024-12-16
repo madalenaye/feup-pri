@@ -15,8 +15,9 @@ export default function SearchBar() {
       console.warn("No response given from the server")
       throw new Error("No response");
     };
+    console.log()
     const responseData = response.data;
-    const docs = responseData.response.docs
+    const docs = responseData
     navigate('/searchresults', { state: { docs, isEpisode} });
   }
 
