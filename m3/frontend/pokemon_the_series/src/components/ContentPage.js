@@ -135,6 +135,7 @@ export default function ContentPage(){
                                             }
                                          </ul>
                                     }
+                                    
                                     {
                                         isEpisode?
                                         <div className="short-info-box-content-row">
@@ -145,10 +146,10 @@ export default function ContentPage(){
                                     {
                                         isEpisode?
                                             <ul className="short-info-box-content-row">
-                                                {doc.animation?<li className="tags" key={doc.animation}>{ "Animation: " + doc.animation}</li>:null}
-                                                {doc.screenplay?<li className="tags" key={doc.screenplay}>{"Screenplay: "+doc.screenplay}</li>:null}
-                                                {doc.storyboard?<li className="tags" key={doc.storyboard}>{"Storyboard: "+doc.storyboard}</li>:null}
-                                                {doc.assistant_director?<li className="tags" key={doc.assistant_director}>{"Assistant Director: "+doc.assistant_director}</li>:null}
+                                                {doc.animation?<li className="tags" key={genKey()}>{ "Animation: " + doc.animation}</li>:null}
+                                                {doc.screenplay?<li className="tags" key={genKey()}>{"Screenplay: "+doc.screenplay}</li>:null}
+                                                {doc.storyboard?<li className="tags" key={genKey()}>{"Storyboard: "+doc.storyboard}</li>:null}
+                                                {doc.assistant_director?<li className="tags" key={genKey()}>{"Assistant Director: "+doc.assistant_director}</li>:null}
                                             </ul>
                                         :
                                         <></>
@@ -174,7 +175,9 @@ export default function ContentPage(){
                             </div>
                         </div>
                     </div>
-                    <div className="more-like-this"></div>
+                    <div className="more-like-this">
+                        
+                    </div>
                 </div>
                 <footer className="footer">
                     <h1>All rights reserved</h1>

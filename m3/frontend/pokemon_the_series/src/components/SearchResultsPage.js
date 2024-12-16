@@ -211,7 +211,9 @@ export default function SearchResultsPage() {
                         let res = false;
                         if (!isEpisode){
                           doc.types.forEach(type => {
-                              if(type.includes(pokemonType)) res = true;
+                              const standardized = pokemonType.toLowerCase();
+                              const compare = type.toLowerCase();
+                              if(compare.includes(standardized)) res = true;
                           });
                           return res;
                         }

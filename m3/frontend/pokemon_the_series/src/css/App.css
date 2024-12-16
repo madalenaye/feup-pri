@@ -84,9 +84,11 @@
 .content-page{
   display:flex;
   flex-direction: column;
-  overflow: hidden;
-  scrollbar-width: none;
+  overflow-x: hidden;
+  overflow-y: auto;
+  
 }
+
 .content-page-entry{
   display: grid;
   grid-template-columns: [left] 0.4fr [middle] 0.6fr [right];
@@ -96,7 +98,9 @@
   align-items: center;
   height:100%;
   width: 100%;
+ 
 }
+
 .content-page-short-info-container{
   display: flex;
   flex-direction: row;

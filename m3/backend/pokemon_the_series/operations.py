@@ -26,6 +26,7 @@ def queryEpisodesPureSemantic(request):
     
             results = query_pure_semantic.fetch_solr_results(queryInfo, "http://localhost:8983/solr", "episodes")
             results = [document for document in results["response"]["docs"]]
+
             print(results[0])
             return HttpResponse(json.dumps(results), content_type="application/json")
         except json.JSONDecodeError:
