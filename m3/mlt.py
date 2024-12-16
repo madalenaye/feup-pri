@@ -33,11 +33,10 @@ def fetch_solr_results(episode, solr_uri, collection):
     docs = response.json().get("response", {}).get("docs", [])
     
     if len(docs) > 0:
-        result = []
-        results.append({
+        result = {
             "id": episode["id"],
             "related": [{"id": docs[i]["id"], "score:": docs[i]["score"]} for i in range(len(docs))]
-        })
+        }
         return result
 
 if __name__ == "__main__":
