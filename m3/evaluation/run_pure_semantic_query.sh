@@ -17,6 +17,8 @@ case "$1" in
    ;;
    "stealneed") ID=6
    ;;
+   "partyneed") ID=7
+   ;;
 esac
 
 python3 query_pure_semantic.py --query "$1/query_pure_semantic.json" --uri http://localhost:8983/solr --collection episodes | \
