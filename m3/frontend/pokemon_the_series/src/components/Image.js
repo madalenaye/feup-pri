@@ -1,6 +1,6 @@
 export default function Image({classList=[],props}){
     const classlist = [...classList];
     return(
-        <img className={classlist.join(" ")} {...props}/>
+        <img referrerPolicy="no-referrer" className={classlist.join(" ")} {...props}/>
     )
 }

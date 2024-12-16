@@ -1,12 +1,17 @@
-#!/usr/bin/env python3
-
 import argparse
 import json
-import sys
 from pathlib import Path
-
+import sys
 import requests
+from sentence_transformers import SentenceTransformer
 
+def text_to_embedding(text):
+    model = SentenceTransformer('all-mpnet-base-v2')
+    embedding = model.encode(text, convert_to_tensor=False).tolist()
+    
+    # Convert the embedding to the expected format
+    embedding_str = "[" + ",".join(map(str, embedding)) + "]"
+    return embedding_str
 
 def fetch_solr_results(query_file, solr_uri, collection):
     """
@@ -23,6 +28,9 @@ def fetch_solr_results(query_file, solr_uri, collection):
     # Load the query parameters from the JSON file
     try:
         query_params = query_file
+        embedding = text_to_embedding(query_params["query"])
+
+        query_params["params"]["rqq"] = f"{{!parent which=\"plot:*\" score=max}}{{!knn f=vector topK=100}}{embedding}"
     except FileNotFoundError:
         print(f"Error: Query file {query_file} not found.")
         sys.exit(1)
@@ -40,9 +48,7 @@ def fetch_solr_results(query_file, solr_uri, collection):
 
     # Fetch and print the results as JSON
     results = response.json()
-    print(json.dumps(results, indent=2))
     return results;
-
 
 if __name__ == "__main__":
     # Set up argument parsing for the command-line interface

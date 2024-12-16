@@ -16,10 +16,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .operations import query
-
-
+from .operations import queryEpisodesPureSemantic,queryPokemons,queryEpRerank,morelikethis
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path("query/", query,name="query")
+    path("queryEpisodes/", queryEpRerank,name="queryEpisodesRerank"),
+    path("queryPokemons/", queryPokemons,name="queryPokemons"),
+    path("morelikethis/", morelikethis, name="moreLikeThis" )
 ]

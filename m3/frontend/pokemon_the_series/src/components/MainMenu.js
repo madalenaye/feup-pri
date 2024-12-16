@@ -1,5 +1,3 @@
-import pokedex from "../images/pokedex.png"
-import johtoBadges from "../images/johto-badges.png"
 import badge from "../images/badge.webp"
 import Video from "./Video.js"
 import logo from "../images/logo.png"
@@ -23,8 +21,8 @@ export default function MainMenu() {
     return (
       <div className="main-menu h-screen">
         <Video src={backGroundLoop} ariaLabel="Background video blue with a rotating pokeball bymbol" classList={["opacity-80", "-z-10" ,"absolute","video-background"]}/>
-        <div className="top-bar flex-row content-center justify-items-end">
-            <Image props={badgeProps} classList={["select"]}/>
+        <div className="top-bar">
+            <Image props={badgeProps} classList={["select","topbar-icon"]}/>
         </div>
         
         <div className="main-menu-content search-engine-container">
