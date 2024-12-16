@@ -6,6 +6,10 @@ import backGroundLoop from "../videos/backgroundLoop.mp4"
 import Japan from "../images/japan.png";
 import USA from "../images/usa.png";
 import Pokeball from "../images/pokeball.png"
+import Egg from "../images/egg.webp";
+import Arrow from "../images/arrow.png"
+
+import axios from "axios"
 import { useState } from "react";
 export default function ContentPage(){
     const location = useLocation();
@@ -14,7 +18,32 @@ export default function ContentPage(){
     const badgeClickHandler =()=>{
         navigate("/mainmenu");
     }
-
+    const handleResponse = (response) =>{
+        let docs = [...response.data]
+        navigate("/searchresults",{state:{docs,isEpisode}})
+    }
+    async function morelikethisHandler(event){
+        event.preventDefault();
+        console.log("clicked!");
+        const requestEndpoint = 'http://127.0.0.1:5001/morelikethis/'
+        console.log(requestEndpoint)
+        let response;
+        try {
+            response = await axios.post(
+                requestEndpoint,
+                {"id":doc.id},
+                {
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                }
+            );
+        } catch (error) {
+            console.error('Error fetching data:', error);
+        } finally{
+            handleResponse(response)
+        }
+    }
     const badgeProps = {
             src:badge,
             id:"header-logo",
@@ -42,16 +71,13 @@ export default function ContentPage(){
                 </div>
                 <div className="main-menu-content content-page">
                     <div className="content-page-entry">
-                        <div className="content-page-image-container">
-                            <h2 className="page-title">
+                    <div className="content-page-image-container">
+                                <h2 className="page-title">
                                 <Image props={{src:Pokeball,alt:"pokeball icon",className:"page-title-logo"}} />
                                 <div>{isEpisode?doc.id:doc.pokedex_entry}</div>
-
                                 <div>{isEpisode?doc.title:doc.name}</div>
-                                
-                            </h2>
+                                 </h2>
                             <Image props={imageProps}/>
-                            
                         </div>
                         <div className="content-page-short-info-container">
                               
@@ -174,10 +200,18 @@ export default function ContentPage(){
                                 </div>
                             </div>
                         </div>
+                        {
+                            isEpisode?
+                            <button onClick={morelikethisHandler} className="more-like-this-button">
+                                More like this
+                                <Image props={{src:Arrow,alt:"An arrow",className:"arrow"}}/>
+                            </button>
+                            :
+                            null
+                        }
+                        <Image props={{src:Egg,alt:"An egg",className:"easter-egg"}}/>
                     </div>
-                    <div className="more-like-this">
-                        
-                    </div>
+                    
                 </div>
                 <footer className="footer">
                     <h1>All rights reserved</h1>

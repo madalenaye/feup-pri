@@ -4,6 +4,7 @@ import json
 from .solr import query_pure_semantic;
 from .solr import query_solr;
 from .solr import query_rerank;
+from .solr import mlt;
 import urllib.request
 import urllib.parse
 
@@ -41,7 +42,7 @@ def queryPokemons(request):
     "params": {
       "defType": "edismax",
       "q.op": "OR",
-      "qf": "biology^10 blurb^2"
+      "qf": "biology^10 blurb^2 name"
     }
     }
     if request.method =='POST':
@@ -79,6 +80,18 @@ def queryEpRerank(request):
             results = query_rerank.fetch_solr_results(queryInfo, "http://localhost:8983/solr", "episodes")
             results = results["response"]["docs"]
             
+            
+            return HttpResponse(json.dumps(results), content_type="application/json")
+        except json.JSONDecodeError:
+            return HttpResponse("Invalid JSON", status=400)
+        
+def morelikethis(request):
+    if request.method =='POST':
+        try:
+            requestBody = json.loads(request.body)
+            id= requestBody['id']
+            results = mlt.fetch_solr_results(id, "http://localhost:8983/solr", "episodes")
+            print(results);
             
             return HttpResponse(json.dumps(results), content_type="application/json")
         except json.JSONDecodeError:
