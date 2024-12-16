@@ -25,6 +25,7 @@ export default function SearchBar() {
     event.preventDefault();
     const formField = event.target.querySelector('.search-bar-text-field');
     const query = formField.value;
+    sessionStorage.setItem("lastQuery", query);
     const requestEndpoint = isEpisode?'http://127.0.0.1:5001/queryEpisodes/':'http://127.0.0.1:5001/queryPokemons/'
     let response;
     try {
@@ -60,7 +61,7 @@ export default function SearchBar() {
         <SearchBarIcon src={pokedexSearchBar} classList={["search-bar-icon"]}/>
         <div className="search-bar-input">
           <div className="search-bar-placeholder"/>
-          <input type="text" className="search-bar-text-field" placeholder="Make your query here!" required/>
+          <input type="text" className="search-bar-text-field" placeholder="Make your query here!" value={sessionStorage.getItem("lastQuery")} required/>
         </div>
         {
           loading
