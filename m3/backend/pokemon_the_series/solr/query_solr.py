@@ -22,7 +22,7 @@ def fetch_solr_results(query_file, solr_uri, collection):
     """
     # Load the query parameters from the JSON file
     try:
-        query_params = json.load(open(query_file))
+        query_params = query_file
     except FileNotFoundError:
         print(f"Error: Query file {query_file} not found.")
         sys.exit(1)
@@ -41,6 +41,7 @@ def fetch_solr_results(query_file, solr_uri, collection):
     # Fetch and print the results as JSON
     results = response.json()
     print(json.dumps(results, indent=2))
+    return results;
 
 
 if __name__ == "__main__":
