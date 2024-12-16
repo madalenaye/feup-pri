@@ -200,10 +200,15 @@ export default function ContentPage(){
                                 </div>
                             </div>
                         </div>
-                        <button onClick={morelikethisHandler} className="more-like-this-button">
-                            More like this
-                            <Image props={{src:Arrow,alt:"An arrow",className:"arrow"}}/>
-                        </button>
+                        {
+                            isEpisode?
+                            <button onClick={morelikethisHandler} className="more-like-this-button">
+                                More like this
+                                <Image props={{src:Arrow,alt:"An arrow",className:"arrow"}}/>
+                            </button>
+                            :
+                            null
+                        }
                         <Image props={{src:Egg,alt:"An egg",className:"easter-egg"}}/>
                     </div>
                     
