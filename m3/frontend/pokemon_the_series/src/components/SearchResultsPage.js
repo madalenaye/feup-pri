@@ -70,7 +70,7 @@ export default function SearchResultsPage() {
     }
   }
   const badgeClickHandler = ()=>{
-    console.warn("clicked")
+    navigate("/mainmenu");
   }
   const sortByCode = (docA,docB)=>{
     return isEpisode?docA.id.localeCompare(docB.id):docA.pokedex_entry.localeCompare(docB.pokedex_entry);

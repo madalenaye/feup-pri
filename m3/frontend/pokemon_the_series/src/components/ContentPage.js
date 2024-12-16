@@ -1,21 +1,27 @@
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import Video from "./Video.js"
 import Image from "./Image.js"
 import badge from "../images/badge.webp"
 import backGroundLoop from "../videos/backgroundLoop.mp4"
 import Japan from "../images/japan.png";
 import USA from "../images/usa.png";
+import Pokeball from "../images/pokeball.png"
 import { useState } from "react";
 export default function ContentPage(){
     const location = useLocation();
+    const navigate = useNavigate();
     const { doc,isEpisode } = location.state;
+    const badgeClickHandler =()=>{
+        navigate("/mainmenu");
+    }
 
-     const badgeProps = {
+    const badgeProps = {
             src:badge,
             id:"header-logo",
-            alt:"Badge logo"
+            alt:"Badge logo",
+            onClick:badgeClickHandler,
     }
-    console.log(doc.image)
+    
     const imageProps={
         src:doc.image,
         alt:"Image of a pokemon or badge"
@@ -38,7 +44,11 @@ export default function ContentPage(){
                     <div className="content-page-entry">
                         <div className="content-page-image-container">
                             <h2 className="page-title">
-                                    {isEpisode?doc.title:doc.name}
+                                <Image props={{src:Pokeball,alt:"pokeball icon",className:"page-title-logo"}} />
+                                <div>{isEpisode?doc.id:doc.pokedex_entry}</div>
+
+                                <div>{isEpisode?doc.title:doc.name}</div>
+                                
                             </h2>
                             <Image props={imageProps}/>
                             

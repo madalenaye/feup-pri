@@ -227,6 +227,15 @@
   word-wrap: break-word;
   z-index: 1;
   text-align: center;
+  display:flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap:1.5%
+}
+.page-title-logo{
+  width: auto;
+  height: 30px;
 }
 .short-info-box-content-col{
   grid-area:middle/left/bottom/right;
