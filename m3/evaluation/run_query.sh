@@ -15,6 +15,10 @@ case "$1" in
    ;;
    "angry") ID=5
    ;;
+   "stealneed") ID=6
+   ;;
+   "partyneed") ID=7
+   ;;
 esac
 
 ./query_solr.py --query "$1/query_$2.json" --uri http://localhost:8983/solr --collection episodes | \
