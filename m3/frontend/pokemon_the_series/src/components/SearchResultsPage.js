@@ -77,29 +77,40 @@ export default function SearchResultsPage() {
   const badgeClickHandler = ()=>{
     navigate("/mainmenu");
   }
-  const sortByCode = (docA,docB)=>{
+  const sortByCodeAsc = (docA,docB)=>{
     return isEpisode?docA.id.localeCompare(docB.id):docA.pokedex_entry.localeCompare(docB.pokedex_entry);
+  }
+  const sortByCodeDesc = (docA,docB)=>{
+    return isEpisode?-1*docA.id.localeCompare(docB.id):-1*docA.pokedex_entry.localeCompare(docB.pokedex_entry);
   }
   /*const sortByRelevance = (docA,docB)=>{
     console.log(docA.score)
     console.log(docB.score)
     return docA.score - docB.score;
   }*/
-  const sortByName = (docA,docB)=>{
+  const sortByNameAsc = (docA,docB)=>{
     return isEpisode?docA.title.localeCompare(docB.title):docA.name.localeCompare(docB.name);
   }
-  
+  const sortByNameDesc = (docA,docB)=>{
+    return isEpisode?-1*docA.title.localeCompare(docB.title):-1*docA.name.localeCompare(docB.name);
+  }
   const filterHandler = (selectedOrderType)=>{
     console.log(toSortDocs)
     switch(selectedOrderType){
       case "relevance":
         setSortedDocs(docsByRel);
         break;
-      case "id":
-        setSortedDocs(toSortDocs.sort(sortByCode));
+      case "idAsc":
+        setSortedDocs(toSortDocs.sort(sortByCodeAsc));
         break;
-      case "name":
-        setSortedDocs(toSortDocs.sort(sortByName));
+      case "idDesc":
+        setSortedDocs(toSortDocs.sort(sortByCodeDesc));
+        break;
+      case "nameAsc":
+        setSortedDocs(toSortDocs.sort(sortByNameAsc));
+        break;
+      case "nameDesc":
+        setSortedDocs(toSortDocs.sort(sortByNameDesc))
         break;
       default:
         break;
