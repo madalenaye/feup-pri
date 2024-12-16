@@ -53,6 +53,7 @@ export default function ContentPage(){
     
     const imageProps={
         src:doc.image,
+        className:"page-image",
         alt:"Image of a pokemon or badge"
     }
     const convertToClassName = (type)=>{

@@ -25,6 +25,8 @@ export default function SearchResultsPage() {
   const [docsByRel, _] = useState(Array.from(docs));
   const [limitDocs, setLimitDocs] = useState(30);
   const [pokemonType,setType] = useState("");
+  const [[dateBegin,dateEnd], setDate] = useState([null,null]);
+  const [japaneseDate,setJapaneseDate] = useState(true);
   const toSortDocs = [...sortedDocs]
   let chosen = 0;
   const handleMouseEnter = (doc) => {
@@ -32,6 +34,9 @@ export default function SearchResultsPage() {
   };
   const clickHandler = (doc)=>{
     navigate("/document",{state:{doc,isEpisode}});
+  }
+  const switchHandler = ()=>{
+    setJapaneseDate(!japaneseDate);
   }
   const determineRegionBadges = (doc)=>{
     const id = doc.id;
@@ -101,13 +106,24 @@ export default function SearchResultsPage() {
     }
   }  
   const limitHandler = (newLimit)=>{
-    console.log("newLimit:",newLimit)
     setLimitDocs(newLimit);
   }
   const typeHandler = (newType)=>{
-    console.log(newType);
     setType(newType);
   }
+
+  const standardizeDate=(dateNotStandard)=>{
+    const standardizedDate = dateNotStandard.substring(0,10)
+    return standardizedDate;
+  }
+  const setDateHandler = (newDateBegin,newDateEnd)=>{
+    const incomingBeginDate = [...newDateBegin].join('');
+    const incomingEndDate = [...newDateEnd].join('');
+    setDate([incomingBeginDate,incomingEndDate]);
+    console.log(incomingBeginDate,incomingEndDate)
+  }
+  
+  console.log(dateBegin,dateEnd)
   const badgeProps = {
     src:badge,
     id:"header-logo",
@@ -129,13 +145,17 @@ export default function SearchResultsPage() {
     className:"topbar-title"
   }
   const filterProps={
-    className:"no-outline"
+    className:"no-outline",
+    japaneseDate:japaneseDate
   }
   
   const filterCallbacks = {
     filterHandler:filterHandler,
     limitHandler:limitHandler,
-    typeHandler:typeHandler
+    typeHandler:typeHandler,
+    setDateHandler: setDateHandler,
+    switchHandler: switchHandler,
+    
   }
 
   console.log("actual limit:",limitDocs)
@@ -219,6 +239,17 @@ export default function SearchResultsPage() {
                         }
                         else{
                           return true;
+                        }
+                    }).filter((doc)=>{
+                        if(!isEpisode) return true
+                        const compareDate = standardizeDate(japaneseDate?doc.first_broadcast_japan:doc.first_broadcast_united_states);
+                        if(dateBegin){
+                          if(dateEnd) return compareDate>=dateBegin && compareDate<=dateEnd
+                          return compareDate>=dateBegin
+                        }
+                        else{
+                          if(dateEnd) return compareDate<=dateEnd
+                          return true
                         }
                     }).map((doc)=>{
                       return (
