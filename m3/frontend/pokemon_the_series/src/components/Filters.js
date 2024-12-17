@@ -45,7 +45,7 @@ export default function Filters({props={},callbacks={},isEpisode=false}){
             
             <select name="orderBy" className={props.className} onChange={onChangeHandler} >
                 <option value="relevance" defaultValue="revelance">Relevance</option>
-                <option value="idASc">Code Asc</option>
+                <option value="idAsc">Code Asc</option>
                 <option value="idDesc">Code Desc</option>
                 <option value="nameAsc">Name Asc</option>
                 <option value="nameDesc">Name Desc</option>

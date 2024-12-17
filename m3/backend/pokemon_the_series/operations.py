@@ -13,7 +13,7 @@ def queryEpisodesPureSemantic(request):
     queryInfo = {
         "query": "{!parent which=\"plot:*\" score=max}{!knn f=vector topK=500}",
         "fields": "id, score,major_events,image, title , plot,paragraphs,human_characters,first_broadcast_japan,first_broadcast_united_states,english_theme_opening,english_theme_ending,japanese_theme_opening,japanese_theme_ending,animation,screenplay,storyboard,assistant_director,animation_directors",
-        "limit": 5000,
+        "limit": 1000000,
         "querytext": "",
         "params": {
         }
@@ -38,7 +38,7 @@ def queryPokemons(request):
     "query":"",
     "filter": "{!collapse field='image'}",
     "fields": "id, score,pokedex_entry, name, biology,blurb,image,abilities ,types",
-    "limit": 30,
+    "limit": 1000000,
     "params": {
       "defType": "edismax",
       "q.op": "OR",
@@ -61,7 +61,7 @@ def queryEpRerank(request):
         "query": "",
         "filter": "-_nest_path_:*",
         "fields": "id, score,major_events,image, title , plot,paragraphs,human_characters,first_broadcast_japan,first_broadcast_united_states,english_theme_opening,english_theme_ending,japanese_theme_opening,japanese_theme_ending,animation,screenplay,storyboard,assistant_director,animation_directors",
-        "limit": 30,
+        "limit": 1000000,
         "params": {
         "defType": "edismax",
         "q.op": "AND",
