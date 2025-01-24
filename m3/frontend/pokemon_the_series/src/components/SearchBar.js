@@ -25,11 +25,12 @@ export default function SearchBar() {
     event.preventDefault();
     const formField = event.target.querySelector('.search-bar-text-field');
     const query = formField.value;
+    sessionStorage.setItem("lastQuery", query);
     const requestEndpoint = isEpisode?'http://127.0.0.1:5001/queryEpisodes/':'http://127.0.0.1:5001/queryPokemons/'
-    console.log(requestEndpoint)
     let response;
     try {
       setLoading(true);
+      console.log("query: ",query)
       response = await axios.post(
         requestEndpoint,
         { "query":query },
@@ -60,14 +61,14 @@ export default function SearchBar() {
         <SearchBarIcon src={pokedexSearchBar} classList={["search-bar-icon"]}/>
         <div className="search-bar-input">
           <div className="search-bar-placeholder"/>
-          <input type="text" className="search-bar-text-field" placeholder="Make your query here!" required/>
+          <input type="text" className="search-bar-text-field" placeholder="Ask anything!" defaultValue={sessionStorage.getItem("lastQuery")} required/>
         </div>
         {
           loading
           ? 
           <LoadingBall classList={["search-loading"]} />
           :
-          <button type="submit" className="search-bar-button" > <SearchIcon src={Search} classList={["select"]}/></button>
+          <button type="submit" className="search-bar-button" > <SearchIcon props={{src:Search, className:"select"}}/></button>
         }
         <div className='search-bar-switch-container'>
           <Image props={pokeballprops}/>
@@ -82,9 +83,9 @@ function SearchBarIcon({src,classList=[]}){
       <img src={src} className={classlist.join(" ")} alt="search bar pokedex icon"/>
     );
 }
-function SearchIcon({src,classList=[]}){
-  const classlist = [...classList]
+function SearchIcon({props={}}){
+  
     return(
-      <img src={src} className={classlist.join(" ")} alt="search icon on the search bar"/>
+      <img {...props} alt="search icon on the search bar"/>
     );
 }

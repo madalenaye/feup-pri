@@ -84,21 +84,23 @@
 .content-page{
   display:flex;
   flex-direction: column;
-  overflow-x: hidden;
   overflow-y: auto;
-  
+  width: 100%;
+  height: 100%;
+  overflow-x: auto;
+  overflow-y: auto;
+  scrollbar-width: none;
 }
 
 .content-page-entry{
   display: grid;
-  grid-template-columns: [left] 0.4fr [middle] 0.6fr [right];
-  grid-template-rows: [top] 0.5fr [middlerow] auto [bottom];
+  grid-template-columns: [left] 650px [middle] auto [right];
+  grid-template-rows: [top] 325px [middlerow] auto [bottom];
   object-fit: contain;
   justify-items: center;
   align-items: center;
   height:100%;
   width: 100%;
- 
 }
 
 .content-page-short-info-container{
@@ -112,15 +114,16 @@
 }
 .short-info-box-skewed{
   width: 80%;
-  height:80%;
+  height: 80%;
   border-radius: 5px;
   border-left-width: 35px;
+  border-right-width: 35px;
   border-color:grey;
   background-color: white;
   transform: skewX(15deg);
   box-shadow: -7px 7px 2px black;
   position: relative;
-  right:-45px;
+  right:-100px;
   display: grid;
   grid-template-columns: [left] auto [right];
   grid-template-rows: [top] 0 [middle] 1fr [bottom];
@@ -218,8 +221,8 @@
   font-size :1.2em;
   color:white;
   font-weight:700;
-  width:500px;
-  height:100%;
+  width:400px;
+  height:auto;
   justify-self: start;
   background-color: red;
   border-radius: 20px;
@@ -241,13 +244,17 @@
   width: auto;
   height: 30px;
 }
+.page-image{
+    width: auto;
+  height: 120%;
+}
 .short-info-box-content-col{
   grid-area:middle/left/bottom/right;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   height: 100%;
-  width:100%;
+  width:80%;
   gap:5%;
 
 }
@@ -286,7 +293,6 @@
 .long-info-box-skewed{
   width: 80%;
   height:80%;
-  max-height: 80%;
   border-radius: 5px;
   border-right-width: 35px;
   border-top-width: 20px;
@@ -345,6 +351,43 @@
   align-items: center;
   display:flex;
   flex-direction: column;
+}
+.more-like-this-button{
+  grid-area:middlerow/middle/bottom/right;
+  justify-self: end;
+  align-self: center;
+  width:18%;
+  height:20%;
+  box-shadow: 0 0 5px black;
+  background-color: white;
+  border-left-width: 10px;
+  border-color: Gray;
+  margin:5%;
+  object-fit: contain;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.arrow{
+  width: auto;
+  height:50%;
+
+}
+.more-like-this-button:hover{
+  animation: alternateX 0.8s ease-in-out infinite alternate
+
+}
+.easter-egg{
+  grid-area:middlerow/middle/bottom/right;
+  justify-self: end;
+  align-self: center;
+  width:10%;
+  height:10%;
+  position: relative;
+  right:-100px;
+  object-fit: contain;
+
 }
 .pokedex-results{
   display:grid;
@@ -550,6 +593,67 @@
   align-items: center;
   
 }
+.filters{
+  display: flex;
+  flex-direction: row;
+  gap:10px;
+  height:100%;
+  width:80%;
+  align-items: center;
+  justify-items: flex-start;
+  flex-wrap: wrap;
+  margin-bottom:2%;
+  max-width: 100%;
+  overflow: auto;
+  scrollbar-width: none;
+} 
+
+.filter-switch-container{
+  border-radius: 20px;
+  background-color: rgba(255,255,255,0.8);
+  box-shadow: 0 0 8px black inset;
+  width:60px;
+  
+
+}
+.filter-switch{
+  border-radius: 20px;  
+  box-shadow: 0 0 5px black;
+  translate: 0,0;
+  width:30px;
+  height:30px;
+  transition-property: translate;
+  transition-duration: 0.5s;
+  transition-timing-function: ease-in-out;
+  align-items: center;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.filter-switch.activated{
+  translate:100% 0;
+}
+
+.filter-switch-text{
+  font-size:0.6em;
+  font-family: 'Pokemon Solid', sans-serif;
+  transform:translate(0,0);
+  transition:transform 0.5s ease-in-out;
+  z-index: -1;
+}
+.filter-switch-text.activated{
+  transform:translate(-100%,0);
+}
+.filter-date-button{
+  background-color: gray;
+  color:white;
+  padding:3px;
+  border-radius: 20px;
+  border-width: 1px;
+  border-color: black;
+}
 .search-bar-switch-container{
   grid-area:top/betweenInputIcon/bottom/searchBarRight;
   position:relavive;
@@ -564,6 +668,7 @@
   align-items: center;
   
 }
+
 .search-bar-switch{
   border-radius: 20px;
   width:35%;
@@ -578,6 +683,7 @@
   transition-timing-function: ease-in-out;
   align-items: center;
 }
+
 .search-bar-switch.activated{
   translate:145% 0;
   rotate:180deg;
@@ -779,7 +885,14 @@
     opacity: 100%;
   }
 }
-
+@keyframes alternateX{
+  0%{
+    transform: translateX(0);
+  }
+  100%{
+    transform: translateX(25%);
+  }
+}
 @keyframes fadeIn{
   from{
     opacity: 0;

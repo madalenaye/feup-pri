@@ -185,7 +185,8 @@
         {
             "name": "title",
             "type": "auto-complete",
-            "indexed": true
+            "indexed": true,
+            "termVectors": true
         },
         {
             "name": "title_query",
@@ -207,13 +208,15 @@
         {
             "name": "plot",
             "type": "pokemonText",
-            "indexed": true
+            "indexed": true,
+            "termVectors": true
         },
         {
             "name": "major_events",
             "type": "pokemonText",
             "indexed": true,
-            "multiValued": true
+            "multiValued": true,
+            "termVectors": true
         },
         {
             "name": "broadcast_delay",

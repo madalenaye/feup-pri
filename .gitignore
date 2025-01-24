@@ -7,3 +7,5 @@ __pycache__/
 **/.DS_Store
 /m3/data/docs/chunked_episodes.json
 /m3/data/docs/chunked_episodes_2.json
+/m3/data/docs/related_docs.json
+/m3/evaluation/mlt/evaluation.json
